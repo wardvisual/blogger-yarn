@@ -1,21 +1,26 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
+model Blogger {
+    id       Int    @id @default(autoincrement())
+    name     String
+    usernmae String
+}
 
-generator client {
-  provider = "prisma-client-js"
+model Wow {
+    id       Int    @id @default(autoincrement())
+    name     String
+    usernmae String
 }
 
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
+    provider = "mysql"
+    url      = env("DATABASE_URL")
 }
 
-model Blog {
-  id   Int      @id @default(autoincrement())
-  date DateTime
+generator client {
+    provider = "prisma-client-js"
 }
 
-model Trash {
-  id   Int    @id @default(autoincrement())
-  name String
+model haha {
+    id       Int    @id @default(autoincrement())
+    name     String
+    usernmae String
 }
