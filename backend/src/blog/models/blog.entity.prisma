@@ -1,0 +1,11 @@
+model Blogger {
+    id       Int    @id @default(autoincrement())
+    name     String
+    usernmae String
+}
+
+model Wow {
+    id       Int    @id @default(autoincrement())
+    name     String
+    usernmae String
+}
