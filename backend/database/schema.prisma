@@ -1,15 +1,3 @@
-model Blogger {
-    id       Int    @id @default(autoincrement())
-    name     String
-    usernmae String
-}
-
-model Wow {
-    id       Int    @id @default(autoincrement())
-    name     String
-    usernmae String
-}
-
 datasource db {
     provider = "mysql"
     url      = env("DATABASE_URL")
@@ -18,9 +6,8 @@ datasource db {
 generator client {
     provider = "prisma-client-js"
 }
-
-model haha {
+model User {
     id       Int    @id @default(autoincrement())
-    name     String
-    usernmae String
+    username String @unique
+    password String
 }
