@@ -6,9 +6,3 @@ datasource db {
 generator client {
     provider = "prisma-client-js"
 }
-
-model haha {
-    id       Int    @id @default(autoincrement())
-    name     String
-    usernmae String
-}
