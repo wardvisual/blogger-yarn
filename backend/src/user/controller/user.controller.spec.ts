@@ -9,6 +9,9 @@ describe('UserController', () => {
     create: jest.fn((dto) => {
       return { id: Date.now(), ...dto };
     }),
+    findAll: jest.fn((dto) => {
+      return { ...dto };
+    }),
   };
 
   beforeEach(async () => {
@@ -34,5 +37,9 @@ describe('UserController', () => {
       username: 'ward',
       password: 'pass',
     });
+  });
+
+  it('should return list of users', () => {
+    expect(controller.findAll()).toBeDefined();
   });
 });
