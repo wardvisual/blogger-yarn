@@ -1,23 +1,24 @@
 import { Body, Controller, Post, Get, Delete, Param } from '@nestjs/common';
 import { UserService } from '@/user/service/user.service';
 import { UserDto } from '@/user/dto/createUser.dto';
+import { Observable } from 'rxjs';
 
 @Controller('user')
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
   @Post()
-  public createUser(@Body() user: UserDto) {
-    return this.userService.createUser(user);
+  public create(@Body() user: UserDto): Observable<UserDto> {
+    return this.userService.create(user);
   }
 
   @Get()
-  public getUsers() {
-    return this.userService.getUsers();
+  public findAll(): Observable<UserDto[]> {
+    return this.userService.findAll();
   }
 
   @Delete(':id')
-  public deleteUser(@Param() { id }: UserDto) {
-    return this.userService.deleteUser(Number(id));
+  public deleteOne(@Param() { id }: UserDto): Observable<UserDto> {
+    return this.userService.deleteOne(Number(id));
   }
 }
