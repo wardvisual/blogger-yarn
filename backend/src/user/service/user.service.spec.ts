@@ -6,6 +6,8 @@ import { UserController } from '../controller/user.controller';
 describe('UserService', () => {
   let service: UserService;
 
+  const userMockPrismaService = {};
+
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [UserController],
