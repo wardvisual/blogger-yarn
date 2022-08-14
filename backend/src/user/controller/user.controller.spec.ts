@@ -40,6 +40,6 @@ describe('UserController', () => {
   });
 
   it('should return list of users', () => {
-    expect(controller.findAll()).toBeDefined();
+    expect(controller.findAll()).toBeTruthy();
   });
 });
