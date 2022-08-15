@@ -23,7 +23,10 @@ describe('UserService', () => {
     service = module.get<UserService>(UserService);
   });
 
-  it('should be fetch all the users', async () => {
-    expect(await service.getUsers());
+  it('should be retrieved all the users', async () => {
+    const fetchedUser = await service.getUsers();
+
+    console.log({ fetchedUser });
+    expect(fetchedUser);
   });
 });
