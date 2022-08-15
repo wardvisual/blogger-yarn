@@ -8,7 +8,11 @@ import { User } from '@/user/entities/user.entity';
 @Module({
   imports: [
     UserModule,
-    ConfigModule.forRoot({ isGlobal: true, envFilePath: '/api/.env' }),
+    ConfigModule.forRoot({
+      isGlobal: true,
+      envFilePath: '/api/.env',
+      load: [],
+    }),
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
