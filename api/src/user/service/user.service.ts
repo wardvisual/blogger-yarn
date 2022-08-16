@@ -10,7 +10,10 @@ export class UserService {
   ) {}
 
   public async findAll(): Promise<User[]> {
-    const users = await this.repository.find();
-    return users;
+    return await this.repository.find();
+  }
+
+  public async findOne(id: number): Promise<User> {
+    return await this.repository.findOne({ where: { id } });
   }
 }
