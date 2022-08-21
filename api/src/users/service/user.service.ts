@@ -32,4 +32,12 @@ export class UsersService {
     return userFromDb;
     // return await newUser.save();
   }
+
+  public async deleteOne(id: string): Promise<void> {
+    try {
+      await this.repository.delete(id);
+    } catch (err) {
+      return err;
+    }
+  }
 }
