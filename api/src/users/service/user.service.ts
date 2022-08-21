@@ -16,12 +16,20 @@ export class UsersService {
   }
 
   public async findOne(id: number): Promise<UserEntity> {
-    return await this.repository.findOne({ where: { id } });
+    try {
+      return await this.repository.findOneOrFail({ where: { id } });
+    } catch (err) {
+      return err;
+    }
   }
 
   public async insert(user: UserDto): Promise<UserEntity> {
-    const _user = this.repository.create(user);
+    const userFromDb = this.repository.findOneOrFail({
+      where: { username: user.username },
+    });
+    // const newUser = this.repository.create(user);
 
-    return await _user.save();
+    return userFromDb;
+    // return await newUser.save();
   }
 }
