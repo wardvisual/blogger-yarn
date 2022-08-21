@@ -10,8 +10,7 @@ import { UserEntity } from './users/entities/user.entity';
     UsersModule,
     ConfigModule.forRoot({
       isGlobal: true,
-      // envFilePath: '/api/.env',
-      // load: [],
+  
     }),
     TypeOrmModule.forRoot({
       type: 'mysql',
