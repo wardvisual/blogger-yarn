@@ -25,7 +25,8 @@ export class UsersController {
   }
 
   @Post()
-  async insert(@Body() user: UserDto): Promise<UserEntity> {
-    return await this.userService.insert(user);
+  async insert(@Body() user: UserDto): Promise<void> {
+    await this.userService.insert(user);
   }
 }
+// curl -X POST -H "Content-Type: application/json"  -D '{"username": "linuz", "email": "dddsa@gmail.com", "password": "dsads", "role": "USER"}' http://localhost:3000/api/user
