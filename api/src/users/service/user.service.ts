@@ -23,19 +23,14 @@ export class UsersService {
     }
   }
 
-  public async insert(user: UserDto): Promise<void> {
+  public async insert(user: UserDto): Promise<UserEntity> {
     const userFromDb = await this.repository.findOne({
       where: { username: user.username },
     });
 
-    if (userFromDb) {
-      console.log('errorr he', userFromDb);
-    } else {
-      const newUser = this.repository.create(user);
-
-      // return userFromDb;
-      await newUser.save();
-      console.log({ newUser });
+    if (!userFromDb) {
+      await userFromDb.save();
+      return userFromDb;
     }
   }
 
