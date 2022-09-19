@@ -10,7 +10,7 @@
   <h3 align="center">Blogger Ako</h3>
 
   <p align="center"> A blog web application utilizing NestJs for the backend and Angular for the frontend.</p> 
-  <p>This project is under development.</p>
+  <p>THIS PROJECT IS UNDER DEVELOPMENT.</p>
     <br />
     <br />
     <a href="https://github.com/wardvisual/blogger-ako"><strong>View Project »</strong></a>
