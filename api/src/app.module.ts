@@ -2,15 +2,15 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 
-import { UsersModule } from '@/users/user.module';
-import { UserEntity } from './users/entities/user.entity';
+import { UsersModule } from '@/models/users/user.module';
+import { UserEntity } from '@/models/users/entities/user.entity';
+import { PostModule } from '@/models/post/post.module';
 
 @Module({
   imports: [
     UsersModule,
     ConfigModule.forRoot({
       isGlobal: true,
-  
     }),
     TypeOrmModule.forRoot({
       type: 'mysql',
@@ -23,6 +23,7 @@ import { UserEntity } from './users/entities/user.entity';
       entities: [UserEntity],
       autoLoadEntities: true,
     }),
+    PostModule,
   ],
   controllers: [],
   providers: [],
