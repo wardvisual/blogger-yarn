@@ -35,8 +35,6 @@
 
 ### Installation
 
-This project was restricted to only using NPM.
-
 1. Clone the repo
 
    ```sh
