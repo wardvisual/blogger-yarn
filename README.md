@@ -9,7 +9,8 @@
 
   <h3 align="center">Blogger Ako</h3>
 
-  <p align="center"> A blog web application utilizing NestJs for the backend and Angular for the frontend. This project is under development.
+  <p align="center"> A blog web application utilizing NestJs for the backend and Angular for the frontend.</p> 
+  <p>This project is under development.</p>
     <br />
     <br />
     <a href="https://github.com/wardvisual/blogger-ako"><strong>View Project »</strong></a>
@@ -20,7 +21,7 @@
     <a href="https://github.com/wardvisual/blogger-ako/issues">Report Bug</a>
     ·
     <a href="https://github.com/wardvisual/blogger-ako/issues">Request Feature</a>
-  </p>
+  
 </div>
 
 ### Built With
