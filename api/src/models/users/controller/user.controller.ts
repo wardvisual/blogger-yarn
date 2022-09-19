@@ -6,9 +6,9 @@ import {
   Query,
   Body,
 } from '@nestjs/common';
-import { UsersService } from '@/users/service/user.service';
-import { UserEntity } from '@/users/entities/user.entity';
-import { UserDto } from '@/users/dto/user.dto';
+import { UsersService } from '@/models/users/service/user.service';
+import { UserEntity } from '@/models/users/entities/user.entity';
+import { UserDto } from '@/models/users/dto/user.dto';
 
 @Controller('user')
 export class UsersController {
