@@ -1,20 +1,22 @@
 {
-    "name": "blog-site",
+    "name": "blogger-ako",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
+    "author": {
+        "name": "Edward Fernandez"
+    },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/wardvisual/blog-site.git"
+        "url": "git+https://github.com/wardvisual/blogger-ako.git"
     },
     "keywords": [],
-    "author": "",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/wardvisual/blog-site/issues"
+        "url": "https://github.com/wardvisual/blogger-ako/issues"
     },
-    "homepage": "https://github.com/wardvisual/blog-site#readme"
+    "homepage": "https://github.com/wardvisual/blogger-ako#readme"
 }
