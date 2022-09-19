@@ -29,6 +29,7 @@
 - [Angular](https://angular.io/)
 - [Typescript](https://www.typescriptlang.org/)
 - [NestJS](https://nestjs.com/)
+- [Swagger](https://swagger.io/)
 
 <!-- INSTALLATION -->
 
