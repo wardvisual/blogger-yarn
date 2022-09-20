@@ -11,7 +11,12 @@
         "type": "git",
         "url": "git+https://github.com/wardvisual/blogger-yarn.git"
     },
-    "keywords": [],
+    "keywords": [
+        "blogger",
+        "blog web app",
+        "nestjs",
+        "angular"
+    ],
     "license": "ISC",
     "bugs": {
         "url": "https://github.com/wardvisual/blogger-yarn/issues"
