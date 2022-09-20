@@ -7,15 +7,16 @@ main {
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-wrap: wrap;
+        flex-direction: column;
         img {
             width: 100%;
             height: auto;
-            max-width: 40em;
+            max-width: 20em;
         }
         h1 {
+            margin: -0.5em 0.7em 0 0;
             color: #3f3d4d;
-            font-size: 7rem;
+            font-size: 4rem;
         }
     }
 }
