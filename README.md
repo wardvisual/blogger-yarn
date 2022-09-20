@@ -7,7 +7,7 @@
     <img src="./screenshots/banner.jpg" alt="banner">
   </a>
 
-  <h3 align="center">Blogger Ako</h3>
+  <h3 align="center">Blogger Yarn?</h3>
 
   <p align="center"> A blog web application utilizing NestJS and Angular. This web app allows users to create and manage blog posts. NestJs is a framework that helps to structure and organize code, while Angular provides the user interface. </p> 
   <p>THIS PROJECT IS UNDER DEVELOPMENT.</p>
