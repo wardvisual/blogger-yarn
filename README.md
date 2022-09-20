@@ -3,8 +3,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/wardvisual/blogger-ako">
-    <img src="./screenshots/readme-banner.jpg" alt="banner">
+  <a href="https://github.com/wardvisual/blogger-yarn">
+    <img src="./screenshots/banner.jpg" alt="banner">
   </a>
 
   <h3 align="center">Blogger Ako</h3>
@@ -13,14 +13,14 @@
   <p>THIS PROJECT IS UNDER DEVELOPMENT.</p>
     <br />
     <br />
-    <a href="https://github.com/wardvisual/blogger-ako"><strong>View Project »</strong></a>
+    <a href="https://github.com/wardvisual/blogger-yarn"><strong>View Project »</strong></a>
     <br />    
     <br />
-    <a href="https://github.com/wardvisual/blogger-ako">View Demo</a>
+    <a href="https://github.com/wardvisual/blogger-yarn">View Demo</a>
     ·
-    <a href="https://github.com/wardvisual/blogger-ako/issues">Report Bug</a>
+    <a href="https://github.com/wardvisual/blogger-yarn/issues">Report Bug</a>
     ·
-    <a href="https://github.com/wardvisual/blogger-ako/issues">Request Feature</a>
+    <a href="https://github.com/wardvisual/blogger-yarn/issues">Request Feature</a>
   
 </div>
 
@@ -38,7 +38,7 @@
 1. Clone the repo
 
    ```sh
-   git clone https://github.com/wardvisual/blogger-ako.git
+   git clone https://github.com/wardvisual/blogger-yarn.git
    ```
 
 <!-- CONTACT -->
@@ -46,4 +46,4 @@
 ## Contact
 
 Edward Fernandez - [@wardvisual](https://twitter.com/wardvisual)
-Project Link: [blogger-ako](https://github.com/wardvisual/blogger-ako)
+Project Link: [blogger-yarn](https://github.com/wardvisual/blogger-yarn)
