@@ -9,13 +9,13 @@ import { UserEntity } from '@/models/users/entities/user.entity';
   imports: [
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
-      useFactory: async (mysqlConfigService: ConfigService) => ({
-        type: mysqlConfigService.get('DB_TYPE') as DatabaseType,
-        host: mysqlConfigService.get('DB_HOST'),
-        port: +mysqlConfigService.get('DB_PORT'),
-        username: mysqlConfigService.get('DB_USERNAME'),
-        password: mysqlConfigService.get('DB_PASSWORD'),
-        database: mysqlConfigService.get('DB_NAME'),
+      useFactory: async (configService: ConfigService) => ({
+        type: configService.get('DB_TYPE') as DatabaseType,
+        host: configService.get('DB_HOST'),
+        port: +configService.get('DB_PORT'),
+        username: configService.get('DB_USERNAME'),
+        password: configService.get('DB_PASSWORD'),
+        database: configService.get('DB_NAME'),
         entities: [UserEntity],
         autoLoadEntities: true,
       }),
