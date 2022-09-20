@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/wardvisual/blogger-yarn">
-    <img src="./screenshots/banner.jpg" alt="banner">
+    <img src="./screenshots/banner.svg" alt="banner">
   </a>
 
   <h3 align="center">Blogger Yarn?</h3>
