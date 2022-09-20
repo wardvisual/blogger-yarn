@@ -3,7 +3,6 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule, TypeOrmModuleAsyncOptions } from '@nestjs/typeorm';
 import { ConfigModule } from '@/config/database/mysql/config.module';
 import { ConfigService } from '@/config/database/mysql/config.service';
-import { UserEntity } from '@/models/users/entities/user.entity';
 
 @Module({
   imports: [
@@ -16,8 +15,8 @@ import { UserEntity } from '@/models/users/entities/user.entity';
         username: configService.get('DB_USERNAME'),
         password: configService.get('DB_PASSWORD'),
         database: configService.get('DB_NAME'),
-        entities: [UserEntity],
         autoLoadEntities: true,
+        synchronize: true,
       }),
       inject: [ConfigService],
     } as TypeOrmModuleAsyncOptions),
