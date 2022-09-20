@@ -1,0 +1,21 @@
+main {
+    height: 100vh;
+    font-family: sans-serif;
+    display: grid;
+    place-items: center;
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 40em;
+        }
+        h1 {
+            color: #3f3d4d;
+            font-size: 7rem;
+        }
+    }
+}
