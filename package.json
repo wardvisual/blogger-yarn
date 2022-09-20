@@ -1,13 +1,11 @@
 {
     "name": "blogger-ako",
     "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
+    "description": "A web application that enables users to create and manage blog posts. This web application utilizes NestJs and Angular",
+    "main": "./api/dist",
     "author": {
-        "name": "Edward Fernandez"
-    },
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "name": "Edward Fernandez",
+        "url": "https://github.com/wardvisual/blogger-ako.git"
     },
     "repository": {
         "type": "git",
