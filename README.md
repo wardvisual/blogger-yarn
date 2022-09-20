@@ -45,5 +45,5 @@
 
 ## Contact
 
-Edward Fernandez - [@wardvisual](https://twitter.com/wardvisual)
+Edward Fernandez: [@wardvisual](https://www.wardvisual.me/)
 Project Link: [blogger-yarn](https://github.com/wardvisual/blogger-yarn)
