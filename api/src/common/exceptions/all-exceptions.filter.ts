@@ -21,10 +21,12 @@ export class AllExceptionsFilter implements ExceptionFilter {
         ? exception.getStatus()
         : HttpStatus.INTERNAL_SERVER_ERROR;
 
-    const responseBody = Object.assign(exception, {
+    const responseBody = {
+      statusCode: httpStatus,
+      message: exception['message'],
       timestamp: new Date().toISOString(),
       path: httpAdapter.getRequestUrl(ctx.getRequest()),
-    });
+    };
 
     httpAdapter.reply(ctx.getResponse(), responseBody, httpStatus);
   }
