@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { ConfigService } from '@/config/database/mysql/config.service';
-import { UsersModule } from '@/models/users/user.module';
+import { PostModule } from '@/models/post/post.module';
 
 @Module({
   providers: [ConfigService],
   exports: [ConfigService],
-  imports: [UsersModule],
+  imports: [PostModule],
 })
 export class ConfigModule {}
