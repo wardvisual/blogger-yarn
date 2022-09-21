@@ -1,7 +1,9 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { UserEntity } from '@/models/user/entities/user.entity';
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { CategoryEntity } from '../../category/entities/category.entity';
 
 @Entity({ name: 'posts' })
-export class Post {
+export class PostEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -22,4 +24,16 @@ export class Post {
 
   @Column()
   imageUrl: string;
+
+  @ManyToOne(() => UserEntity, (user: UserEntity) => user.posts, {
+    eager: true,
+  })
+  user: UserEntity;
+
+  @ManyToOne(
+    () => CategoryEntity,
+    (category: CategoryEntity) => category.posts,
+    { eager: true },
+  )
+  category: CategoryEntity;
 }

@@ -1,25 +1,25 @@
 {
-    "name": "blogger-yarn",
-    "version": "1.0.0",
-    "description": "A web application that enables users to create and manage blog posts. This web application utilizes NestJs and Angular",
-    "main": "./api/dist",
-    "author": {
-        "name": "Edward Fernandez",
-        "url": "https://github.com/wardvisual/blogger-yarn.git"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/wardvisual/blogger-yarn.git"
-    },
-    "keywords": [
-        "blogger",
-        "blog web app",
-        "nestjs",
-        "angular"
-    ],
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/wardvisual/blogger-yarn/issues"
-    },
-    "homepage": "https://github.com/wardvisual/blogger-yarn#readme"
+  "name": "blogger-yarn",
+  "version": "1.0.0",
+  "description": "A web application that enables users to create and manage blog PostEntitys. This web application utilizes NestJs and Angular",
+  "main": "./api/dist",
+  "author": {
+    "name": "Edward Fernandez",
+    "url": "https://github.com/wardvisual/blogger-yarn.git"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wardvisual/blogger-yarn.git"
+  },
+  "keywords": [
+    "blogger",
+    "blog web app",
+    "nestjs",
+    "angular"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wardvisual/blogger-yarn/issues"
+  },
+  "homepage": "https://github.com/wardvisual/blogger-yarn#readme"
 }

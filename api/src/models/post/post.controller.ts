@@ -11,36 +11,39 @@ import {
 import { PostService } from './post.service';
 import { CreatePostDto } from './dto/create-post.dto';
 import { UpdatePostDto } from './dto/update-post.dto';
+import { PostEntity } from './entities/post.entity';
 
 @Controller('post')
 export class PostController {
   constructor(private readonly postService: PostService) {}
 
   @Post()
-  public create(@Body() createPostDto: CreatePostDto) {
-    return this.postService.create(createPostDto);
+  public async create(@Body() createPostDto: CreatePostDto) {
+    return await this.postService.create(createPostDto);
   }
 
   @Get()
-  public findAll() {
-    return this.postService.findAll();
+  public async findAll(): Promise<PostEntity[]> {
+    return await this.postService.findAll();
   }
 
   @Get(':id')
-  public findOne(@Param('id', ParseIntPipe) id: number) {
-    return this.postService.findOne(id);
+  public async findOne(
+    @Param('id', ParseIntPipe) id: number,
+  ): Promise<PostEntity> {
+    return await this.postService.findOne(id);
   }
 
   @Patch(':id')
-  public update(
+  public async update(
     @Param('id', ParseIntPipe) id: number,
     @Body() updatePostDto: UpdatePostDto,
   ) {
-    return this.postService.update(id, updatePostDto);
+    return await this.postService.update(id, updatePostDto);
   }
 
   @Delete(':id')
-  public remove(@Param('id', ParseIntPipe) id: number) {
-    return this.postService.remove(id);
+  public async remove(@Param('id', ParseIntPipe) id: number) {
+    return await this.postService.remove(id);
   }
 }
