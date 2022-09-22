@@ -13,7 +13,7 @@ export class PostEntity {
   @Column()
   description: string;
 
-  @Column({ unique: true })
+  @Column()
   slug: string;
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
