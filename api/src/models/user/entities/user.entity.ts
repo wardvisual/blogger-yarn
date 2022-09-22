@@ -29,7 +29,6 @@ export class UserEntity {
   avatar: string;
 
   @ApiProperty()
-  @OneToMany(() => PostEntity, (post: PostEntity) => post.user)
-  @Column('array', { array: true })
+  @OneToMany((type) => PostEntity, (post: PostEntity) => post.user)
   posts: PostEntity[];
 }

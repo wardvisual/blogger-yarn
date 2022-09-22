@@ -18,7 +18,6 @@ export class CategoryEntity {
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   updatedAt: Date;
 
-  @OneToMany(() => PostEntity, (post: PostEntity) => post.category)
-  @Column('array', { array: true })
+  @OneToMany((type) => PostEntity, (post: PostEntity) => post.category)
   posts: PostEntity[];
 }
