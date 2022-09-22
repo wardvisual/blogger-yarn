@@ -8,4 +8,7 @@ export class UpdatePostDto extends PartialType(CreatePostDto) {
 
   @ApiProperty({ required: false })
   description?: string;
+
+  @ApiProperty({ required: false })
+  imageUrl?: string;
 }
