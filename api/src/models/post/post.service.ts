@@ -1,7 +1,4 @@
-import {
-  Injectable,
-  NotFoundException,
-} from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CreatePostDto } from './dto/create-post.dto';
 import { UpdatePostDto } from './dto/update-post.dto';
@@ -17,10 +14,15 @@ export class PostService {
   ) {}
 
   public async create(createPostDto: CreatePostDto) {
-    const slug = StringHelper.toSlug(createPostDto.title);
-    const title = StringHelper.toTitleCase(createPostDto.title);
+    const post = new PostEntity();
 
-    return await this.repository.insert({ ...createPostDto, title, slug });
+    post.userId = 1;
+
+    Object.assign(post, createPostDto);
+
+    this.repository.create(post);
+
+    return await this.repository.save(post);
   }
 
   public async findAll(): Promise<PostEntity[]> {
