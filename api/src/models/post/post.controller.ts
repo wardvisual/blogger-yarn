@@ -7,6 +7,8 @@ import {
   Param,
   Delete,
   ParseIntPipe,
+  UseInterceptors,
+  ClassSerializerInterceptor,
 } from '@nestjs/common';
 import { PostService } from './post.service';
 import { CreatePostDto } from './dto/create-post.dto';
@@ -16,6 +18,7 @@ import { ApiTags } from '@nestjs/swagger';
 
 @ApiTags('post')
 @Controller('post')
+@UseInterceptors(ClassSerializerInterceptor)
 export class PostController {
   constructor(private readonly postService: PostService) {}
 
