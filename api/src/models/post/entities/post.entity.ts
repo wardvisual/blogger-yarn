@@ -1,5 +1,13 @@
 import { UserEntity } from '@/models/user/entities/user.entity';
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import slugify from 'slugify';
+import {
+  BeforeInsert,
+  Column,
+  Entity,
+  JoinColumn,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import { CategoryEntity } from '../../category/entities/category.entity';
 
 @Entity({ name: 'posts' })
@@ -25,8 +33,18 @@ export class PostEntity {
   @Column()
   imageUrl: string;
 
+  @Column()
+  userId: number;
+
+  @Column({ default: 3 })
+  categoryId?: number;
+
   @ManyToOne(() => UserEntity, (user: UserEntity) => user.posts, {
     eager: true,
+  })
+  @JoinColumn({
+    name: 'userId',
+    referencedColumnName: 'id',
   })
   user: UserEntity;
 
@@ -35,5 +53,17 @@ export class PostEntity {
     (category: CategoryEntity) => category.posts,
     { eager: true },
   )
+  @JoinColumn({
+    name: 'categoryId',
+    referencedColumnName: 'id',
+  })
   category: CategoryEntity;
+
+  @BeforeInsert()
+  slugifyPost() {
+    this.slug = slugify(this.title.substring(0, 20), {
+      lower: true,
+      replacement: '_',
+    });
+  }
 }
