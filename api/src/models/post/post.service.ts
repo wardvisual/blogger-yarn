@@ -5,6 +5,7 @@ import { UpdatePostDto } from './dto/update-post.dto';
 import { PostEntity } from './entities/post.entity';
 import { Repository } from 'typeorm';
 import { StringHelper } from '@/common/helpers/string.helper';
+import { UserEntity } from '../user/entities/user.entity';
 
 @Injectable()
 export class PostService {
@@ -13,10 +14,11 @@ export class PostService {
     private readonly repository: Repository<PostEntity>,
   ) {}
 
-  public async create(createPostDto: CreatePostDto) {
+  public async create(createPostDto: CreatePostDto, user: UserEntity) {
     const post = new PostEntity();
 
-    post.userId = 1;
+    post.userId = user.id;
+    post.categoryId = 1;
 
     Object.assign(post, createPostDto);
 
