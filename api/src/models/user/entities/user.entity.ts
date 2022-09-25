@@ -1,7 +1,8 @@
 import { PostEntity } from '@/models/post/entities/post.entity';
-import { ApiProperty } from '@nestjs/swagger';
+import * as bcrypt from 'bcryptjs';
 import {
   BeforeInsert,
+  BeforeUpdate,
   Column,
   Entity,
   OneToMany,
@@ -10,31 +11,45 @@ import {
 
 @Entity({ name: 'users' })
 export class UserEntity {
-  @ApiProperty()
   @PrimaryGeneratedColumn()
-  id: string;
+  id: number;
 
-  @ApiProperty()
   @Column()
   firstname: string;
 
-  @ApiProperty()
   @Column()
   lastname: string;
 
-  @ApiProperty()
   @Column()
   email: string;
 
-  @ApiProperty()
-  @Column()
+  @Column({ select: false })
   password: string;
 
-  @ApiProperty()
   @Column()
   avatar: string;
 
-  @ApiProperty()
+  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
+  createdAt: Date;
+
+  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
+  updatedAt: Date;
+
   @OneToMany((type) => PostEntity, (post: PostEntity) => post.user)
   posts: PostEntity[];
+
+  @BeforeInsert()
+  @BeforeUpdate()
+  async hashPassword() {
+    this.password = await bcrypt.hash(this.password, 10);
+
+    // try {
+    //   const rounds = bcrypt.getRounds(this.password);
+    //   if (rounds === 0) {
+    //     this.password = await bcrypt.hash(this.password, 10);
+    //   }
+    // } catch (error) {
+    //   this.password = await bcrypt.hash(this.password, 10);
+    // }
+  }
 }
