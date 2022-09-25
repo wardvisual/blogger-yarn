@@ -9,12 +9,15 @@ import {
   ParseIntPipe,
   UseInterceptors,
   ClassSerializerInterceptor,
+  Req,
 } from '@nestjs/common';
 import { PostService } from './post.service';
 import { CreatePostDto } from './dto/create-post.dto';
 import { UpdatePostDto } from './dto/update-post.dto';
 import { PostEntity } from './entities/post.entity';
 import { ApiTags } from '@nestjs/swagger';
+import { Request } from 'express';
+import { UserEntity } from '../user/entities/user.entity';
 
 @ApiTags('post')
 @Controller('post')
@@ -23,8 +26,14 @@ export class PostController {
   constructor(private readonly postService: PostService) {}
 
   @Post()
-  public async create(@Body() createPostDto: CreatePostDto) {
-    return await this.postService.create(createPostDto);
+  public async create(
+    @Body() createPostDto: CreatePostDto,
+    @Req() request: Request,
+  ) {
+    return await this.postService.create(
+      createPostDto,
+      request.body.user as UserEntity,
+    );
   }
 
   @Get()
