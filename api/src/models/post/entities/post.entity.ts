@@ -33,10 +33,10 @@ export class PostEntity {
   @Column()
   imageUrl: string;
 
-  @Column()
+  @Column({ select: false })
   userId: number;
 
-  @Column({ default: 3 })
+  @Column({ default: 3, select: false })
   categoryId?: number;
 
   @ManyToOne(() => UserEntity, (user: UserEntity) => user.posts, {
