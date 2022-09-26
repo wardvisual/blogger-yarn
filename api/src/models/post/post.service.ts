@@ -17,8 +17,8 @@ export class PostService {
   public async create(createPostDto: CreatePostDto, user: UserEntity) {
     const post = new PostEntity();
 
-    post.userId = user.id;
-    post.categoryId = 1;
+    post.userId = 1;
+    post.categoryId = 5;
 
     Object.assign(post, createPostDto);
 
@@ -27,8 +27,38 @@ export class PostService {
     return await this.repository.save(post);
   }
 
-  public async findAll(): Promise<PostEntity[]> {
-    return await this.repository.find();
+  public async findAll(query?: any) {
+    console.log({ query });
+    const queries = Object.keys(query);
+    const sqlQuery = this.repository
+      .createQueryBuilder('post')
+      .leftJoinAndSelect('post.category', 'category')
+      .leftJoinAndSelect('post.user', 'user');
+
+    if (!queries.length && query.constructor === Object) {
+      // if title key is present
+      if (queries.includes('title')) {
+        sqlQuery.where('post.title LIKE :title', {
+          title: `%${query['title']}%`,
+        });
+      }
+
+      // if the sort key is present, sort by title field
+      if (queries.includes('sort')) {
+        sqlQuery.orderBy('post.title', query['sort'].toUpperCase());
+      }
+
+      // if the category key is present, show only selected category items
+      if (queries.includes('category')) {
+        sqlQuery.andWhere('category.title = :cat', { cat: query['category'] });
+      }
+
+      console.log('constructor');
+      return await sqlQuery.getMany();
+    } else {
+      console.log('constructor not');
+      return await sqlQuery.getMany();
+    }
   }
 
   public async findOne(id: number): Promise<PostEntity> {
