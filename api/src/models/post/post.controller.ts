@@ -10,6 +10,7 @@ import {
   UseInterceptors,
   ClassSerializerInterceptor,
   Req,
+  Query,
 } from '@nestjs/common';
 import { PostService } from './post.service';
 import { CreatePostDto } from './dto/create-post.dto';
@@ -28,17 +29,16 @@ export class PostController {
   @Post()
   public async create(
     @Body() createPostDto: CreatePostDto,
-    @Req() request: Request,
+    @Req() req: Request,
   ) {
-    return await this.postService.create(
-      createPostDto,
-      request.body.user as UserEntity,
-    );
+    /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
+    /* @ts-ignore */
+    return await this.postService.create(createPostDto, req.user as UserEntity);
   }
 
   @Get()
-  public async findAll(): Promise<PostEntity[]> {
-    return await this.postService.findAll();
+  public findAll(@Query() query: any) {
+    return this.postService.findAll(query);
   }
 
   @Get(':id')
