@@ -28,35 +28,35 @@ export class PostService {
   }
 
   public async findAll(query?: any) {
-    console.log({ query });
-    const queries = Object.keys(query);
     const sqlQuery = this.repository
       .createQueryBuilder('post')
       .leftJoinAndSelect('post.category', 'category')
       .leftJoinAndSelect('post.user', 'user');
 
-    if (!queries.length && query.constructor === Object) {
-      // if title key is present
+    if (!(Object.keys(query).length === 0) && query.constructor === Object) {
+      const queries = Object.keys(query);
+
+      // filter with title keys
       if (queries.includes('title')) {
         sqlQuery.where('post.title LIKE :title', {
           title: `%${query['title']}%`,
         });
       }
 
-      // if the sort key is present, sort by title field
+      // sort by title field
       if (queries.includes('sort')) {
         sqlQuery.orderBy('post.title', query['sort'].toUpperCase());
       }
 
-      // if the category key is present, show only selected category items
+      // show only selected category items
       if (queries.includes('category')) {
-        sqlQuery.andWhere('category.title = :cat', { cat: query['category'] });
+        sqlQuery.andWhere('category.title = :category', {
+          category: query['category'],
+        });
       }
 
-      console.log('constructor');
       return await sqlQuery.getMany();
     } else {
-      console.log('constructor not');
       return await sqlQuery.getMany();
     }
   }
