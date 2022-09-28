@@ -4,30 +4,18 @@ import { CreatePostDto } from './dto/create-post.dto';
 import { UpdatePostDto } from './dto/update-post.dto';
 import { PostEntity } from './entities/post.entity';
 import { Repository } from 'typeorm';
-import { CategoryEntity } from '../category/entities/category.entity';
 
 @Injectable()
 export class PostService {
   constructor(
     @InjectRepository(PostEntity)
     private readonly postRepository: Repository<PostEntity>,
-    @InjectRepository(CategoryEntity)
-    private readonly categoryRepository: Repository<CategoryEntity>,
   ) {}
 
   public async create(createPostDto: CreatePostDto, userId: number) {
     const post = new PostEntity();
 
     post.userId = userId;
-    if (createPostDto.categoryId) {
-      const category = await this.categoryRepository.findOne({
-        where: { id: createPostDto.categoryId },
-      });
-
-      if (!category) throw new NotFoundException('Category not found');
-
-      Object.assign(post.category, category);
-    }
 
     Object.assign(post, createPostDto);
 
@@ -94,18 +82,6 @@ export class PostService {
 
     if (!postFromDb)
       throw new NotFoundException(`A post with an ID of ${id} was not found.`);
-
-    postFromDb.updatedAt = new Date(Date.now());
-
-    if (updatePostDto.categoryId) {
-      const category = await this.categoryRepository.findOne({
-        where: { id: updatePostDto.categoryId },
-      });
-
-      if (!category) throw new NotFoundException('Category not found');
-
-      Object.assign(postFromDb.category, category);
-    }
 
     Object.assign(postFromDb, updatePostDto);
 
