@@ -9,7 +9,6 @@ import {
   ParseIntPipe,
   UseInterceptors,
   ClassSerializerInterceptor,
-  Req,
   Query,
 } from '@nestjs/common';
 import { PostService } from './post.service';
