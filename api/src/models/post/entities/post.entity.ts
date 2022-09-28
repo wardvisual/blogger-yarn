@@ -1,4 +1,3 @@
-import { UserEntity } from '@/models/user/entities/user.entity';
 import slugify from 'slugify';
 import {
   BeforeInsert,
@@ -8,7 +7,8 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { CategoryEntity } from '../../category/entities/category.entity';
+import { UserEntity } from '@/models/user/entities/user.entity';
+import { CategoryEntity } from '@/models/category/entities/category.entity';
 
 @Entity({ name: 'posts' })
 export class PostEntity {
