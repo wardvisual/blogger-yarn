@@ -16,6 +16,7 @@ export class PostService {
     const post = new PostEntity();
 
     post.userId = userId;
+    post.createdAt = new Date(Date.now());
 
     Object.assign(post, createPostDto);
 
@@ -69,23 +70,25 @@ export class PostService {
   }
 
   public async findOne(id: number): Promise<PostEntity> {
-    const postFromDb = await this.postRepository.findOne({ where: { id } });
+    const post = await this.postRepository.findOne({ where: { id } });
 
-    if (!postFromDb)
+    if (!post)
       throw new NotFoundException(`A post with an ID of ${id} was not found.`);
 
-    return postFromDb;
+    return post;
   }
 
   public async update(id: number, updatePostDto: UpdatePostDto) {
-    const postFromDb = await this.findOne(id);
+    const post = await this.findOne(id);
 
-    if (!postFromDb)
+    if (!post)
       throw new NotFoundException(`A post with an ID of ${id} was not found.`);
 
-    Object.assign(postFromDb, updatePostDto);
+    post.updatedAt = new Date(Date.now());
 
-    return await this.postRepository.save(postFromDb);
+    Object.assign(post, updatePostDto);
+
+    return await this.postRepository.save(post);
   }
 
   public async remove(id: number) {
