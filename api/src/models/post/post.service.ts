@@ -53,9 +53,9 @@ export class PostService {
       }
 
       return await sqlQuery.getMany();
-    } else {
-      return await sqlQuery.getMany();
     }
+
+    return await sqlQuery.getMany();
   }
 
   public async findBySlug(slug: string) {
