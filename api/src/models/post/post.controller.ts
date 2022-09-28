@@ -17,8 +17,6 @@ import { CreatePostDto } from './dto/create-post.dto';
 import { UpdatePostDto } from './dto/update-post.dto';
 import { PostEntity } from './entities/post.entity';
 import { ApiTags } from '@nestjs/swagger';
-import { Request } from 'express';
-import { UserEntity } from '../user/entities/user.entity';
 
 @ApiTags('post')
 @Controller('post')
@@ -29,16 +27,19 @@ export class PostController {
   @Post()
   public async create(
     @Body() createPostDto: CreatePostDto,
-    @Req() req: Request,
+    @Body() userId: number,
   ) {
-    /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
-    /* @ts-ignore */
-    return await this.postService.create(createPostDto, req.user as UserEntity);
+    return await this.postService.create(createPostDto, userId);
   }
 
   @Get()
   public findAll(@Query() query: any) {
     return this.postService.findAll(query);
+  }
+
+  @Get('/slug/:slug')
+  public async findBySlug(@Param('slug') slug: string) {
+    return await this.postService.findBySlug(slug);
   }
 
   @Get(':id')
