@@ -24,6 +24,9 @@ export class PostEntity {
   @Column()
   slug: string;
 
+  @Column()
+  imageUrl: string;
+
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   createdAt: Date;
 
@@ -31,13 +34,10 @@ export class PostEntity {
   updatedAt: Date;
 
   @Column()
-  imageUrl: string;
-
-  @Column({ select: false })
   userId: number;
 
-  @Column({ default: 3, select: false })
-  categoryId?: number;
+  @Column({ default: 1 })
+  categoryId: number;
 
   @ManyToOne(() => UserEntity, (user: UserEntity) => user.posts, {
     eager: true,
@@ -57,7 +57,7 @@ export class PostEntity {
     name: 'categoryId',
     referencedColumnName: 'id',
   })
-  category: CategoryEntity;
+  category?: CategoryEntity;
 
   @BeforeInsert()
   slugifyPost() {
