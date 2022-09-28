@@ -6,7 +6,6 @@ import {
   IsString,
   MinLength,
 } from 'class-validator';
-import { CategoryEntity } from '@/models/category/entities/category.entity';
 
 export class CreatePostDto {
   @ApiProperty()
@@ -29,8 +28,4 @@ export class CreatePostDto {
   @IsOptional()
   @ApiProperty({ required: false })
   categoryId?: number;
-
-  @IsOptional()
-  @ApiProperty({ required: false })
-  category?: CategoryEntity;
 }
