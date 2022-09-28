@@ -4,31 +4,40 @@ import { CreatePostDto } from './dto/create-post.dto';
 import { UpdatePostDto } from './dto/update-post.dto';
 import { PostEntity } from './entities/post.entity';
 import { Repository } from 'typeorm';
-import { StringHelper } from '@/common/helpers/string.helper';
-import { UserEntity } from '../user/entities/user.entity';
+import { CategoryEntity } from '../category/entities/category.entity';
 
 @Injectable()
 export class PostService {
   constructor(
     @InjectRepository(PostEntity)
-    private readonly repository: Repository<PostEntity>,
+    private readonly postRepository: Repository<PostEntity>,
+    @InjectRepository(CategoryEntity)
+    private readonly categoryRepository: Repository<CategoryEntity>,
   ) {}
 
-  public async create(createPostDto: CreatePostDto, user: UserEntity) {
+  public async create(createPostDto: CreatePostDto, userId: number) {
     const post = new PostEntity();
 
-    post.userId = 1;
-    post.categoryId = 5;
+    post.userId = userId;
+    if (createPostDto.categoryId) {
+      const category = await this.categoryRepository.findOne({
+        where: { id: createPostDto.categoryId },
+      });
+
+      if (!category) throw new NotFoundException('Category not found');
+
+      Object.assign(post.category, category);
+    }
 
     Object.assign(post, createPostDto);
 
-    this.repository.create(post);
+    this.postRepository.create(post);
 
-    return await this.repository.save(post);
+    return await this.postRepository.save(post);
   }
 
   public async findAll(query?: any) {
-    const sqlQuery = this.repository
+    const sqlQuery = this.postRepository
       .createQueryBuilder('post')
       .leftJoinAndSelect('post.category', 'category')
       .leftJoinAndSelect('post.user', 'user');
@@ -61,30 +70,53 @@ export class PostService {
     }
   }
 
+  public async findBySlug(slug: string) {
+    const post = await this.postRepository.findOne({ where: { slug } });
+
+    if (!post) {
+      throw new NotFoundException(`post with slug ${slug} was not found.`);
+    }
+
+    return post;
+  }
+
   public async findOne(id: number): Promise<PostEntity> {
-    const postFromDatabase = await this.repository.findOne({ where: { id } });
+    const postFromDb = await this.postRepository.findOne({ where: { id } });
 
-    if (!postFromDatabase)
-      throw new NotFoundException(`A Post with an ID of ${id} was not found.`);
+    if (!postFromDb)
+      throw new NotFoundException(`A post with an ID of ${id} was not found.`);
 
-    return postFromDatabase;
+    return postFromDb;
   }
 
   public async update(id: number, updatePostDto: UpdatePostDto) {
-    if (!(await this.findOne(id)))
-      throw new NotFoundException(`A Post with an ID of ${id} was not found.`);
+    const postFromDb = await this.findOne(id);
 
-    const slug = StringHelper.toSlug(updatePostDto.title);
-    const title = StringHelper.toTitleCase(updatePostDto.title);
+    if (!postFromDb)
+      throw new NotFoundException(`A post with an ID of ${id} was not found.`);
 
-    return this.repository.update(id, { ...updatePostDto, title, slug });
+    postFromDb.updatedAt = new Date(Date.now());
+
+    if (updatePostDto.categoryId) {
+      const category = await this.categoryRepository.findOne({
+        where: { id: updatePostDto.categoryId },
+      });
+
+      if (!category) throw new NotFoundException('Category not found');
+
+      Object.assign(postFromDb.category, category);
+    }
+
+    Object.assign(postFromDb, updatePostDto);
+
+    return await this.postRepository.save(postFromDb);
   }
 
   public async remove(id: number) {
     if (!(await this.findOne(id))) {
-      throw new NotFoundException(`A Post with an ID of ${id} was not found.`);
+      throw new NotFoundException(`A post with an ID of ${id} was not found.`);
     }
 
-    return await this.repository.delete(id);
+    return await this.postRepository.delete(id);
   }
 }
