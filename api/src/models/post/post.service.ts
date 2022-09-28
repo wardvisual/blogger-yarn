@@ -16,7 +16,6 @@ export class PostService {
     const post = new PostEntity();
 
     post.userId = userId;
-    post.createdAt = new Date(Date.now());
 
     Object.assign(post, createPostDto);
 
