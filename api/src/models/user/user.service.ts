@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
@@ -9,7 +9,7 @@ import { Repository } from 'typeorm';
 export class UserService {
   constructor(
     @InjectRepository(UserEntity)
-    private readonly repository: Repository<UserEntity>,
+    private readonly userRepository: Repository<UserEntity>,
   ) {}
 
   public async create(createUserDto: CreateUserDto) {
@@ -17,24 +17,42 @@ export class UserService {
 
     Object.assign(user, createUserDto);
 
-    this.repository.create(user);
+    this.userRepository.create(user);
 
-    return await this.repository.save(user);
+    return await this.userRepository.save(user);
   }
 
-  findAll() {
-    return `This action returns all user`;
+  public async findAll() {
+    return await this.userRepository.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} user`;
+  public async findOne(id: number) {
+    const user = await this.userRepository.findOne({ where: { id } });
+
+    if (!user)
+      throw new NotFoundException(`User with an ID of ${id} was not found.`);
+
+    return user;
   }
 
-  update(id: number, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`;
+  public async update(id: number, updateUserDto: UpdateUserDto) {
+    const user = await this.findOne(id);
+
+    if (!user)
+      throw new NotFoundException(`User with an ID of ${id} was not found.`);
+
+    user.updatedAt = new Date(Date.now());
+
+    Object.assign(user, updateUserDto);
+
+    return await this.userRepository.save(user);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} user`;
+  public async remove(id: number) {
+    if (!(await this.findOne(id))) {
+      throw new NotFoundException(`User with an ID of ${id} was not found.`);
+    }
+
+    return await this.userRepository.delete(id);
   }
 }
