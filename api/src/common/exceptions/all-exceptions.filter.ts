@@ -3,29 +3,58 @@ import {
   Catch,
   ExceptionFilter,
   HttpException,
+  Logger,
 } from '@nestjs/common';
-import { HttpAdapterHost } from '@nestjs/core';
 import { HttpStatus } from '@nestjs/common';
 
 @Catch()
 export class AllExceptionsFilter implements ExceptionFilter {
-  constructor(private readonly httpAdapterHost: HttpAdapterHost) {}
+  private readonly logger: Logger;
 
-  catch(exception: unknown, host: ArgumentsHost): void {
-    const { httpAdapter } = this.httpAdapterHost;
+  constructor() {
+    this.logger = new Logger();
+  }
 
+  catch(exception: Error, host: ArgumentsHost): void {
     const ctx = host.switchToHttp();
+    const request = ctx.getRequest();
+    const response = ctx.getResponse();
 
-    const httpStatus =
+    const statusCode =
       exception instanceof HttpException
         ? exception.getStatus()
         : HttpStatus.INTERNAL_SERVER_ERROR;
+    const message =
+      exception instanceof HttpException
+        ? exception.message
+        : 'Internal Server Error';
 
-    const responseBody = Object.assign(exception, {
+    const devErrorResponse: any = {
+      statusCode,
       timestamp: new Date().toISOString(),
-      path: httpAdapter.getRequestUrl(ctx.getRequest()),
-    });
+      path: request.url,
+      method: request.method,
+      errorName: exception?.name,
+      message: exception?.message,
+    };
 
-    httpAdapter.reply(ctx.getResponse(), responseBody, httpStatus);
+    const prodErrorResponse: any = {
+      statusCode,
+      message,
+    };
+
+    this.logger.log(
+      `\nRequest Method: ${request.method}\nRequestUrl: ${
+        request.url
+      }\n${JSON.stringify(devErrorResponse)}`,
+    );
+
+    response
+      .status(statusCode)
+      .json(
+        process.env.NODE_ENV === 'development'
+          ? devErrorResponse
+          : prodErrorResponse,
+      );
   }
 }
