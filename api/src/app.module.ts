@@ -4,6 +4,8 @@ import { APP_FILTER } from '@nestjs/core';
 
 import { DatabaseProviderModule } from '@/providers/database/mysql/provider.module';
 import { AllExceptionsFilter } from '@/common/exceptions/all-exceptions.filter';
+import { AuthModule } from './auth/auth.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -11,6 +13,7 @@ import { AllExceptionsFilter } from '@/common/exceptions/all-exceptions.filter';
       isGlobal: true,
     }),
     DatabaseProviderModule,
+    AuthModule,
   ],
   controllers: [],
   providers: [
