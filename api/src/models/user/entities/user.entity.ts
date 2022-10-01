@@ -40,7 +40,7 @@ export class UserEntity {
 
   @BeforeInsert()
   @BeforeUpdate()
-  async hashPassword() {
+  public async hashPassword() {
     this.password = await bcrypt.hash(this.password, 10);
 
     // try {
@@ -51,5 +51,11 @@ export class UserEntity {
     // } catch (error) {
     //   this.password = await bcrypt.hash(this.password, 10);
     // }
+  }
+
+  public async isPasswordMatch(userPassword: string) {
+    const isMatch = await bcrypt.compare(this.password, userPassword);
+
+    return isMatch;
   }
 }
