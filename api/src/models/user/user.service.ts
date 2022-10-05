@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { UserEntity } from './entities/user.entity';
-import { Repository } from 'typeorm';
+import { FindOneOptions, Repository } from 'typeorm';
 
 @Injectable()
 export class UserService {
@@ -12,7 +12,7 @@ export class UserService {
     private readonly userRepository: Repository<UserEntity>,
   ) {}
 
-  public async create(createUserDto: CreateUserDto) {
+  public async create(createUserDto: CreateUserDto): Promise<UserEntity> {
     const user = new UserEntity();
 
     Object.assign(user, createUserDto);
@@ -22,37 +22,27 @@ export class UserService {
     return await this.userRepository.save(user);
   }
 
-  public async findAll() {
-    return await this.userRepository.find();
-  }
-
-  public async findOne(id: number) {
-    const user = await this.userRepository.findOne({ where: { id } });
+  public async findOne(where: FindOneOptions<UserEntity>): Promise<UserEntity> {
+    const user = await this.userRepository.findOne(where);
 
     if (!user)
-      throw new NotFoundException(`User with an ID of ${id} was not found.`);
+      throw new NotFoundException(
+        `There isn't any user with identifier: ${where}`,
+      );
 
     return user;
   }
 
   public async update(id: number, updateUserDto: UpdateUserDto) {
-    const user = await this.findOne(id);
+    const user = await this.userRepository.findOneBy({ id });
 
     if (!user)
-      throw new NotFoundException(`User with an ID of ${id} was not found.`);
+      throw new NotFoundException(`There isn't any user with an ID of: ${id}`);
 
     user.updatedAt = new Date(Date.now());
 
     Object.assign(user, updateUserDto);
 
     return await this.userRepository.save(user);
-  }
-
-  public async remove(id: number) {
-    if (!(await this.findOne(id))) {
-      throw new NotFoundException(`User with an ID of ${id} was not found.`);
-    }
-
-    return await this.userRepository.delete(id);
   }
 }
