@@ -1,32 +1,38 @@
 import {
   Controller,
-  Get,
   Post,
   Body,
-  Patch,
-  Param,
-  Delete,
   HttpCode,
+  UseInterceptors,
+  UseGuards,
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { RegisterDto } from './dto/register-user.dto';
 import { UserEntity } from '../models/user/entities/user.entity';
 import { LoginDto } from './dto/login-user.dto';
 import { HttpStatus } from '@nestjs/common';
+import { TokenInterceptor } from './interceptors/token.interceptor';
+import { LocalAuthGuard } from './guards/local-auth.guard';
+import { ApiTags } from '@nestjs/swagger';
+import { AuthUser } from '@/models/user/user.decorator';
 
+ApiTags('Authentication');
 @Controller('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
   @Post('register')
   @HttpCode(HttpStatus.CREATED)
-  public register(@Body() user: RegisterDto): Promise<UserEntity> {
-    return this.authService.register(user);
+  @UseInterceptors(TokenInterceptor)
+  public async register(@Body() user: RegisterDto): Promise<UserEntity> {
+    return await this.authService.register(user);
   }
 
   @Post('login')
+  @UseGuards(LocalAuthGuard)
   @HttpCode(HttpStatus.OK)
-  public login(@Body() user: LoginDto): Promise<UserEntity> {
-    return this.authService.login(user);
+  @UseInterceptors(TokenInterceptor)
+  public async login(@AuthUser() user: LoginDto) {
+    return await this.authService.login(user);
   }
 }
