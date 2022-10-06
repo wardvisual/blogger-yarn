@@ -32,8 +32,7 @@ export class AuthController {
   @UseGuards(LocalAuthGuard)
   @HttpCode(HttpStatus.OK)
   @UseInterceptors(TokenInterceptor)
-  public async login(@Body() user: LoginDto): Promise<UserEntity> {
-    console.log({ user: user.email, pass: user.password });
-    return await this.authService.login(user);
+  public async login(@AuthUser() user: LoginDto): Promise<UserEntity> {
+    return await this.authService.login(user.email, user.password);
   }
 }
