@@ -1,4 +1,4 @@
-import { Injectable, UnauthorizedException } from '@nestjs/common';
+import { Body, Injectable, UnauthorizedException } from '@nestjs/common';
 import { RegisterDto } from './dto/register-user.dto';
 import { JwtService } from '@nestjs/jwt';
 import { UserEntity } from '@/models/user/entities/user.entity';
@@ -7,6 +7,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import type { JwtPayload } from './interfaces/jwt-payload.interface';
 import { AuthUser } from '@/models/user/user.decorator';
+import * as bcrypt from 'bcryptjs';
 
 @Injectable()
 export class AuthService {
@@ -22,16 +23,24 @@ export class AuthService {
     return user;
   }
 
-  public async login(@AuthUser() loginDto: LoginDto) {
-    // const user = await this.userRepository.findOne({
-    //   where: { email: loginDto.email },
-    // });
+  public async login(loginDto: LoginDto): Promise<UserEntity> {
+    console.log({ loginDto: loginDto.email, pass: loginDto.password });
 
-    // if (!user || (user && !user.isPasswordMatch(loginDto.password))) {
+    const user = await this.userRepository.findOne({
+      where: { email: loginDto.email },
+    });
+
+    if (!user) {
+      throw new UnauthorizedException('Invalid email or password');
+    }
+
+    // const isMatch = await user.checkPassword(loginDto.password);
+
+    // if (!isMatch) {
     //   throw new UnauthorizedException('Invalid email or password');
     // }
 
-    return loginDto;
+    return user;
   }
 
   public async verifyPayload(payload: JwtPayload): Promise<UserEntity> {

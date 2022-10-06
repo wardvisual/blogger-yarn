@@ -40,22 +40,15 @@ export class UserEntity {
 
   @BeforeInsert()
   @BeforeUpdate()
-  public async hashPassword() {
-    this.password = await bcrypt.hash(this.password, 10);
+  async hashPassword(): Promise<void> {
+    const salt = await bcrypt.genSalt(10);
 
-    // try {
-    //   const rounds = bcrypt.getRounds(this.password);
-    //   if (rounds === 0) {
-    //     this.password = await bcrypt.hash(this.password, 10);
-    //   }
-    // } catch (error) {
-    //   this.password = await bcrypt.hash(this.password, 10);
-    // }
+    if (!/^\$2[abxy]?\$\d+\$/.test(this.password)) {
+      this.password = await bcrypt.hash(this.password, salt);
+    }
   }
 
-  public async isPasswordMatch(userPassword: string) {
-    const isMatch = await bcrypt.compare(this.password, userPassword);
-
-    return isMatch;
+  async checkPassword(plainPassword: string): Promise<boolean> {
+    return await bcrypt.compare(plainPassword, this.password);
   }
 }

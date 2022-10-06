@@ -16,7 +16,7 @@ import { LocalAuthGuard } from './guards/local-auth.guard';
 import { ApiTags } from '@nestjs/swagger';
 import { AuthUser } from '@/models/user/user.decorator';
 
-ApiTags('Authentication');
+ApiTags('authentication');
 @Controller('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
@@ -32,7 +32,8 @@ export class AuthController {
   @UseGuards(LocalAuthGuard)
   @HttpCode(HttpStatus.OK)
   @UseInterceptors(TokenInterceptor)
-  public async login(@AuthUser() user: LoginDto) {
+  public async login(@Body() user: LoginDto): Promise<UserEntity> {
+    console.log({ user: user.email, pass: user.password });
     return await this.authService.login(user);
   }
 }
