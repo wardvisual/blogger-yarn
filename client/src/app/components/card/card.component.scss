@@ -1,0 +1,84 @@
+figure {
+    padding: 1em;
+    width: 100%;
+    .content {
+        background-color: var(--color-dark-1);
+        border-radius: var(--radius-10);
+        position: relative;
+        max-width: 40em;
+        min-height: 28em;
+        display: flex;
+        align-items: center;
+        .card__image {
+            position: absolute;
+            max-width: 30em;
+            right: -16em;
+            background-color: var(--color-dark-2);
+            border-radius: var(--radius-10);
+            box-shadow: var(--shadow-1);
+            padding: 2em;
+            img {
+                object-fit: contain;
+                border-radius: var(--radius-10);
+                box-shadow: var(--shadow-1);
+                &:hover {
+                    cursor: pointer;
+                }
+                &:active {
+                    transform: scale(1.005);
+                }
+            }
+            .user {
+                display: flex;
+                align-items: center;
+                gap: 1em;
+                margin-bottom: 1.2em;
+                border-radius: var(--radius-10);
+                cursor: pointer;
+                img {
+                    max-width: 3em;
+                    border-radius: 100%;
+                }
+                .text {
+                    display: flex;
+                    flex-direction: column;
+                    p {
+                        margin-top: -0.4em;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+        .card__details {
+            padding: 1.5em;
+            max-width: 26em;
+            position: relative;
+            h2 {
+                margin-top: 0.2em;
+                font-weight: bold;
+                line-height: 1.2;
+                &:hover {
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
+            }
+            .tags {
+                display: flex;
+                align-items: center;
+                gap: 1em;
+                margin-top: 1em;
+                li {
+                    background: var(--color-blue-1-low);
+                    padding: 0.2em 1em 0.2em 1em;
+                    border-radius: var(--radius-5);
+                    font-size: 14px;
+                }
+            }
+            .card__footer {
+                margin-top: 2em;
+                display: flex;
+                gap: 0.2em;
+            }
+        }
+    }
+}
