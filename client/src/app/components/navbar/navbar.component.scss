@@ -22,7 +22,11 @@ nav .content .left .logo img {
 nav .content .right .actions {
     display: flex;
     align-items: center;
-    gap: 0.5em;
+    gap: 1em;
+}
+
+nav .content .right .actions button {
+    margin-right: 1em;
 }
 
 nav .content .right .actions .user img {

@@ -2,7 +2,7 @@ main .content {
     display: grid;
     grid-template-columns: 14em 1fr 18em;
     grid-gap: 1em;
-    margin-top: 2em;
+    margin-top: 1em;
     >* {
         // Sidebar
         li {
@@ -13,7 +13,7 @@ main .content {
             border-radius: var(--radius-5);
             &:hover {
                 cursor: pointer;
-                background: var(--dark-1);
+                background: var(--color-dark-1);
             }
         }
         // Feed
@@ -35,17 +35,24 @@ main .content {
                     display: grid;
                     grid-gap: 1em;
                     padding: 1em;
-                    background: var(--dark-1);
+                    background: var(--color-dark-1);
                     border-radius: var(--radius-5);
+                    >img:first-child {
+                        max-height: 25em;
+                        object-fit: cover;
+                    }
                     .user {
                         display: flex;
                         align-items: center;
                         gap: 1em;
                         img {
                             margin-top: -1em;
-                            max-width: 2em;
+                            max-width: 3em;
                             border-radius: 100%;
                         }
+                    }
+                    h1 {
+                        margin-top: -0.6em;
                     }
                     .hashtags {
                         display: flex;
@@ -68,13 +75,14 @@ main .content {
             }
             div.list {
                 display: grid;
-                background: var(--dark-1);
+                background: var(--color-dark-1);
                 border-radius: var(--radius-5);
                 div {
-                    border-top: 2px var(--dark-2) solid;
+                    border-top: 2px var(--color-dark-2) solid;
                     padding: 1em;
                     p:last-child {
                         font-size: 10px;
+                        margin-top: 1em;
                     }
                 }
             }
