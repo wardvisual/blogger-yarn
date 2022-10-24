@@ -1,6 +1,7 @@
 import {
   BadRequestException,
   Injectable,
+  Logger,
   NotFoundException,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -11,17 +12,21 @@ import { FindOneOptions, Repository } from 'typeorm';
 
 @Injectable()
 export class UserService {
+  logger = new Logger();
   constructor(
     @InjectRepository(UserEntity)
     private readonly userRepository: Repository<UserEntity>,
   ) {}
 
   public async create(createUserDto: CreateUserDto): Promise<UserEntity> {
-    let user: unknown;
+    let user = null;
+    this.logger.log({ createUserDto });
 
-    user = this.userRepository.findOne({
+    user = await this.userRepository.findOne({
       where: { email: createUserDto.email },
     });
+
+    this.logger.log({ user });
 
     if (!user) {
       user = new UserEntity();
@@ -37,7 +42,10 @@ export class UserService {
   }
 
   public async findOne(where: FindOneOptions<UserEntity>): Promise<UserEntity> {
+    this.logger.log({ where });
     const user = await this.userRepository.findOne(where);
+
+    this.logger.log({ user });
 
     if (!user)
       throw new NotFoundException(

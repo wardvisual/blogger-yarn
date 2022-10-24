@@ -1,4 +1,9 @@
-import { Body, Injectable, UnauthorizedException } from '@nestjs/common';
+import {
+  Body,
+  Injectable,
+  Logger,
+  UnauthorizedException,
+} from '@nestjs/common';
 import { RegisterDto } from './dto/register-user.dto';
 import { JwtService } from '@nestjs/jwt';
 import { UserEntity } from '@/models/user/entities/user.entity';
@@ -12,6 +17,7 @@ import { UserService } from '../models/user/user.service';
 
 @Injectable()
 export class AuthService {
+  logger = new Logger();
   constructor(
     @InjectRepository(UserEntity)
     private readonly userService: UserService,
@@ -19,13 +25,18 @@ export class AuthService {
   ) {}
 
   public async register(registerDto: RegisterDto): Promise<UserEntity> {
-    return await this.userService.create(registerDto);
+    const user = await this.userService.create(registerDto);
+
+    this.logger.log({ user });
+    return user;
   }
 
   public async login(username: string, password: string): Promise<UserEntity> {
     const user = await this.userService.findOne({
       where: { email: username },
     });
+
+    console.log({ user, username, password });
 
     if (!user) {
       throw new UnauthorizedException('Invalid email or password');
@@ -34,6 +45,7 @@ export class AuthService {
     if (!(await user.checkPassword(password))) {
       throw new UnauthorizedException('Invalid email or password');
     }
+    console.log({ level: 2, user, username, password });
 
     return user;
   }
