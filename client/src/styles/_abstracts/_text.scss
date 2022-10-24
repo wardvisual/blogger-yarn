@@ -1,0 +1,6 @@
+$textAlignments: ("left", "right", "center", "revert");
+@each $textAlignment in $textAlignments {
+    .text-#{$textAlignment} {
+        text-align: #{$textAlignment};
+    }
+}

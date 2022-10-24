@@ -1,0 +1,15 @@
+$alignments: ( "center", "space-between", "space-around", "space-evenly", "flex-start", "flex-end");
+@each $alignment in $alignments {
+    .justify-#{$alignment} {
+        justify-content: #{$alignment};
+    }
+    .items-#{$alignment} {
+        align-items: #{$alignment};
+    }
+    .justify-items-#{$alignment} {
+        justify-items: #{$alignment};
+    }
+    .content-#{$alignment} {
+        align-content: #{$alignment};
+    }
+}
