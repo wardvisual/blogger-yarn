@@ -9,13 +9,23 @@ nav .content {
     align-items: center;
 }
 
-nav .actions {
+nav .content .left {
     display: flex;
     align-items: center;
     gap: 1em;
 }
 
-nav .user img {
+nav .content .left .logo img {
+    max-width: 3em;
+}
+
+nav .content .right .actions {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+nav .content .right .actions .user img {
     max-width: 3em;
     border-radius: 100%;
     cursor: pointer;
