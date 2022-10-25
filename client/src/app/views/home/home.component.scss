@@ -23,6 +23,9 @@ main .content {
                     display: flex;
                     align-items: center;
                     gap: 1em;
+                    li {
+                        padding: 1em;
+                    }
                 }
             }
             div.blogs {
@@ -52,6 +55,26 @@ main .content {
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
+                    }
+                }
+            }
+        }
+        // cards
+        &:nth-child(3) {
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            div.list {
+                display: grid;
+                background: var(--dark-1);
+                border-radius: var(--radius-5);
+                div {
+                    border-top: 2px var(--dark-2) solid;
+                    padding: 1em;
+                    p:last-child {
+                        font-size: 10px;
                     }
                 }
             }
