@@ -26,6 +26,8 @@ main .content {
                 }
             }
             div.blogs {
+                display: grid;
+                grid-gap: 1em;
                 figure {
                     display: grid;
                     grid-gap: 1em;
