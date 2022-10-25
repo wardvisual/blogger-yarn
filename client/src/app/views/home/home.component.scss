@@ -46,9 +46,15 @@ main .content {
                         align-items: center;
                         gap: 1em;
                         img {
-                            margin-top: -1em;
                             max-width: 3em;
                             border-radius: 100%;
+                        }
+                        h2 {
+                            font-size: 1.2rem;
+                        }
+                        .text {
+                            display: flex;
+                            flex-direction: column;
                         }
                     }
                     h1 {
