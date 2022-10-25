@@ -1,4 +1,25 @@
 // utilities
 .wrapper {
-    margin: 0 13em 0 13em;
+    width: 100%;
+    max-width: 95em;
+    padding: 0 2em 0 2em;
+    margin: 0 auto;
+    @media #{$media-desktop} {
+        .content {
+            min-width: unset;
+        }
+    }
+    @media #{$media-laptop} {
+        max-width: unset;
+        .content {
+            min-width: unset;
+        }
+    }
+    @media #{$media-mobile-sm} {
+        max-width: unset;
+        padding: 0 1em 0 1em;
+        .content {
+            min-width: unset;
+        }
+    }
 }

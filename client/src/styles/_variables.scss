@@ -1,10 +1,15 @@
-
 :root {
-  --color-dark-1: #2a2d33;
-  --color-dark-2: #23262e;
-  --color-blue-1: #5f85db;
-  --color-blue-2: #90b8f8;
-  --color-light-1: #f0f0f1;
-  --radius-5: 5px;
-  --radius-10: 10px;
+    --color-dark-1: #2a2d33;
+    --color-dark-2: #23262e;
+    --color-blue-1: #5f85db;
+    --color-blue-2: #90b8f8;
+    --color-light-1: #f0f0f1;
+    --radius-5: 5px;
+    --radius-10: 10px;
 }
+
+$media-desktop: "only screen and (min-width: 1400px)";
+$media-laptop: "only screen and (max-width: 1401px)";
+$media-tablet: "only screen and (max-width: 768px)";
+$media-mobile: "only screen and (max-width: 600px)";
+$media-mobile-sm: "only screen and (max-width: 480px)";
