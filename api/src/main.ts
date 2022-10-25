@@ -7,7 +7,9 @@ import * as passport from 'passport';
 import * as session from 'express-session';
 
 async function bootstrap() {
-  const app: INestApplication = await NestFactory.create(AppModule);
+  const app: INestApplication = await NestFactory.create(AppModule, {
+    cors: true,
+  });
 
   app.useGlobalPipes(new ValidationPipe());
   app.use(cookieParser(process.env.APP_SECRET));
