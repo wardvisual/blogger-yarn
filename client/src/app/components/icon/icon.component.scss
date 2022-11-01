@@ -1,0 +1,12 @@
+.icon-container {
+
+    .icon {
+        cursor: pointer;
+        transform: scale(1.4);
+
+        &:active {
+            transform: scale(1.3);
+            transition: scale .3s;
+        }
+    }
+}
