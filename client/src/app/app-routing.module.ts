@@ -4,13 +4,13 @@ import { Views } from './views';
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: '',
     component: Views.HomeComponent,
   },
   {
-    path: '',
+    path: 'home',
     pathMatch: 'full',
-    redirectTo: 'home',
+    redirectTo: '',
   },
   {
     path: 'new',
