@@ -1,3 +1,5 @@
+@import "./src/styles/variables";
+
 figure {
     padding: 1em;
     width: 100%;
@@ -9,6 +11,25 @@ figure {
         min-height: 28em;
         display: flex;
         align-items: center;
+        @media screen and (max-width: 1563px) {
+            max-width: unset;
+            flex-direction: column;
+            .card__image {
+                position: unset !important;
+                max-width: unset !important;
+                background: unset !important;
+                padding: 1em !important;
+                margin-bottom: unset !important;
+                flex-direction: column-reverse !important;
+                box-shadow: unset !important;
+            }
+            .card__details {
+                max-width: unset !important;
+            }
+            .user {
+                margin-bottom: unset !important;
+            }
+        }
         .card__image {
             position: absolute;
             max-width: 30em;
@@ -17,6 +38,9 @@ figure {
             border-radius: var(--radius-10);
             box-shadow: var(--shadow-1);
             padding: 2em;
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
             img {
                 object-fit: contain;
                 border-radius: var(--radius-10);
@@ -32,7 +56,6 @@ figure {
                 display: flex;
                 align-items: center;
                 gap: 1em;
-                margin-bottom: 1.2em;
                 border-radius: var(--radius-10);
                 cursor: pointer;
                 img {
@@ -78,6 +101,9 @@ figure {
                 margin-top: 2em;
                 display: flex;
                 gap: 0.2em;
+                @media #{$media-mobile} {
+                    justify-content: space-between;
+                }
             }
         }
     }
