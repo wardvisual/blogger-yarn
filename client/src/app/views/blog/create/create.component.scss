@@ -1,0 +1,42 @@
+section {
+  .content {
+    form {
+      display: grid;
+      grid-gap: 1em;
+      padding: 2em;
+      margin-top: 1em;
+      border-radius: var(--radius-10);
+      background: var(--color-dark-1);
+
+     .header {
+      display: grid;
+      grid-gap: 1em;
+
+      button.outlined {
+        max-width: 13em;
+      }
+
+      .input {
+        display: grid;
+
+        input{
+          background: none;
+          border: none;
+          &:focus {
+            outline: none;
+          }
+        }
+
+        input:first-child {
+          font-size: 3rem;
+          font-weight: bold;
+        }
+        input:last-child {
+          padding: 1.7em;
+          font-size: 1.2rem;
+        }
+       }
+     }
+    }
+  }
+}

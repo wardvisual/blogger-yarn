@@ -4,7 +4,6 @@ main .content {
     display: grid;
     grid-template-columns: 14em 1fr 20em;
     grid-gap: 1em;
-    margin-top: 1em;
     @media #{$media-laptop} {
         grid-template-columns: 14em 1fr;
         >*:not(:nth-child(1)):not(:nth-child(2)) {
@@ -17,6 +16,7 @@ main .content {
             display: none;
         }
     }
+    
     >* {
         // Sidebar
         li {
