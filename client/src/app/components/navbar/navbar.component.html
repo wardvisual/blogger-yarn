@@ -5,9 +5,9 @@
                 <div class="menu">
                     <app-icon [icon]="'menu'"></app-icon>
                 </div>
-                <a href="/" class="logo">
+                <div [routerLink]="'/'" class="logo">
                     <img src="assets/logos/logo.svg" alt="logo" />
-                </a>
+                </div>
                 <div class="input">
                     <input type="text" name="search" id="search" placeholder="Search..." />
                     <app-icon [icon]="'search_outline'"></app-icon>
@@ -15,7 +15,9 @@
             </div>
             <div class="right">
                 <div class="actions">
-                    <button>Create Post</button>
+                    <button [routerLink]="'new'" [routerLinkActive]="'active'">
+            Create Post
+          </button>
                     <div class="input icon-only">
                         <input type="text" name="search" id="search" placeholder="Search..." />
                         <app-icon [icon]="'search_outline'"></app-icon>
