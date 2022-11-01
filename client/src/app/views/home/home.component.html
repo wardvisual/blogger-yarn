@@ -1,55 +1,42 @@
-<app-navbar></app-navbar>
-<main>
+<main class="mt-6">
     <div class="wrapper">
         <div class="content">
             <ul class="sidebar">
                 <li>
-                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+                    <app-icon [icon]="'home_border'"></app-icon>
                     Home
                 </li>
                 <li>
-                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+                    <app-icon [icon]="'collections_bookmark'"></app-icon>
                     Readling List
                 </li>
                 <li>
-                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+                    <app-icon [icon]="'view_list'"></app-icon>
                     Listings
                 </li>
                 <li>
-                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+                    <app-icon [icon]="'headset_mic'"></app-icon>
                     Podcasts
                 </li>
                 <li>
-                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
-                    News
+                    <app-icon [icon]="'video_library'"></app-icon>
+                    Videos
                 </li>
                 <li>
-                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
-                    News
+                    <app-icon [icon]="'code'"></app-icon>
+                    Code Snippets
                 </li>
                 <li>
-                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
-                    News
+                    <app-icon [icon]="'book'"></app-icon>
+                    Guides
                 </li>
                 <li>
-                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
-                    News
+                    <app-icon [icon]="'question_answer'"></app-icon>
+                    FAQ
                 </li>
                 <li>
-                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
-                    News
-                </li>
-                <li>
-                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
-                    News
-                </li>
-                <li>
-                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
-                    News
-                </li>
-                <li>
-                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
-                    News
+                    <app-icon [icon]="'perm_contact_calendar'"></app-icon>
+                    Contact
                 </li>
             </ul>
             <div class="feed">
@@ -62,91 +49,9 @@
                 </nav>
 
                 <div class="blogs">
-                    <figure>
-                        <img src="assets/images/banner-2.jpg" alt="blog" />
-                        <div class="user">
-                            <img src="assets/images/user.jpg" alt="blog" />
-                            <div class="text">
-                                <h2>Edward Fernandez</h2>
-                                <p>Oct 22 (Just now)</p>
-                            </div>
-                        </div>
-
-                        <!-- <h1>{{ post.title }}</h1> -->
-                        <h1>post</h1>
-                        <div class="hashtags">
-                            <p>#arch</p>
-                            <p>#monorepo</p>
-                            <p>#monorepo</p>
-                        </div>
-                        <div class="actions">
-                            <div>
-                                <p>1 Reaction</p>
-                            </div>
-                            <div>
-                                <p>Add Comment</p>
-                            </div>
-                            <div>
-                                <p>3 min read</p>
-                            </div>
-                        </div>
-                    </figure>
-                    <figure>
-                        <img src="assets/images/blogpost.jpg" alt="blog" />
-                        <div class="user">
-                            <img src="assets/images/user.jpg" alt="blog" />
-                            <div class="text">
-                                <h2>Edward Fernandez</h2>
-                                <p>Oct 22 (Just now)</p>
-                            </div>
-                        </div>
-
-                        <h1>Upgrade your Lerna Workspace - Make it Fast and Modern!</h1>
-                        <div class="hashtags">
-                            <p>#monorepo</p>
-                            <p>#monorepo</p>
-                            <p>#monorepo</p>
-                        </div>
-                        <div class="actions">
-                            <div>
-                                <p>1 Reaction</p>
-                            </div>
-                            <div>
-                                <p>Add Comment</p>
-                            </div>
-                            <div>
-                                <p>3 min read</p>
-                            </div>
-                        </div>
-                    </figure>
-                    <figure>
-                        <img src="assets/images/blogpost.jpg" alt="blog" />
-                        <div class="user">
-                            <img src="assets/images/user.jpg" alt="blog" />
-                            <div class="text">
-                                <h2>Edward Fernandez</h2>
-                                <p>Oct 22 (Just now)</p>
-                            </div>
-                        </div>
-
-                        <h1>Upgrade your Lerna Workspace - Make it Fast and Modern!</h1>
-                        <div class="hashtags">
-                            <p>#monorepo</p>
-                            <p>#monorepo</p>
-                            <p>#monorepo</p>
-                        </div>
-                        <div class="actions">
-                            <div>
-                                <p>1 Reaction</p>
-                            </div>
-                            <div>
-                                <p>Add Comment</p>
-                            </div>
-                            <div>
-                                <p>3 min read</p>
-                            </div>
-                        </div>
-                    </figure>
+                    <app-card></app-card>
+                    <app-card></app-card>
+                    <app-card></app-card>
                 </div>
             </div>
             <div class="cards">
@@ -158,30 +63,26 @@
                 <div class="list">
                     <div>
                         <p>Junior/Mid Software Engineer - Immersive and Escape Rooms</p>
-                        <p>jobs</p>
+                        <ul class="tags">
+                            <li>Jobs</li>
+                            <li>Jobs</li>
+                        </ul>
                     </div>
                     <div>
                         <p>Junior/Mid Software Engineer - Immersive and Escape Rooms</p>
-                        <p>misc</p>
+                        <ul class="tags">
+                            <li>Jobs</li>
+                            <li>Jobs</li>
+                            <li>Jobs</li>
+                        </ul>
                     </div>
                     <div>
                         <p>Junior/Mid Software Engineer - Immersive and Escape Rooms</p>
-                        <p>misc</p>
-                    </div>
-                </div>
-
-                <div class="list">
-                    <div>
-                        <p>Junior/Mid Software Engineer - Immersive and Escape Rooms</p>
-                        <p>jobs</p>
-                    </div>
-                    <div>
-                        <p>Junior/Mid Software Engineer - Immersive and Escape Rooms</p>
-                        <p>misc</p>
-                    </div>
-                    <div>
-                        <p>Junior/Mid Software Engineer - Immersive and Escape Rooms</p>
-                        <p>misc</p>
+                        <ul class="tags">
+                            <li>Jobs</li>
+                            <li>Jobs</li>
+                            <li>Jobs</li>
+                        </ul>
                     </div>
                 </div>
             </div>

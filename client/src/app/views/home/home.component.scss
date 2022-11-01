@@ -1,8 +1,22 @@
+@import "./src/styles/variables";
+
 main .content {
     display: grid;
-    grid-template-columns: 14em 1fr 18em;
+    grid-template-columns: 14em 1fr 20em;
     grid-gap: 1em;
     margin-top: 1em;
+    @media #{$media-laptop} {
+        grid-template-columns: 14em 1fr;
+        >*:not(:nth-child(1)):not(:nth-child(2)) {
+            display: none;
+        }
+    }
+    @media #{$media-mobile} {
+        grid-template-columns: 1fr;
+        >*:not(:nth-child(2)) {
+            display: none;
+        }
+    }
     >* {
         // Sidebar
         li {
@@ -31,45 +45,6 @@ main .content {
             div.blogs {
                 display: grid;
                 grid-gap: 1em;
-                figure {
-                    display: grid;
-                    grid-gap: 1em;
-                    padding: 1em;
-                    background: var(--color-dark-1);
-                    border-radius: var(--radius-5);
-                    >img:first-child {
-                        max-height: 25em;
-                        object-fit: cover;
-                    }
-                    .user {
-                        display: flex;
-                        align-items: center;
-                        gap: 1em;
-                        img {
-                            max-width: 3em;
-                            border-radius: 100%;
-                        }
-                        h2 {
-                            font-size: 1.2rem;
-                        }
-                        .text {
-                            display: flex;
-                            flex-direction: column;
-                        }
-                    }
-                    h1 {
-                        margin-top: -0.6em;
-                    }
-                    .hashtags {
-                        display: flex;
-                        gap: 1em;
-                    }
-                    .actions {
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                    }
-                }
             }
         }
         // cards
@@ -78,18 +53,15 @@ main .content {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                margin-bottom: 1em;
             }
             div.list {
                 display: grid;
-                background: var(--color-dark-1);
-                border-radius: var(--radius-5);
+                grid-gap: 1em;
                 div {
-                    border-top: 2px var(--color-dark-2) solid;
+                    border-radius: var(--radius-10);
                     padding: 1em;
-                    p:last-child {
-                        font-size: 10px;
-                        margin-top: 1em;
-                    }
+                    background: var(--color-dark-1);
                 }
             }
         }
