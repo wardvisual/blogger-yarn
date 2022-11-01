@@ -1,18 +1,64 @@
+@import "./src/styles/variables";
+
 nav {
-    box-shadow: rgba(17, 22, 28, 0.2) 0px 8px 24px;
+    box-shadow: var(--shadow-1);
     padding: 0.5em 0 0.5em 0;
+    position: fixed;
+    width: 100%;
+    background: var(--color-dark-1);
+    top: 0;
+    z-index: 9;
 }
 
 nav .content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media #{$media-mobile} {
+        padding: 0 1em 0 1em;
+        .left {
+            .menu {
+                display: block!important;
+
+             
+            }
+
+            .input {
+                display: none;
+            }
+        }
+        
+        .right .actions {
+            gap: 1.4em!important;
+            .input {
+                display: block!important;
+
+                input {
+                    display: none!important;
+                }
+            }
+
+            button {
+                display: none;
+            }
+        }
+    }
+    
 }
 
 nav .content .left {
     display: flex;
     align-items: center;
     gap: 1em;
+
+    .menu {
+        display: none;
+        .icon {
+            transform: scale(1.3);
+            cursor: pointer;
+        }
+    }
 }
 
 nav .content .left .logo img {
@@ -23,14 +69,22 @@ nav .content .right .actions {
     display: flex;
     align-items: center;
     gap: 1em;
+
+    .input {
+        display: none;
+    }
 }
 
 nav .content .right .actions button {
     margin-right: 1em;
 }
 
+nav .content .right .actions .notification {
+    transform: scale(1.5);
+}
+
 nav .content .right .actions .user img {
-    max-width: 2.5em;
+    max-width: 3em;
     border-radius: 100%;
     cursor: pointer;
     &:hover {

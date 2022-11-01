@@ -2,18 +2,26 @@
     <div class="wrapper">
         <div class="content">
             <div class="left">
+                <div class="menu">
+                    <app-icon [icon]="'menu'"></app-icon>
+                </div>
                 <div class="logo">
                     <img src="assets/logos/logo-main.png" alt="logo" />
                 </div>
                 <div class="input">
                     <input type="text" name="search" id="search" placeholder="Search..." />
+                    <app-icon [icon]="'search_outline'"></app-icon>
                 </div>
             </div>
             <div class="right">
                 <div class="actions">
                     <button>Create Blog</button>
-                    <div class="notification">
-                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="notifications"></mat-icon>
+                    <div class="input">
+                        <input type="text" name="search" id="search" placeholder="Search..." />
+                        <app-icon [icon]="'search_outline'"></app-icon>
+                    </div>
+                    <div>
+                        <app-icon [icon]="'notifications'"></app-icon>
                     </div>
                     <div class="user">
                         <img src="assets/images/user.jpg" alt="user" />
