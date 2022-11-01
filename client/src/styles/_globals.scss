@@ -63,7 +63,14 @@ button {
         opacity: 90%;
         cursor: pointer;
     }
+
+    &.outlined {
+        background-color: unset;
+        color: var(--color-blue-1);
+        border: 1px var(--color-blue-1) solid;
+    }
 }
+
 
 img {
     width: 100%;

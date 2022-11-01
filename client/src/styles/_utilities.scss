@@ -2,8 +2,9 @@
 .wrapper {
     width: 100%;
     max-width: 97em;
-    padding: 0 2em 0 2em;
     margin: 0 auto;
+    padding: 0 2em 0 2em;
+    
     @media #{$media-desktop} {
         .content {}
     }
@@ -35,6 +36,10 @@
 
 .mt-6 {
     margin-top: 6em;
+}
+
+.mt-5 {
+    margin-top: 5em;
 }
 
 .select-1 {
