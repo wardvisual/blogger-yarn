@@ -1,16 +1,18 @@
+@import "./src/styles/variables";
+
 section {
   .content {
     form {
       display: grid;
       grid-gap: 1em;
-      padding: 2em;
       margin-top: 1em;
       border-radius: var(--radius-10);
       background: var(--color-dark-1);
-
-     .header {
-      display: grid;
-      grid-gap: 1em;
+      
+      .header {
+       padding: 4em;
+       display: grid;
+       grid-gap: 2em;
 
       button.outlined {
         max-width: 13em;
@@ -22,6 +24,7 @@ section {
         input{
           background: none;
           border: none;
+          padding: unset;
           &:focus {
             outline: none;
           }
@@ -30,13 +33,46 @@ section {
         input:first-child {
           font-size: 3rem;
           font-weight: bold;
+
         }
         input:last-child {
-          padding: 1.7em;
           font-size: 1.2rem;
         }
        }
      }
+
+
+      @media #{$media-laptop} {
+        .header {
+          padding: 2em;
+        }
+
+        input:first-child {
+          font-size: 2rem!important;
+        }
+
+        input:last-child {
+          font-size: 1.2rem!important;
+        }
+      }
+
+      @media #{$media-mobile-sm} {
+        .header {
+          padding: 1.5em 1em 1.5em 1em;
+        }
+
+        button.outlined {
+          max-width: unset!important;
+        }
+
+        input:first-child {
+          font-size: 1.4rem!important;
+        }
+
+        input:last-child {
+          font-size: 1rem!important;
+        }
+      }
     }
   }
 }
