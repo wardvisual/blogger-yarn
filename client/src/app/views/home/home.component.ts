@@ -10,7 +10,7 @@ interface Post {
 }
 
 @Component({
-  selector: 'app-home',
+  selector: 'view-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })

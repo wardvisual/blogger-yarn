@@ -45,7 +45,7 @@ table {
 
 input,
 button {
-    padding: 0.7em;
+    padding: .4em 0.7em .4em 0.7em;
     background: none;
     border: none;
     border-radius: var(--radius-5);
@@ -53,8 +53,8 @@ button {
 }
 
 input {
-    border: 0.2px var(--color-dark-2) solid;
-    background: var(--color-dark-1);
+    border: 0.8px #313439 solid;
+    background: var(--color-dark-2);
 }
 
 button {

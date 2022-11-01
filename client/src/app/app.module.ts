@@ -3,18 +3,26 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './views/home/home.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { CardComponent } from './components/card/card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { IconComponent } from './components/icon/icon.component';
+
+/* Views */
+import { Views } from './views';
+/* Componetns */
+import { Component } from './components';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NavbarComponent, CardComponent, IconComponent],
+  declarations: [
+    AppComponent,
+    Views.HomeComponent,
+    Views.BlogComponent.Create,
+    Component.NavbarComponent,
+    Component.CardComponent,
+    Component.IconComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

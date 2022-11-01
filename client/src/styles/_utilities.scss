@@ -76,10 +76,20 @@
 
 .input {
   display: flex;
-  align-items: center;
   gap: 1em;
   cursor: pointer;
+  position: relative;
   .icon {
+    position: absolute;
     transform: scale(1.4);
+    right: 1em;
+    top: .4em;   
   }
+}
+
+
+.input.icon-only {
+   .icon {
+       position: unset;
+   }
 }

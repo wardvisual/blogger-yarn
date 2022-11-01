@@ -1,16 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './views/home/home.component';
+import { Views } from './views';
 
 const routes: Routes = [
   {
     path: 'home',
-    component: HomeComponent,
+    component: Views.HomeComponent,
   },
   {
     path: '',
     pathMatch: 'full',
     redirectTo: 'home',
+  },
+  {
+    path: 'new',
+    component: Views.BlogComponent.Create,
   },
 ];
 
