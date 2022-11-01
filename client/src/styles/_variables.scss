@@ -2,14 +2,21 @@
     --color-dark-1: #2a2d33;
     --color-dark-2: #23262e;
     --color-blue-1: #5f85db;
+    --color-blue-1-low: #5f84db14;
     --color-blue-2: #90b8f8;
     --color-light-1: #f0f0f1;
     --radius-5: 5px;
     --radius-10: 10px;
+    --shadow-1: rgba(17, 22, 28, 0.2) 0px 8px 24px;
 }
 
+// $media-desktop: "only screen and (min-width: 1400px)";
+// $media-laptop: "only screen and (max-width: 1401px)";
+// $media-tablet: "only screen and (max-width: 768px)";
+// $media-mobile: "only screen and (max-width: 600px)";
+// $media-mobile-sm: "only screen and (max-width: 480px)";
 $media-desktop: "only screen and (min-width: 1400px)";
-$media-laptop: "only screen and (max-width: 1401px)";
+$media-laptop: "only screen and (max-width: 1142px)"; // 
 $media-tablet: "only screen and (max-width: 768px)";
-$media-mobile: "only screen and (max-width: 600px)";
+$media-mobile: "only screen and (max-width: 775px)"; //
 $media-mobile-sm: "only screen and (max-width: 480px)";
