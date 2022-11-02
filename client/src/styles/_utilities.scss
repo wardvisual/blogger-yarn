@@ -52,8 +52,9 @@
     min-width: max-content;
     display: flex;
     align-items: center;
-    gap: 0.3em;
+    gap: 0.5em;
     cursor: pointer;
+    user-select: none;
     color: var(--color-blue-1);
     border-radius: var(--radius-5);
     .icon {

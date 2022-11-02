@@ -44,12 +44,16 @@ table {
 }
 
 input,
-button {
+button,select, option, textarea{
     padding: .4em 0.7em .4em 0.7em;
     background: none;
     border: none;
     border-radius: var(--radius-5);
     width: 100%;
+}
+
+select {
+    background: var(--color-dark-1);
 }
 
 input {
@@ -64,13 +68,19 @@ button {
         cursor: pointer;
     }
 
-    &.outlined {
-        background-color: unset;
-        color: var(--color-blue-1);
-        border: 1px var(--color-blue-1) solid;
-    }
 }
 
+.outlined {
+    background-color: unset;
+    color: var(--color-blue-1);
+    border: 1px var(--color-blue-1) solid;
+}
+
+label.outlined {
+    padding: 1em;
+    border-radius: var(--radius-5);
+    cursor: pointer;
+}
 
 img {
     width: 100%;
