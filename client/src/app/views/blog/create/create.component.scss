@@ -2,6 +2,17 @@
 
 section {
   .content {
+      >div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        >div {
+          display: flex;
+          align-items: center;
+          gap: 1em;
+        }
+      }
     form {
       display: grid;
       grid-gap: 1em;
@@ -14,30 +25,82 @@ section {
        display: grid;
        grid-gap: 2em;
 
-      button.outlined {
-        max-width: 13em;
+
+       label.outlined {
+        max-width: max-content;
+       
+       }
+        input[type="file"] {
+          display: none;
+        }
+
+       .image-container {
+          display: flex;
+          align-items: center;
+          gap: 2em;
+
+        img {
+          max-width: 30em;
+        }
+
+        > div {
+          display: flex;
+          align-items: center;
+          gap: 1em;
+        }
+       }
+       .editor-toolbar {
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+          grid-gap: 2.3em;
+          >* {
+            color: var(--color-blue-1);
+            transform: scale(1.3);
+          }
+        }
+
+        button.outlined {
+          max-width: 13em;
+        }
+
+      .controls {
+        display: flex;
+        gap: 2em;
       }
 
       .input {
         display: grid;
 
-        input{
-          background: none;
-          border: none;
-          padding: unset;
+        input, textarea{
+          background: var(--color-dark-2);
+          padding: 1em;
           &:focus {
             outline: none;
           }
         }
 
-        input:first-child {
+        > textarea {
+          min-height: 20em;
+          max-width: 1360px;
+        }
+
+        > input:first-child {
           font-size: 3rem;
           font-weight: bold;
-
         }
-        input:last-child {
+
+        > textarea {
+          font-size: 1.5rem;
+        }
+
+        > input:last-child {
           font-size: 1.2rem;
         }
+       }
+       
+       .select {
+
        }
      }
 
