@@ -17,14 +17,14 @@
             <form>
                 <div class="header">
                     <div class="image-container">
-                        <img src="assets/images/banner-2.jpg" alt="banner" />
+                        <img [src]="imageCover" *ngIf="imageCover" alt="banner" />
                         <div>
                             <button>Change</button>
                             <button class="outlined">Remove</button>
                         </div>
                     </div>
                     <label for="upload-cover" class="outlined">Add a cover image</label>
-                    <input type="file" id="upload-cover" name="coverImage" [ob] />
+                    <input type="file" id="upload-cover" name="coverImage" (change)="onImageCoverSelected($event)" />
 
                     <div class="input">
                         <input type="text" placeholder="Blog post title" />
@@ -48,7 +48,7 @@
                         <app-icon [icon]="'format_list_bulleted'" title="Generic List"></app-icon>
                         <app-icon [icon]="'format_list_numbered'" title="Numbered List"></app-icon>
                         <i class="separator">|</i>
-                        <app-icon [icon]="'insert_link'" title ="Create Link"></app-icon>
+                        <app-icon [icon]="'insert_link'" title="Create Link"></app-icon>
                         <app-icon [icon]="'image'" title="Insert Image"></app-icon>
                     </div>
                     <div class="input">
