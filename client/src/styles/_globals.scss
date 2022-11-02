@@ -44,7 +44,7 @@ table {
 }
 
 input,
-button,select, option, textarea{
+button,select, option, textarea, {
     padding: .4em 0.7em .4em 0.7em;
     background: none;
     border: none;
@@ -70,13 +70,18 @@ button {
 
 }
 
-.outlined {
+button.outlined {
     background-color: unset;
-    color: var(--color-blue-1);
     border: 1px var(--color-blue-1) solid;
 }
 
-label.outlined {
+.outlined, .filled {
+    cursor: pointer;
+    border: 1px var(--color-blue-1) solid;
+    color: var(--color-blue-1);
+}
+
+.outlined {
     padding: 1em;
     border-radius: var(--radius-5);
     cursor: pointer;
