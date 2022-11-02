@@ -1,61 +1,74 @@
 <section>
-    <div class="wrapper">
-        <div class="content">
-            <div>
-                <h2>Create new post</h2>
-                <div>
-                    <p class="link">
-                        <app-icon [icon]="'edit'" title="Edit"></app-icon>
-                        Edit
-                    </p>
-                    <p class="link">
-                        <app-icon [icon]="'remove_red_eye'" title="Preview"></app-icon>
-                        Preview
-                    </p>
-                </div>
-            </div>
-            <form>
-                <div class="header">
-                    <div class="image-container">
-                        <img [src]="imageCover" *ngIf="imageCover" alt="banner" />
-                        <div>
-                            <button>Change</button>
-                            <button class="outlined">Remove</button>
-                        </div>
-                    </div>
-                    <label for="upload-cover" class="outlined">Add a cover image</label>
-                    <input type="file" id="upload-cover" name="coverImage" (change)="onImageCoverSelected($event)" />
-
-                    <div class="input">
-                        <input type="text" placeholder="Blog post title" />
-                        <input type="text" placeholder="Add up to 4 tags.." />
-                        <!-- <div class="select">
-                            <input type="text" placeholder="Add up to 4 tags.." />
-                            <select>
-                                <option disabled selected></option>
-                                <option>#WebDev</option>
-                                <option>#WebDev</option>
-                                <option>#WebDev</option>
-                            </select>
-                        </div> -->
-                    </div>
-                    <div class="editor-toolbar">
-                        <app-icon [icon]="'format_bold'" title="Bold"></app-icon>
-                        <app-icon [icon]="'format_italic'" title="Italic"></app-icon>
-                        <app-icon [icon]="'h_mobiledata'" title="Heading"></app-icon>
-                        <i class="separator">|</i>
-                        <app-icon [icon]="'format_quote'" title="Qoute"></app-icon>
-                        <app-icon [icon]="'format_list_bulleted'" title="Generic List"></app-icon>
-                        <app-icon [icon]="'format_list_numbered'" title="Numbered List"></app-icon>
-                        <i class="separator">|</i>
-                        <app-icon [icon]="'insert_link'" title="Create Link"></app-icon>
-                        <app-icon [icon]="'image'" title="Insert Image"></app-icon>
-                    </div>
-                    <div class="input">
-                        <textarea placeholder="Content here.."></textarea>
-                    </div>
-                </div>
-            </form>
+  <div class="wrapper">
+    <div class="content">
+      <div>
+        <h2>Create new post</h2>
+        <div>
+          <p class="link">
+            <app-icon [icon]="'edit'" title="Edit"></app-icon>
+            Edit
+          </p>
+          <p class="link">
+            <app-icon [icon]="'remove_red_eye'" title="Preview"></app-icon>
+            Preview
+          </p>
         </div>
+      </div>
+      <form>
+        <div class="header">
+          <div class="image-wrapper" *ngIf="imageCover">
+            <div class="image-container">
+              <img [src]="imageCover" *ngIf="imageCover" alt="banner" />
+            </div>
+            <div>
+              <label for="upload-cover" class="outlined" *ngIf="imageCover" >Change</label>
+              <label for="upload-cover" *ngIf="imageCover" class="remove" (click)="onRemoveImage()">Remove</label>
+            </div>
+          </div>
+          <label for="upload-cover" class="outlined" *ngIf="!imageCover" >Add a cover image</label>
+          <input
+            type="file"
+            id="upload-cover"
+            name="coverImage"
+            (change)="onImageCoverSelected($event)"
+          />
+
+          <div class="input">
+            <input type="text" placeholder="Blog post title" />
+            <input type="text" placeholder="Add up to 4 tags.." />
+            <!-- <div class="select">
+                  <input type="text" placeholder="Add up to 4 tags.." />
+                  <select>
+                      <option disabled selected></option>
+                      <option>#WebDev</option>
+                      <option>#WebDev</option>
+                      <option>#WebDev</option>
+                  </select>
+              </div> -->
+          </div>
+          <div class="editor-toolbar">
+            <app-icon [icon]="'format_bold'" title="Bold"></app-icon>
+            <app-icon [icon]="'format_italic'" title="Italic"></app-icon>
+            <app-icon [icon]="'h_mobiledata'" title="Heading"></app-icon>
+            <i class="separator">|</i>
+            <app-icon [icon]="'format_quote'" title="Qoute"></app-icon>
+            <app-icon
+              [icon]="'format_list_bulleted'"
+              title="Generic List"
+            ></app-icon>
+            <app-icon
+              [icon]="'format_list_numbered'"
+              title="Numbered List"
+            ></app-icon>
+            <i class="separator">|</i>
+            <app-icon [icon]="'insert_link'" title="Create Link"></app-icon>
+            <app-icon [icon]="'image'" title="Insert Image"></app-icon>
+          </div>
+          <div class="input">
+            <textarea placeholder="Content here.."></textarea>
+          </div>
+        </div>
+      </form>
     </div>
+  </div>
 </section>

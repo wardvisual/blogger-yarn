@@ -38,12 +38,16 @@ export class Create implements OnInit {
     }
 
     const reader = new FileReader();
+
     reader.readAsDataURL(event.target.files[0]);
 
     reader.onload = (_event) => {
       this.imageCover = reader.result;
-      console.log({ _event, reader });
     };
+  }
+
+  public onRemoveImage(): void {
+    this.imageCover = ""
   }
 
   ngOnInit(): void {}

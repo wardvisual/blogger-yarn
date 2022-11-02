@@ -34,19 +34,32 @@ section {
           display: none;
         }
 
-       .image-container {
+       .image-wrapper {
           display: flex;
           align-items: center;
           gap: 2em;
 
-        img {
-          max-width: 30em;
+        > div:first-child {
+          background: var(--color-dark-2);
+          width: 25em;
+          display: grid;
+          place-items: center;
+          padding: .5em;
+          img {
+            object-fit: contain;  
+            max-width: 20em;
+            max-height: 12em;
+          }
         }
-
-        > div {
+        > div:last-child {
           display: flex;
           align-items: center;
           gap: 1em;
+        }
+
+        .remove {
+          cursor: pointer;
+          color: var(--color-red-1);
         }
        }
        .editor-toolbar {
