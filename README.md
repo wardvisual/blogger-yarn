@@ -24,7 +24,7 @@
   
 </div>
 
-## 💻 Tech
+## 💻 Technologies
 
 - Frontend: [Angular](https://angular.io/)
 - Style: [SCSS](https://sass-lang.com/)
