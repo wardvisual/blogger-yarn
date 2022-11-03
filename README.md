@@ -24,26 +24,46 @@
   
 </div>
 
-### Built With
+## 💻 Tech
 
-- [Angular](https://angular.io/)
-- [Typescript](https://www.typescriptlang.org/)
-- [NestJS](https://nestjs.com/)
-- [Swagger](https://swagger.io/)
+- Frontend: [Angular](https://angular.io/)
+- Style: [SCSS](https://sass-lang.com/)
+- Backend: [NestJS](https://nestjs.com/)
+- Database: [MySQL](https://www.mysql.com/)
+- API Documentation: [Swagger](https://swagger.io/)
 
-<!-- INSTALLATION -->
+## ✅ Features
 
-### Installation
+- Login / Signup
+- Google / Facebook / Twitter / GitHub OAuth
+- Create / Remove / Update / Delete Post
+- Like / Unicorn / Bookmark Post
+- Reading List
+- Create / Add Tags to Post
+- Follow Tags
+- Find Posts by Tags
+- Comment / Replies
+- Like Comment
+- Edit / Delete Comment
+- View Profile
+- Edit Profile
+- Follow User
+- Search Posts
+- Real-time Notifications
+- Skeleton Loading
 
-1. Clone the repo
+## 🐛 Issues
 
-   ```sh
-   git clone https://github.com/wardvisual/blogger-yarn.git
-   ```
+If you're facing a problem in using CSS Portrait Image Generator please let me know by [creating an issue here](https://github.com/wardvisual/blogger-yarn/issues/new). I'm here to help you!
 
-<!-- CONTACT -->
+## 📃 License
 
-## Contact
+CSS Portrait Image Generator is licensed under [The MIT License](https://opensource.org/licenses/MIT).
 
-Edward Fernandez: [@wardvisual](https://www.wardvisual.me/)
-Project Link: [blogger-yarn](https://github.com/wardvisual/blogger-yarn)
+## 📝 Author
+
+CSS Portrait Image Generator is created by **[Edward Fernandez](https://github.com/wardvisual/)**
+
+---
+
+💻 Made with 💕 by [Edward Fernandez](https://wardvisual.me)
