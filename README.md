@@ -58,7 +58,7 @@ If you're facing a problem using this web application please let me know by [cre
 
 ## 📃 License
 
-"Blogger Yarn?" the web app is licensed under [The MIT License](https://opensource.org/licenses/MIT).
+"Blogger Yarn?" web app is licensed under [The MIT License](https://opensource.org/licenses/MIT).
 
 ## 📝 Author
 
@@ -66,4 +66,4 @@ If you're facing a problem using this web application please let me know by [cre
 
 ---
 
-💻 Made with 💕 by [Edward Fernandez](https://wardvisual.me)
+💻 Made with 💕 by [Edward Fernandez](https://wardvisual.me) 
