@@ -8,8 +8,8 @@
     "allowSyntheticDefaultImports": true,
     "target": "es2017",
     "sourceMap": true,
-    "outDir": "./apps/api/dist",
-    "baseUrl": "./apps/api",
+    "outDir": "apps/api/dist",
+    "baseUrl": "apps/api",
     "paths": {
       "@/*": ["apps/api/src/*"]
     },
