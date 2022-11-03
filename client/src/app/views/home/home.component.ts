@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
   });
 
   ngOnInit(): void {
-    this.postService.get().subscribe((res) => console.log({ res }));
+    this.postService.get().subscribe(res => console.log({ res }));
   }
 
   public onSubmit(): void {

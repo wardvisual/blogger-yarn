@@ -1,42 +1,49 @@
 <figure class="card">
-    <div class="content">
-        <div class="card__image">
-            <div class="user">
-                <img src="assets/images/user.jpg" alt="blog" />
-                <div class="text">
-                    <h3>Edward Fernandez</h3>
-                    <p class="o-70">@wardvisual</p>
-                </div>
-            </div>
-            <img src="assets/images/banner-2.jpg" alt="banner" />
+  <div class="content">
+    <div class="card__image">
+      <div class="user">
+        <img src="assets/images/user.jpg" alt="blog" />
+        <div class="text">
+          <h3>Edward Fernandez</h3>
+          <p class="o-70">@wardvisual</p>
         </div>
-        <div class="card__details">
-            <p class="o-80">02 December 2021</p>
-            <h2>Transparent proxy on Arch Linux, with ...</h2>
-            <!-- Transparent proxy on Arch Linux, with iptables and systemd slice -->
-            <p class="o-80">
-                Long story short. To build a transparent proxy, we need to redirect every outbound request to the proxy. It seems easy with iptables...
-            </p>
-            <ul class="tags">
-                <li>Web Dev</li>
-                <li>Javascript</li>
-                <li>Angular</li>
-            </ul>
-
-            <div class="card__footer o-80 select-1">
-                <p class="link">
-                    <mat-icon class="icon">favorite_border</mat-icon>
-                    10 Reactions
-                </p>
-                <p class="link">
-                    <mat-icon class="icon">chat_bubble_outline</mat-icon>
-                    Comment
-                </p>
-                <p class="link">
-                    <mat-icon class="icon">bookmark_border</mat-icon>
-                    Save
-                </p>
-            </div>
-        </div>
+      </div>
+      <img src="assets/images/banner-2.jpg" alt="banner" />
     </div>
+    <div class="card__details">
+      <p class="o-80">02 December 2021</p>
+      <h2>Transparent proxy on Arch Linux, with ...</h2>
+      <!-- Transparent proxy on Arch Linux, with iptables and systemd slice -->
+      <p class="o-80">
+        Long story short. To build a transparent proxy, we need to redirect
+        every outbound request to the proxy. It seems easy with iptables...
+      </p>
+      <ul class="tags">
+        <li>Web Dev</li>
+        <li>Javascript</li>
+        <li>Angular</li>
+      </ul>
+
+      <div class="card__footer o-80 select-1">
+        <p class="link">
+          <app-icon
+            [icon]="'favorite_border'"
+            [style]="{ fontSize: '.9rem' }"></app-icon>
+          10 Reactions
+        </p>
+        <p class="link">
+          <app-icon
+            [icon]="'chat_bubble_outline'"
+            [style]="{ fontSize: '.9rem' }"></app-icon>
+          Comment
+        </p>
+        <p class="link">
+          <app-icon
+            [icon]="'bookmark_border'"
+            [style]="{ fontSize: '.9rem' }"></app-icon>
+          Save
+        </p>
+      </div>
+    </div>
+  </div>
 </figure>

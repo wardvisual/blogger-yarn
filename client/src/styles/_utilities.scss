@@ -1,84 +1,87 @@
 // utilities
 .wrapper {
-    width: 100%;
-    max-width: 97em;
-    margin: 0 auto;
-    padding: 0 2em 0 2em;
-    
-    @media #{$media-desktop} {
-        .content {}
+  width: 100%;
+  max-width: 97em;
+  margin: 0 auto;
+  padding: 0 2em 0 2em;
+
+  @media #{$media-desktop} {
+    .content {
     }
-    @media #{$media-laptop} {
-        max-width: unset;
-        .content {}
+  }
+  @media #{$media-laptop} {
+    max-width: unset;
+    .content {
     }
-    @media #{$media-mobile-sm} {
-        max-width: unset;
-        padding: 0 1em 0 1em;
-        .content {}
+  }
+  @media #{$media-mobile-sm} {
+    max-width: unset;
+    padding: 0 1em 0 1em;
+    .content {
     }
-    @media screen and (max-width: 775px) {
-        // padding: 0 0.5em 0 0.5em;
-        padding: 0 1.2em 0 1.2em;
-    }
+  }
+  @media screen and (max-width: 775px) {
+    // padding: 0 0.5em 0 0.5em;
+    padding: 0 1.2em 0 1.2em;
+  }
 }
 
 .o-90 {
-    opacity: 90%;
+  opacity: 90%;
 }
 
 .o-80 {
-    opacity: 80%;
+  opacity: 80%;
 }
 
 .o-70 {
-    opacity: 70%;
+  opacity: 70%;
 }
 
 .mt-6 {
-    margin-top: 6em;
+  margin-top: 6em;
 }
 
 .mt-5 {
-    margin-top: 5em;
+  margin-top: 5em;
 }
 
 .select-1 {
-    user-select: none;
+  user-select: none;
 }
 
 .link {
-    padding: 0.5em;
-    min-width: max-content;
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-    cursor: pointer;
-    user-select: none;
+  padding: 0.5em;
+  min-width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  cursor: pointer;
+  user-select: none;
+  color: var(--color-blue-1);
+  border-radius: var(--radius-5);
+  .icon {
     color: var(--color-blue-1);
-    border-radius: var(--radius-5);
-    .icon {
-        color: var(--color-blue-1);
-    }
-    &:active {
-        transform: scale(0.9);
-    }
-    &:hover {
-        background: var(--color-dark-2);
-    }
+  }
+  &:active {
+    transform: scale(0.9);
+  }
+  &:hover {
+    background: var(--color-dark-2);
+  }
 }
 
 .tags {
-    display: flex;
-    align-items: center;
-    gap: 1em;
-    margin-top: 1em;
-    li {
-        background: var(--color-blue-1-low);
-        padding: 0.2em 1em 0.2em 1em !important;
-        border-radius: var(--radius-5);
-        font-size: 14px;
-    }
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-top: 1em;
+  li {
+    background: var(--color-blue-1-low);
+    padding: 0.2em 1em 0.2em 1em !important;
+    border-radius: var(--radius-5);
+    font-size: 14px;
+  }
 }
 
 .input {
@@ -90,13 +93,12 @@
     position: absolute;
     transform: scale(1.4);
     right: 1em;
-    top: .4em;   
+    top: 0.4em;
   }
 }
 
-
 .input.icon-only {
-   .icon {
-       position: unset;
-   }
+  .icon {
+    position: unset;
+  }
 }

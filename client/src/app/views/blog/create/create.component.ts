@@ -41,13 +41,15 @@ export class Create implements OnInit {
 
     reader.readAsDataURL(event.target.files[0]);
 
-    reader.onload = (_event) => {
+    reader.onload = _event => {
       this.imageCover = reader.result;
+      this.coverImageErrorMsg = '';
     };
   }
 
   public onRemoveImage(): void {
-    this.imageCover = ""
+    this.imageCover = '';
+    this.coverImageErrorMsg = '';
   }
 
   ngOnInit(): void {}

@@ -1,69 +1,69 @@
-@import "./src/styles/variables";
+@import './src/styles/variables';
 
 main .content {
-    display: grid;
-    grid-template-columns: 14em 1fr 20em;
-    grid-gap: 1em;
-    @media #{$media-laptop} {
-        grid-template-columns: 14em 1fr;
-        >*:not(:nth-child(1)):not(:nth-child(2)) {
-            display: none;
-        }
+  display: grid;
+  grid-template-columns: 14em 1fr 20em;
+  grid-gap: 1em;
+  @media #{$media-laptop} {
+    grid-template-columns: 14em 1fr;
+    > *:not(:nth-child(1)):not(:nth-child(2)) {
+      display: none;
     }
-    @media #{$media-mobile} {
-        grid-template-columns: 1fr;
-        >*:not(:nth-child(2)) {
-            display: none;
-        }
+  }
+  @media #{$media-mobile} {
+    grid-template-columns: 1fr;
+    > *:not(:nth-child(2)) {
+      display: none;
     }
-    
-    >* {
-        // Sidebar
-        li {
-            display: flex;
-            gap: 1em;
-            align-items: center;
-            padding: 0.8em 1.4em 0.8em 0.5em;
-            border-radius: var(--radius-5);
-            &:hover {
-                cursor: pointer;
-                background: var(--color-dark-1);
-            }
-        }
-        // Feed
-        &:nth-child(2) {
-            nav {
-                ul {
-                    display: flex;
-                    align-items: center;
-                    gap: 1em;
-                    li {
-                        padding: 1em;
-                    }
-                }
-            }
-            div.blogs {
-                display: grid;
-                grid-gap: 1em;
-            }
-        }
-        // cards
-        &:nth-child(3) {
-            header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 1em;
-            }
-            div.list {
-                display: grid;
-                grid-gap: 1em;
-                div {
-                    border-radius: var(--radius-10);
-                    padding: 1em;
-                    background: var(--color-dark-1);
-                }
-            }
-        }
+  }
+
+  > * {
+    // Sidebar
+    li {
+      display: flex;
+      gap: 1em;
+      align-items: center;
+      padding: 0.8em 1.4em 0.8em 0.5em;
+      border-radius: var(--radius-5);
+      &:hover {
+        cursor: pointer;
+        background: var(--color-dark-1);
+      }
     }
+    // Feed
+    &:nth-child(2) {
+      nav {
+        ul {
+          display: flex;
+          align-items: center;
+          gap: 1em;
+          li {
+            padding: 1em;
+          }
+        }
+      }
+      div.blogs {
+        display: grid;
+        grid-gap: 1em;
+      }
+    }
+    // cards
+    &:nth-child(3) {
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1em;
+      }
+      div.list {
+        display: grid;
+        grid-gap: 1em;
+        div {
+          border-radius: var(--radius-10);
+          padding: 1em;
+          background: var(--color-dark-1);
+        }
+      }
+    }
+  }
 }

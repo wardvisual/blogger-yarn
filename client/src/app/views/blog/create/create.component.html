@@ -19,19 +19,29 @@
           <div class="image-wrapper" *ngIf="imageCover">
             <div class="image-container">
               <img [src]="imageCover" *ngIf="imageCover" alt="banner" />
+              <p *ngIf="coverImageErrorMsg">{{ coverImageErrorMsg }}</p>
             </div>
             <div>
-              <label for="upload-cover" class="outlined" *ngIf="imageCover" >Change</label>
-              <label for="upload-cover" *ngIf="imageCover" class="remove" (click)="onRemoveImage()">Remove</label>
+              <label for="upload-cover" class="outlined" *ngIf="imageCover"
+                >Change</label
+              >
+              <label
+                for="upload-cover"
+                *ngIf="imageCover"
+                class="remove"
+                (click)="onRemoveImage()"
+                >Remove</label
+              >
             </div>
           </div>
-          <label for="upload-cover" class="outlined" *ngIf="!imageCover" >Add a cover image</label>
+          <label for="upload-cover" class="outlined" *ngIf="!imageCover"
+            >Add a cover image</label
+          >
           <input
             type="file"
             id="upload-cover"
             name="coverImage"
-            (change)="onImageCoverSelected($event)"
-          />
+            (change)="onImageCoverSelected($event)" />
 
           <div class="input">
             <input type="text" placeholder="Blog post title" />
@@ -54,12 +64,10 @@
             <app-icon [icon]="'format_quote'" title="Qoute"></app-icon>
             <app-icon
               [icon]="'format_list_bulleted'"
-              title="Generic List"
-            ></app-icon>
+              title="Generic List"></app-icon>
             <app-icon
               [icon]="'format_list_numbered'"
-              title="Numbered List"
-            ></app-icon>
+              title="Numbered List"></app-icon>
             <i class="separator">|</i>
             <app-icon [icon]="'insert_link'" title="Create Link"></app-icon>
             <app-icon [icon]="'image'" title="Insert Image"></app-icon>
