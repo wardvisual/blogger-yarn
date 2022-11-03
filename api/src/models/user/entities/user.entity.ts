@@ -35,7 +35,7 @@ export class UserEntity {
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   updatedAt: Date;
 
-  @OneToMany((type) => PostEntity, (post: PostEntity) => post.user)
+  @OneToMany(type => PostEntity, (post: PostEntity) => post.user)
   posts: PostEntity[];
 
   @BeforeInsert()

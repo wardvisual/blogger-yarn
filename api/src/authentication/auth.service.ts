@@ -21,7 +21,7 @@ export class AuthService {
   constructor(
     @InjectRepository(UserEntity)
     private readonly userService: UserService,
-    private readonly jwtService: JwtService,
+    private readonly jwtService: JwtService
   ) {}
 
   public async register(registerDto: RegisterDto): Promise<UserEntity> {

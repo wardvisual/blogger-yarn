@@ -18,7 +18,7 @@ async function bootstrap() {
       secret: 'my-secret',
       resave: false,
       saveUninitialized: false,
-    }),
+    })
   );
 
   app.use(passport.initialize());

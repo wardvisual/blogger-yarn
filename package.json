@@ -21,5 +21,11 @@
   "bugs": {
     "url": "https://github.com/wardvisual/blogger-yarn/issues"
   },
-  "homepage": "https://github.com/wardvisual/blogger-yarn#readme"
+  "homepage": "https://github.com/wardvisual/blogger-yarn#readme",
+  "scripts": {
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "prettier": "^2.7.1"
+  }
 }

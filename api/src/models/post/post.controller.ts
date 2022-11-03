@@ -26,7 +26,7 @@ export class PostController {
   @Post()
   public async create(
     @Body() createPostDto: CreatePostDto,
-    @Body() userId: number,
+    @Body() userId: number
   ) {
     return await this.postService.create(createPostDto, userId);
   }
@@ -43,7 +43,7 @@ export class PostController {
 
   @Get(':id')
   public async findOne(
-    @Param('id', ParseIntPipe) id: number,
+    @Param('id', ParseIntPipe) id: number
   ): Promise<PostEntity> {
     return await this.postService.findOne(id);
   }
@@ -51,7 +51,7 @@ export class PostController {
   @Patch(':id')
   public async update(
     @Param('id', ParseIntPipe) id: number,
-    @Body() updatePostDto: UpdatePostDto,
+    @Body() updatePostDto: UpdatePostDto
   ) {
     return await this.postService.update(id, updatePostDto);
   }

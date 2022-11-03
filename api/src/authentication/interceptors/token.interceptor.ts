@@ -14,15 +14,15 @@ import { ConfigService as NestConfigService } from '@nestjs/config';
 export class TokenInterceptor implements NestInterceptor {
   constructor(
     private readonly authService: AuthService,
-    private readonly configService: NestConfigService,
+    private readonly configService: NestConfigService
   ) {}
 
   intercept(
     context: ExecutionContext,
-    next: CallHandler,
+    next: CallHandler
   ): Observable<UserEntity> {
     return next.handle().pipe(
-      map((user) => {
+      map(user => {
         const response = context.switchToHttp().getResponse<Response>();
         const token = this.authService.signToken(user);
 
@@ -35,7 +35,7 @@ export class TokenInterceptor implements NestInterceptor {
         });
 
         return user;
-      }),
+      })
     );
   }
 }

@@ -51,7 +51,7 @@ export class PostEntity {
   @ManyToOne(
     () => CategoryEntity,
     (category: CategoryEntity) => category.posts,
-    { eager: true },
+    { eager: true }
   )
   @JoinColumn({
     name: 'categoryId',

@@ -4,6 +4,6 @@ export class StringHelper {
   }
 
   public static toTitleCase(text: string): string {
-    return text.replace(/(?:^|\s)\S/g, (string) => string.toUpperCase());
+    return text.replace(/(?:^|\s)\S/g, string => string.toUpperCase());
   }
 }

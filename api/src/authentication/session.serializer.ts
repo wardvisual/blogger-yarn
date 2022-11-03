@@ -6,14 +6,14 @@ import { UserEntity } from '../models/user/entities/user.entity';
 export class SessionSerializer extends PassportSerializer {
   serializeUser(
     user: UserEntity,
-    done: (err: Error | null, id?: UserEntity) => void,
+    done: (err: Error | null, id?: UserEntity) => void
   ): void {
     done(null, user);
   }
 
   deserializeUser(
     payload: unknown,
-    done: (err: Error | null, payload?: unknown) => void,
+    done: (err: Error | null, payload?: unknown) => void
   ): void {
     done(null, payload);
   }

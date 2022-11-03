@@ -46,7 +46,7 @@ export class AllExceptionsFilter implements ExceptionFilter {
     this.logger.log(
       `\nRequest Method: ${request.method}\nRequestUrl: ${
         request.url
-      }\n${JSON.stringify(devErrorResponse)}`,
+      }\n${JSON.stringify(devErrorResponse)}`
     );
 
     response
@@ -54,7 +54,7 @@ export class AllExceptionsFilter implements ExceptionFilter {
       .json(
         process.env.NODE_ENV === 'development'
           ? devErrorResponse
-          : prodErrorResponse,
+          : prodErrorResponse
       );
   }
 }

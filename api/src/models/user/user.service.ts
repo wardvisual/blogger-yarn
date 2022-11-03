@@ -15,7 +15,7 @@ export class UserService {
   logger = new Logger();
   constructor(
     @InjectRepository(UserEntity)
-    private readonly userRepository: Repository<UserEntity>,
+    private readonly userRepository: Repository<UserEntity>
   ) {}
 
   public async create(createUserDto: CreateUserDto): Promise<UserEntity> {
@@ -49,7 +49,7 @@ export class UserService {
 
     if (!user)
       throw new NotFoundException(
-        `There isn't any user with identifier: ${where}`,
+        `There isn't any user with identifier: ${where}`
       );
 
     return user;
