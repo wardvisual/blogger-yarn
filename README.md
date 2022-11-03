@@ -49,20 +49,20 @@
 - Edit Profile
 - Follow User
 - Search Posts
-- Real-time Notifications
+- Real-time Notifications 
 - Skeleton Loading
 
 ## 🐛 Issues
 
-If you're facing a problem in using CSS Portrait Image Generator please let me know by [creating an issue here](https://github.com/wardvisual/blogger-yarn/issues/new). I'm here to help you!
+If you're facing a problem using this web application please let me know by [creating an issue here](https://github.com/wardvisual/blogger-yarn/issues/new). I'm here to help you!
 
 ## 📃 License
 
-CSS Portrait Image Generator is licensed under [The MIT License](https://opensource.org/licenses/MIT).
+"Blogger Yarn?" the web app is licensed under [The MIT License](https://opensource.org/licenses/MIT).
 
 ## 📝 Author
 
-CSS Portrait Image Generator is created by **[Edward Fernandez](https://github.com/wardvisual/)**
+"Blogger Yarn?" web app is created by **[Edward Fernandez](https://github.com/wardvisual/)**
 
 ---
 
