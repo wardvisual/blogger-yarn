@@ -30,8 +30,9 @@
 ## 💻 Technologies
 
 - Frontend: [Angular](https://angular.io/)
-- Style: [SCSS](https://sass-lang.com/)
+- Stylesheet: [SCSS](https://sass-lang.com/)
 - Backend: [NestJS](https://nestjs.com/)
+- ORM: [TypeORM](https://typeorm.io/)
 - Database: [MySQL](https://www.mysql.com/)
 - API Documentation: [Swagger](https://swagger.io/)
 
