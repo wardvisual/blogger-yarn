@@ -26,6 +26,7 @@
 
 ## 📷 Homepage 
 ![homepage](screenshots/ss-1.jpg)
+
 ## 💻 Technologies
 
 - Frontend: [Angular](https://angular.io/)
