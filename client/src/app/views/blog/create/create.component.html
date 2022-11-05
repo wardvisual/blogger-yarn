@@ -1,29 +1,28 @@
 <section>
-  <div class="wrapper">
-    <div class="content">
-      <div>
-        <h2>Create new post</h2>
-        <div>
-          <p class="link">
-            <app-icon [icon]="'edit'" title="Edit"></app-icon>
-            Edit
-          </p>
-          <p class="link">
-            <app-icon [icon]="'remove_red_eye'" title="Preview"></app-icon>
-            Preview
-          </p>
-        </div>
-      </div>
-      <form>
-        <div class="header">
-          <div class="image-wrapper" *ngIf="imageCover">
-            <div class="image-container">
-              <img [src]="imageCover" *ngIf="imageCover" alt="banner" />
-              <p *ngIf="coverImageErrorMsg">{{ coverImageErrorMsg }}</p>
-            </div>
+    <div class="wrapper">
+        <div class="content">
             <div>
-              <label for="upload-cover" class="outlined" *ngIf="imageCover"
-                >Change</label
+                <h2>Create new post</h2>
+                <div>
+                    <p class="link">
+                        <app-icon [icon]="'edit'" title="Edit"></app-icon>
+                        Edit
+                    </p>
+                    <p class="link">
+                        <app-icon [icon]="'remove_red_eye'" title="Preview"></app-icon>
+                        Preview
+                    </p>
+                </div>
+            </div>
+            <form [formGroup]="form">
+                <div class="header">
+                    <div class="image-wrapper" *ngIf="imageCover">
+                        <div class="image-container">
+                            <img [src]="imageCover" *ngIf="imageCover" alt="banner" />
+                            <p *ngIf="coverImageErrorMsg">{{ coverImageErrorMsg }}</p>
+                        </div>
+                        <div>
+                            <label for="upload-cover" class="outlined" *ngIf="imageCover">Change</label
               >
               <label
                 for="upload-cover"
@@ -40,11 +39,15 @@
           <input
             type="file"
             id="upload-cover"
-            name="coverImage"
+            name="imageUrl"
+            formControlName="imageUrl"
             (change)="onImageCoverSelected($event)" />
 
           <div class="input">
-            <input type="text" placeholder="Blog post title" />
+            <input
+              type="text"
+              placeholder="Blog post title"
+              formControlName="title" />
             <input type="text" placeholder="Add up to 4 tags.." />
             <!-- <div class="select">
                   <input type="text" placeholder="Add up to 4 tags.." />
@@ -73,8 +76,18 @@
             <app-icon [icon]="'image'" title="Insert Image"></app-icon>
           </div>
           <div class="input">
-            <textarea placeholder="Content here.."></textarea>
+            <markdown
+              class="variable-binding"
+              [data]="form.get('content')?.value || ''"></markdown>
+            <textarea
+              placeholder="Content here.."
+              formControlName="content"></textarea>
           </div>
+
+          <footer>
+            <button type="submit" (click)="submitForm()">Publish</button>
+            <button type="button">Save Draft</button>
+          </footer>
         </div>
       </form>
     </div>

@@ -16,9 +16,14 @@ export class CreatePostDto {
 
   @IsString()
   @IsNotEmpty()
-  @MinLength(40)
+  @MinLength(40, { message: 'contnt must be 40 characters' })
   @ApiProperty()
-  description: string;
+  content: string;
+
+  @IsNumber()
+  @IsOptional()
+  @ApiProperty({ required: false })
+  tagsId?: number;
 
   @IsString()
   @ApiProperty()

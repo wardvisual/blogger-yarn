@@ -1,32 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import { discardPeriodicTasks } from '@angular/core/testing';
-import { FormBuilder } from '@angular/forms';
-import { disableDebugTools, DomSanitizer } from '@angular/platform-browser';
+import { FormBuilder, Validators } from '@angular/forms';
+import { PostService } from '../../../core/services/post.service';
+import { Observable } from 'rxjs';
 
-interface Creatable {
-  title: string;
-  description: string;
-  imageUrl: string;
-}
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
   styleUrls: ['./create.component.scss'],
 })
 export class Create implements OnInit {
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private postService: PostService
+  ) {}
 
   imageCover: any = '';
   coverImageErrorMsg: string = '';
+  public markdown: string = '';
 
-  public createForm = this.formBuilder.group<Creatable>({
+  public form = this.formBuilder.group({
     title: '',
-    description: '',
-    imageUrl: this.imageCover,
+    content: '',
+    imageUrl: this.imageCover.split('\\')[2],
+    userId: 7,
+    categoryId: 7,
   });
 
   public submitForm(): void {
-    console.log({ value: this.createForm.value });
+    this.postService.post(this.form.value).subscribe();
   }
 
   public onImageCoverSelected(event: any): void {
@@ -41,7 +42,7 @@ export class Create implements OnInit {
 
     reader.readAsDataURL(event.target.files[0]);
 
-    reader.onload = _event => {
+    reader.onload = () => {
       this.imageCover = reader.result;
       this.coverImageErrorMsg = '';
     };

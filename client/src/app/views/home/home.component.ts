@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
   ) {}
 
   formGroup = this.formBuilder.group<{}>({
-    title: '',
+    title: '# da',
     description:
       'A component-based framework for building scalable web applications · A collection of well-integrated libraries that cover a wide variety of features, ',
     imageUrl: '',
@@ -32,9 +32,13 @@ export class HomeComponent implements OnInit {
   });
 
   ngOnInit(): void {
+    console.log('form', this.formGroup.get('title')?.value);
     this.postService.get().subscribe(res => console.log({ res }));
   }
 
+  public hidePreview() {
+    alert('exit');
+  }
   public onSubmit(): void {
     this.postService.post(this.formGroup.value).subscribe();
     console.log('Submitted successfully!');

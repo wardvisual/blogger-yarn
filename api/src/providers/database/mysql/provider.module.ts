@@ -16,7 +16,7 @@ import { ConfigService } from '@/config/database/mysql/config.service';
         password: configService.get('DB_PASSWORD'),
         database: configService.get('DB_NAME'),
         autoLoadEntities: true,
-        synchronize: true,
+        synchronize: configService.get('APP_ENV') === 'development' && true,
       }),
       inject: [ConfigService],
     } as TypeOrmModuleAsyncOptions),

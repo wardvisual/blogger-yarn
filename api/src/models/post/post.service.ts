@@ -16,6 +16,7 @@ export class PostService {
     const post = new PostEntity();
 
     post.userId = userId;
+    post.tagId = 1;
 
     Object.assign(post, createPostDto);
 

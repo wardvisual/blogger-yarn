@@ -34,8 +34,8 @@ export class AllExceptionsFilter implements ExceptionFilter {
       timestamp: new Date().toISOString(),
       path: request.url,
       method: request.method,
-      errorName: exception?.name,
-      message: exception?.message,
+      error: exception?.name,
+      message: exception['response'].message,
     };
 
     const prodErrorResponse: any = {
@@ -46,9 +46,10 @@ export class AllExceptionsFilter implements ExceptionFilter {
     this.logger.log(
       `\nRequest Method: ${request.method}\nRequestUrl: ${
         request.url
-      }\n${JSON.stringify(devErrorResponse)}`
+      }\n${JSON.stringify(devErrorResponse)}}\n`
     );
 
+    console.log({ request, exception });
     response
       .status(statusCode)
       .json(

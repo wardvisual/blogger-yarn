@@ -4,11 +4,14 @@ import {
   Column,
   Entity,
   JoinColumn,
+  ManyToMany,
   ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { UserEntity } from '@/models/user/entities/user.entity';
 import { CategoryEntity } from '@/models/category/entities/category.entity';
+import { TagEntity } from '@/models/tag/entities/tag.entity';
+// import { TagEntity } from '@/models/tags/entities/tag.entity';
 
 @Entity({ name: 'posts' })
 export class PostEntity {
@@ -19,7 +22,7 @@ export class PostEntity {
   title: string;
 
   @Column()
-  description: string;
+  content: string;
 
   @Column()
   slug: string;
@@ -27,19 +30,16 @@ export class PostEntity {
   @Column()
   imageUrl: string;
 
-  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
-  createdAt: Date;
-
-  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
-  updatedAt: Date;
-
   @Column()
   userId: number;
 
   @Column({ default: 1 })
   categoryId: number;
 
-  @ManyToOne(() => UserEntity, (user: UserEntity) => user.posts, {
+  @Column({ default: 1 })
+  tagId: number;
+
+  @ManyToOne(() => UserEntity, (tag: UserEntity) => tag.posts, {
     eager: true,
   })
   @JoinColumn({
@@ -59,6 +59,15 @@ export class PostEntity {
   })
   category?: CategoryEntity;
 
+  @ManyToOne(() => TagEntity, (tags: TagEntity) => tags.posts, {
+    eager: true,
+  })
+  @JoinColumn({
+    name: 'tagId',
+    referencedColumnName: 'id',
+  })
+  tag?: TagEntity;
+
   @BeforeInsert()
   slugifyPost() {
     this.slug = slugify(this.title.substring(0, 20), {
@@ -66,4 +75,10 @@ export class PostEntity {
       replacement: '_',
     });
   }
+
+  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
+  createdAt: Date;
+
+  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
+  updatedAt: Date;
 }

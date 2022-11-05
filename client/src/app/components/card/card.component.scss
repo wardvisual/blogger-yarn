@@ -1,118 +1,117 @@
 @import './src/styles/variables';
 figure {
-    width: 100%;
-    .content {
-        background-color: var(--color-dark-1);
+  width: 100%;
+  .content {
+    background-color: var(--color-dark-1);
+    border-radius: var(--radius-10);
+    position: relative;
+    max-width: 40em;
+    min-height: 28em;
+    display: flex;
+    align-items: center;
+    @media screen and (max-width: 1563px) {
+      max-width: unset;
+      flex-direction: column;
+      .card__image {
+        position: unset !important;
+        max-width: unset !important;
+        background: unset !important;
+        padding: 1em !important;
+        margin-bottom: unset !important;
+        flex-direction: column-reverse !important;
+        box-shadow: unset !important;
+      }
+      .card__details {
+        max-width: unset !important;
+      }
+      .user {
+        margin-bottom: unset !important;
+      }
+    }
+    .card__image {
+      position: absolute;
+      max-width: 30em;
+      right: -16em;
+      background-color: var(--color-dark-2);
+      border-radius: var(--radius-10);
+      box-shadow: var(--shadow-1);
+      padding: 2em;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      img {
+        object-fit: contain;
         border-radius: var(--radius-10);
-        position: relative;
-        max-width: 40em;
-        min-height: 28em;
+        box-shadow: var(--shadow-1);
+        &:hover {
+          cursor: pointer;
+        }
+        &:active {
+          transform: scale(1.005);
+        }
+      }
+      .user {
         display: flex;
         align-items: center;
-        @media screen and (max-width: 1563px) {
-            max-width: unset;
-            flex-direction: column;
-            .card__image {
-                position: unset !important;
-                max-width: unset !important;
-                background: unset !important;
-                padding: 1em !important;
-                margin-bottom: unset !important;
-                flex-direction: column-reverse !important;
-                box-shadow: unset !important;
-            }
-            .card__details {
-                max-width: unset !important;
-            }
-            .user {
-                margin-bottom: unset !important;
-            }
+        gap: 1em;
+        border-radius: var(--radius-10);
+        cursor: pointer;
+        img {
+          max-width: 3em;
+          border-radius: 100%;
         }
-        .card__image {
-            position: absolute;
-            max-width: 30em;
-            right: -16em;
-            background-color: var(--color-dark-2);
-            border-radius: var(--radius-10);
-            box-shadow: var(--shadow-1);
-            padding: 2em;
-            display: flex;
-            flex-direction: column;
-            gap: 1em;
-            img {
-                object-fit: contain;
-                border-radius: var(--radius-10);
-                box-shadow: var(--shadow-1);
-                &:hover {
-                    cursor: pointer;
-                }
-                &:active {
-                    transform: scale(1.005);
-                }
-            }
-            .user {
-                display: flex;
-                align-items: center;
-                gap: 1em;
-                border-radius: var(--radius-10);
-                cursor: pointer;
-                img {
-                    max-width: 3em;
-                    border-radius: 100%;
-                }
-                .text {
-                    display: flex;
-                    flex-direction: column;
-                    p {
-                        margin-top: -0.4em;
-                        font-size: 14px;
-                    }
-                }
-            }
+        .text {
+          display: flex;
+          flex-direction: column;
+          p {
+            margin-top: -0.4em;
+            font-size: 14px;
+          }
         }
-        .card__details {
-            padding: 1.5em;
-            max-width: 26em;
-            position: relative;
-            h2 {
-                margin-top: 0.2em;
-                font-weight: bold;
-                line-height: 1.2;
-                &:hover {
-                    cursor: pointer;
-                    text-decoration: underline;
-                }
-            }
-            .tags {
-                display: flex;
-                align-items: center;
-                flex-wrap: wrap;
-                gap: 0.5em;
-                margin-top: 1em;
-                li {
-                    background: var(--color-blue-1-low);
-                    padding: 0.2em 1em 0.2em 1em;
-                    border-radius: var(--radius-5);
-                    font-size: 14px;
-                }
-            }
-            .card__footer {
-                margin-top: 2em;
-                display: flex;
-                gap: 0.2em;
-                @media #{$media-mobile} {
-                    justify-content: 
-                    space-between;
-                }
-                @media #{$media-mobile-sm} {
-                    p {
-                        font-size: 10px;
-                    }
-                    .icon {
-                        font-size: 0.8rem;
-                    }
-                }
-            }
-        }
+      }
     }
+    .card__details {
+      padding: 1.5em;
+      max-width: 26em;
+      position: relative;
+      h2 {
+        margin-top: 0.2em;
+        font-weight: bold;
+        line-height: 1.2;
+        &:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
+      }
+      .tags {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.5em;
+        margin-top: 1em;
+        li {
+          background: var(--color-blue-1-low);
+          padding: 0.2em 1em 0.2em 1em;
+          border-radius: var(--radius-5);
+          font-size: 14px;
+        }
+      }
+      .card__footer {
+        margin-top: 2em;
+        display: flex;
+        gap: 0.2em;
+        @media #{$media-mobile} {
+          justify-content: space-between;
+        }
+        @media #{$media-mobile-sm} {
+          p {
+            font-size: 10px;
+          }
+          .icon {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
 }

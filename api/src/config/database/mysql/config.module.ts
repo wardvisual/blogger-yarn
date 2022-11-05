@@ -3,11 +3,12 @@ import { ConfigService } from '@/config/database/mysql/config.service';
 import { PostModule } from '@/models/post/post.module';
 import { CategoryModule } from '@/models/category/category.module';
 import { UserModule } from '@/models/user/user.module';
+import { TagModule } from '@/models/tag/tag.module';
 import { AuthModule } from '@/authentication/auth.module';
 
 @Module({
   providers: [ConfigService],
   exports: [ConfigService],
-  imports: [UserModule, PostModule, CategoryModule, AuthModule],
+  imports: [UserModule, PostModule, CategoryModule, AuthModule, TagModule],
 })
 export class ConfigModule {}

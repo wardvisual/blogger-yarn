@@ -24,7 +24,8 @@
   
 </div>
 
-## 📷 Homepage 
+## 📷 Homepage
+
 ![homepage](screenshots/ss-1.jpg)
 
 ## 💻 Technologies
@@ -53,7 +54,7 @@
 - Edit Profile
 - Follow User
 - Search Posts
-- Real-time Notifications 
+- Real-time Notifications
 - Skeleton Loading
 
 ## 🐛 Issues
@@ -70,4 +71,4 @@ If you're facing a problem using this web application please let me know by [cre
 
 ---
 
-💻 Made with 💕 by [Edward Fernandez](https://wardvisual.me) 
+💻 Made with 💕 by [Edward Fernandez](https://wardvisual.me)
