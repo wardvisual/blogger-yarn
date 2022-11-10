@@ -85,8 +85,15 @@
           </div>
 
           <footer>
-            <button type="submit" (click)="submitForm()">Publish</button>
-            <button type="button">Save Draft</button>
+            <app-button
+              [name]="'Publish'"
+              (onClick)="submitForm()">
+            </app-button>
+            <app-button
+              [name]="'Save Draft'"
+              [type]="'outline'"
+              >
+            </app-button>
           </footer>
         </div>
       </form>
