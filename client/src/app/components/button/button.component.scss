@@ -1,0 +1,13 @@
+button {
+    background-color: var(--color-blue-1);
+    width: 100%;
+    &:hover {
+        opacity: 90%;
+        cursor: pointer;
+    }
+    &.outline {
+        background-color: unset;
+        border: 1px var(--color-blue-1) solid;
+        color: var(--color-blue-1);
+    }
+}
