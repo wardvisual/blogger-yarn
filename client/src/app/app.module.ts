@@ -14,6 +14,7 @@ import { Views } from './views';
 /* Componetns */
 import { Component } from './components';
 import { MarkdownModule } from 'ngx-markdown';
+import { ButtonComponent } from './components/button/button.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { MarkdownModule } from 'ngx-markdown';
     Component.NavbarComponent,
     Component.CardComponent,
     Component.IconComponent,
+    ButtonComponent,
   ],
   imports: [
     BrowserModule,
