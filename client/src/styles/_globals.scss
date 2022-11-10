@@ -1,47 +1,47 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-  color: var(--color-light-1);
-  font-family: 'poppins';
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    color: var(--color-light-1);
+    font-family: 'poppins';
 }
 
 body {
-  background-color: var(--color-dark-2);
-  line-height: 1.8;
-  overflow-x: hidden;
+    background-color: var(--color-dark-2);
+    line-height: 1.8;
+    overflow-x: hidden;
 }
 
 ol,
 ul {
-  list-style: none;
+    list-style: none;
 }
 
 blockquote,
 q {
-  quotes: none;
+    quotes: none;
 }
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
-  content: none;
+    content: '';
+    content: none;
 }
 
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 input,
@@ -49,61 +49,49 @@ button,
 select,
 option,
 textarea {
-  padding: 0.4em 0.7em 0.4em 0.7em;
-  background: none;
-  border: none;
-  border-radius: var(--radius-5);
-  width: 100%;
+    padding: 0.4em 0.7em 0.4em 0.7em;
+    padding: 1em;
+    background: none;
+    border: none;
+    border-radius: var(--radius-5);
+    width: 100%;
 }
 
 select {
-  background: var(--color-dark-1);
+    background: var(--color-dark-1);
 }
 
 input {
-  border: 0.8px #313439 solid;
-  background: var(--color-dark-2);
+    border: 0.8px #313439 solid;
+    background: var(--color-dark-2);
 }
 
 button {
-  background-color: var(--color-blue-1);
-  &:hover {
-    opacity: 90%;
-    cursor: pointer;
-  }
+    background-color: var(--color-blue-1);
+    &:hover {
+        opacity: 90%;
+        cursor: pointer;
+    }
 }
 
 button.outlined {
-  background-color: unset;
-  border: 1px var(--color-blue-1) solid;
-}
-
-.outlined,
-.filled {
-  cursor: pointer;
-  border: 1px var(--color-blue-1) solid;
-  color: var(--color-blue-1);
-}
-
-.outlined {
-  padding: 1em;
-  border-radius: var(--radius-5);
-  cursor: pointer;
+    background-color: unset;
+    border: 1px var(--color-blue-1) solid;
 }
 
 img {
-  width: 100%;
-  height: auto;
+    width: 100%;
+    height: auto;
 }
 
 h1 {
-  font-size: 3rem;
+    font-size: 3rem;
 }
 
 h2 {
-  font-size: 2rem;
+    font-size: 2rem;
 }
 
 h3 {
-  font-size: 1rem;
+    font-size: 1rem;
 }
