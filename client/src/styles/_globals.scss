@@ -50,7 +50,6 @@ select,
 option,
 textarea {
     padding: 0.4em 0.7em 0.4em 0.7em;
-    padding: 1em;
     background: none;
     border: none;
     border-radius: var(--radius-5);
@@ -59,19 +58,6 @@ textarea {
 
 select {
     background: var(--color-dark-1);
-}
-
-button {
-    background-color: var(--color-blue-1);
-    &:hover {
-        opacity: 90%;
-        cursor: pointer;
-    }
-}
-
-button.outlined {
-    background-color: unset;
-    border: 1px var(--color-blue-1) solid;
 }
 
 img {
