@@ -19,9 +19,11 @@
       </div>
       <div class="right">
         <div class="actions">
-          <button [routerLink]="'new'" [routerLinkActive]="'active'">
-            Create Post
-          </button>
+          <app-button
+            [name]="'Create Post'"
+            [routerLink]="'new'" [routerLinkActive]="'active'"
+          >
+          </app-button>
           <div class="input icon-only">
             <input
               type="text"
