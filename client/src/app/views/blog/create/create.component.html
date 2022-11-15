@@ -79,21 +79,20 @@
             <markdown
               class="variable-binding"
               [data]="form.get('content')?.value || ''"></markdown>
+            <!-- <app-input
+              [type]="'textarea'"
+              [name]="'content'"
+              [placeholder]="'Content Here'"
+              formControlName="content"></app-input> -->
             <textarea
               placeholder="Content here.."
               formControlName="content"></textarea>
           </div>
 
           <footer>
-            <app-button
-              [name]="'Publish'"
-              (onClick)="submitForm()">
+            <app-button [name]="'Publish'" (onClick)="submitForm()">
             </app-button>
-            <app-button
-              [name]="'Save Draft'"
-              [type]="'outline'"
-              >
-            </app-button>
+            <app-button [name]="'Save Draft'" [type]="'outline'"> </app-button>
           </footer>
         </div>
       </form>
