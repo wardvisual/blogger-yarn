@@ -1,4 +1,4 @@
-@import './src/styles/variables';
+@import './src/assets/styles/variables';
 section {
     .content {
         >div {
@@ -120,12 +120,12 @@ section {
                 }
             }
             footer {
-                display: flex ;
+                display: flex;
                 align-items: center;
                 justify-content: space-between;
                 gap: 1em;
-                > * {
-                  flex-grow: 1;
+                >* {
+                    flex-grow: 1;
                 }
             }
         }

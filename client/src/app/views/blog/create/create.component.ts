@@ -27,6 +27,7 @@ export class Create implements OnInit {
   });
 
   public submitForm(): void {
+    // this.postService.upload();
     this.postService.post(this.form.value).subscribe();
   }
 

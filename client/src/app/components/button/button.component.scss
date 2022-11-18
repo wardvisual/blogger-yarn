@@ -9,5 +9,9 @@ button {
         background-color: unset;
         border: 1px var(--color-blue-1) solid;
         color: var(--color-blue-1);
+        &:hover {
+            background-color: var(--color-blue-3);
+            color: var(--color-light-1);
+        }
     }
 }

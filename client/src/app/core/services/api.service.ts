@@ -28,9 +28,9 @@ export class ApiService {
       .pipe(catchError(this.formatErrors));
   }
 
-  public post(path: string, body: Object = {}): Observable<any> {
+  public post<T>(path: string, body: Object = {}): Observable<any> {
     return this.http
-      .post(`${environment.apiURL}/${path}`, JSON.stringify(body))
+      .post<T>(`${environment.apiURL}/${path}`, JSON.stringify(body))
       .pipe(catchError(this.formatErrors));
   }
 

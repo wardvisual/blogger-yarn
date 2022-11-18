@@ -7,26 +7,25 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 /* Views */
 import { Views } from './views';
 /* Componetns */
 import { Component } from './components';
-import { MarkdownModule } from 'ngx-markdown';
-import { ButtonComponent } from './components/button/button.component';
-import { InputComponent } from './components/input/input.component';
+import { AngularMarkdownEditorModule } from 'angular-markdown-editor';
 
 @NgModule({
   declarations: [
     AppComponent,
     Views.HomeComponent,
+    Views.CreateBlogComponent,
     Views.BlogComponent.Create,
     Component.NavbarComponent,
     Component.CardComponent,
     Component.IconComponent,
-    ButtonComponent,
-    InputComponent,
+    Component.ButtonComponent,
+    Component.InputComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,9 +34,8 @@ import { InputComponent } from './components/input/input.component';
     HttpClientModule,
     BrowserAnimationsModule,
     MatIconModule,
-    FormsModule,
     ReactiveFormsModule,
-    MarkdownModule.forRoot(),
+    AngularMarkdownEditorModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

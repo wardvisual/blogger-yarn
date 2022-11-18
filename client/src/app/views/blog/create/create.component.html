@@ -33,69 +33,38 @@
               >
             </div>
           </div>
-          <label for="upload-cover" class="outlined" *ngIf="!imageCover"
-            >Add a cover image</label
-          >
-          <input
-            type="file"
-            id="upload-cover"
-            name="imageUrl"
-            formControlName="imageUrl"
-            (change)="onImageCoverSelected($event)" />
+          <label for="upload-cover" class="outlined" *ngIf="!imageCover">
+            Add a cover image
+          </label>
+                            <input type="file" id="upload-cover" name="imageUrl" formControlName="imageUrl" (change)="onImageCoverSelected($event)" />
 
-          <div class="input">
-            <input
-              type="text"
-              placeholder="Blog post title"
-              formControlName="title" />
-            <input type="text" placeholder="Add up to 4 tags.." />
-            <!-- <div class="select">
-                  <input type="text" placeholder="Add up to 4 tags.." />
-                  <select>
-                      <option disabled selected></option>
-                      <option>#WebDev</option>
-                      <option>#WebDev</option>
-                      <option>#WebDev</option>
-                  </select>
-              </div> -->
-          </div>
-          <div class="editor-toolbar">
-            <app-icon [icon]="'format_bold'" title="Bold"></app-icon>
-            <app-icon [icon]="'format_italic'" title="Italic"></app-icon>
-            <app-icon [icon]="'h_mobiledata'" title="Heading"></app-icon>
-            <i class="separator">|</i>
-            <app-icon [icon]="'format_quote'" title="Qoute"></app-icon>
-            <app-icon
-              [icon]="'format_list_bulleted'"
-              title="Generic List"></app-icon>
-            <app-icon
-              [icon]="'format_list_numbered'"
-              title="Numbered List"></app-icon>
-            <i class="separator">|</i>
-            <app-icon [icon]="'insert_link'" title="Create Link"></app-icon>
-            <app-icon [icon]="'image'" title="Insert Image"></app-icon>
-          </div>
-          <div class="input">
-            <markdown
-              class="variable-binding"
-              [data]="form.get('content')?.value || ''"></markdown>
-            <!-- <app-input
-              [type]="'textarea'"
-              [name]="'content'"
-              [placeholder]="'Content Here'"
-              formControlName="content"></app-input> -->
-            <textarea
-              placeholder="Content here.."
-              formControlName="content"></textarea>
-          </div>
+                            <div class="input">
+                                <input type="text" placeholder="Blog post title" formControlName="title" />
+                                <input type="text" placeholder="Add up to 4 tags.." />
+                            </div>
+                            <div class="editor-toolbar">
+                                <app-icon [icon]="'format_bold'" title="Bold"></app-icon>
+                                <app-icon [icon]="'format_italic'" title="Italic"></app-icon>
+                                <app-icon [icon]="'h_mobiledata'" title="Heading"></app-icon>
+                                <i class="separator">|</i>
+                                <app-icon [icon]="'format_quote'" title="Qoute"></app-icon>
+                                <app-icon [icon]="'format_list_bulleted'" title="Generic List"></app-icon>
+                                <app-icon [icon]="'format_list_numbered'" title="Numbered List"></app-icon>
+                                <i class="separator">|</i>
+                                <app-icon [icon]="'insert_link'" title="Create Link"></app-icon>
+                                <app-icon [icon]="'image'" title="Insert Image"></app-icon>
+                            </div>
+                            <div class="input">
+                                <textarea placeholder="Content here.." formControlName="content"></textarea>
+                            </div>
 
-          <footer>
-            <app-button [name]="'Publish'" (onClick)="submitForm()">
-            </app-button>
-            <app-button [name]="'Save Draft'" [type]="'outline'"> </app-button>
-          </footer>
-        </div>
-      </form>
-    </div>
-  </div>
+                            <footer>
+                                <app-button [name]="'Publish'" (onClick)="submitForm()">
+                                </app-button>
+                                <app-button [name]="'Save Draft'" [type]="'outline'"> </app-button>
+                            </footer>
+                        </div>
+            </form>
+            </div>
+            </div>
 </section>

@@ -14,6 +14,10 @@ const routes: Routes = [
   },
   {
     path: 'new',
+    component: Views.CreateBlogComponent,
+  },
+  {
+    path: 'test',
     component: Views.BlogComponent.Create,
   },
 ];

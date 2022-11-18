@@ -18,4 +18,8 @@ export class PostService {
   public post(body: Object = {}): Observable<{}> {
     return this.apiService.post(`${this.path}`, body);
   }
+
+  public upload(formData: FormData): Observable<{}> {
+    return this.apiService.post<FormData>(`${this.path}/upload`, formData);
+  }
 }
