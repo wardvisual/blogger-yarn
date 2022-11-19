@@ -10,15 +10,15 @@
                     </div>
                     <div class="link">
                         <app-icon [icon]="'remove_red_eye'" title="Preview"></app-icon>
-                        <p>Edit</p>
+                        <p>Preview</p>
                     </div>
                 </div>
             </div>
 
-            <form>
-                <div class="header">
-                    <angular-markdown-editor textareaId="editor1" name="markdownText" ngModel="markdownText" (onChange)="onChange($event)">
-                    </angular-markdown-editor>
+            <form class="form">
+                <div class="form__header">
+                    <!-- <angular-markdown-editor textareaId="editor1" name="markdownText" ngModel="markdownText" (onChange)="onChange($event)">
+                    </angular-markdown-editor> -->
                     <app-button *ngIf="form.get('banner')" [name]="'Add a cover image'" type="outline"></app-button>
 
                     <div *ngIf="!form.get('banner')" class="image-wrapper">
@@ -31,6 +31,21 @@
                             <app-button [name]="'Remove'" type="outline"></app-button>
                         </div>
                     </div>
+                </div>
+
+                <div class="form__body">
+                    <div class="input">
+                        <input type="text" placeholder="Blog post title" />
+                        <input type="text" placeholder="Add up to 4 tags.." />
+                    </div>
+                    <div class="input">
+                        <textarea placeholder="Content here.."></textarea>
+                    </div>
+
+                    <footer>
+                        <app-button [name]="'Publish'"> </app-button>
+                        <app-button [name]="'Save Draft'" [type]="'outline'"> </app-button>
+                    </footer>
                 </div>
             </form>
         </div>
