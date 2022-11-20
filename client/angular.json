@@ -25,14 +25,21 @@
                         "inlineStyleLanguage": "scss",
                         "assets": ["src/favicon.ico", "src/assets"],
                         "styles": [
-                            "src/styles.scss",
-                            "node_modules/prismjs/themes/prism-okaidia.css"
+                            "src/assets/scss/styles.scss",
+                            "node_modules/prismjs/themes/prism-okaidia.css",
+                            "node_modules/prismjs/themes/prism.css"
                         ],
                         "scripts": [
                             "node_modules/prismjs/prism.js",
                             "node_modules/prismjs/components/prism-csharp.min.js",
-                            "node_modules/prismjs/components/prism-css.min.js"
-                        ]
+                            "node_modules/prismjs/components/prism-css.min.js",
+                            "node_modules/prismjs/components/prism-css.min.js",
+                            "node_modules/prismjs/components/prism-javascript.min.js",
+                            "node_modules/prismjs/components/prism-typescript.min.js"
+                        ],
+                        "stylePreprocessorOptions": {
+                            "includePaths": ["src/assets/scss/abstracts/"]
+                        }
                     },
                     "configurations": {
                         "production": {
@@ -92,7 +99,7 @@
                         "inlineStyleLanguage": "scss",
                         "assets": ["src/favicon.ico", "src/assets"],
                         "styles": [
-                            "src/styles.scss",
+                            "src/assets/scss/styles.scss",
                             "node_modules/prismjs/themes/prism.css"
                         ],
                         "scripts": [
