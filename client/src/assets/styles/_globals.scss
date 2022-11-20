@@ -16,7 +16,7 @@
 }
 
 body {
-    background-color: var(--color-dark-2);
+    background-color: $color-black-300;
     line-height: 1.8;
     overflow-x: hidden;
 }
@@ -52,12 +52,12 @@ textarea {
     padding: 0.4em 0.7em 0.4em 0.7em;
     background: none;
     border: none;
-    border-radius: var(--radius-5);
+    border-radius: $radius-5;
     width: 100%;
 }
 
 select {
-    background: var(--color-dark-1);
+    background: $color-black-400;
 }
 
 img {

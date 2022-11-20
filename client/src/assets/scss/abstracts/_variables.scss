@@ -3,20 +3,20 @@
 */
 
 // Black
-$color-black-100: #535a6b;
-$color-black-200: #393e4a;
-$color-black-300: #2a2d33;
-$color-black-400: #23262e;
+$color-black-100: #222d44;
+$color-black-200: #1a2233;
+$color-black-300: #111722;
+$color-black-400: #090c12;
 // Blue
-$color-blue-100: #a2c5fe;
-$color-blue-200: #91b1fa;
-$color-blue-300: #769df6;
-$color-blue-400: #6690ee;
+$color-blue-100: #58f3ee;
+$color-blue-200: #41f1ec;
+$color-blue-300: #29f0e9;
+$color-blue-400: #11ece5;
 // White
-$color-white-100: #d7d7d7;
-$color-white-200: #dedede;
-$color-white-300: #e7e7e7;
-$color-white-400: #f0f0f1;
+$color-white-100: #e5e9f0;
+$color-white-200: #d5dce7;
+$color-white-300: #c5cedd;
+$color-white-400: #b6c2d5;
 
 /*
   Radius
@@ -31,3 +31,13 @@ $radius-10: 10px;
 */
 
 $shadow-1: rgba(17, 22, 28, 0.2) 0px 8px 24px;
+
+/*
+  Media Queries
+*/
+
+$media-desktop: 'only screen and (min-width: 1400px)';
+$media-laptop: 'only screen and (max-width: 1142px)'; //
+$media-tablet: 'only screen and (max-width: 768px)';
+$media-mobile: 'only screen and (max-width: 775px)'; //
+$media-mobile-sm: 'only screen and (max-width: 480px)';
