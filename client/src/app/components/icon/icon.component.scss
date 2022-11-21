@@ -1,13 +1,12 @@
 .icon-container {
-  display: flex;
-  align-items: center;
-  .icon {
-    cursor: pointer;
-    transform: scale(1.2);
-
-    &:active {
-      transform: scale(1.3);
-      transition: scale 0.3s;
+    display: flex;
+    align-items: center;
+    .icon {
+        cursor: pointer;
+        transform: scale(1.2);
+        &:active {
+            transform: scale(1.3);
+            transition: scale 0.3s;
+        }
     }
-  }
 }

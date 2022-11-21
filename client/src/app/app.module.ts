@@ -5,8 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
-import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
+import { CoreModule } from './core/core.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
 /* Views */
@@ -20,7 +20,6 @@ import { AngularMarkdownEditorModule } from 'angular-markdown-editor';
     AppComponent,
     Views.HomeComponent,
     Views.CreateBlogComponent,
-    Views.BlogComponent.Create,
     Component.NavbarComponent,
     Component.CardComponent,
     Component.IconComponent,

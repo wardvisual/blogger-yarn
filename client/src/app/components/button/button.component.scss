@@ -1,5 +1,7 @@
+@import './src/assets/scss/abstracts/variables';
 button {
-    background-color: var(--color-blue-1);
+    background-color: $color-blue-400;
+    color: $color-black-400;
     width: 100%;
     &:hover {
         opacity: 90%;
@@ -7,11 +9,11 @@ button {
     }
     &.outline {
         background-color: unset;
-        border: 1px var(--color-blue-1) solid;
-        color: var(--color-blue-1);
+        border: 1px $color-blue-400 solid;
+        color: $color-blue-400;
         &:hover {
-            background-color: var(--color-blue-3);
-            color: var(--color-light-1);
+            background-color: $color-blue-300;
+            color: $color-white-400;
         }
     }
 }

@@ -1,5 +1,5 @@
-
+@import './src/assets/scss/abstracts/variables';
 input {
     border: 0.8px #313439 solid;
-    background: var(--color-dark-2);
+    background: $color-black-300;
 }
