@@ -1,53 +1,62 @@
 <section>
-    <div class="wrapper">
-        <div class="content">
-            <div>
-                <h2>Create new post</h2>
-                <div>
-                    <div class="link">
-                        <app-icon [icon]="'edit'" title="Edit"></app-icon>
-                        <p>Edit</p>
-                    </div>
-                    <div class="link">
-                        <app-icon [icon]="'remove_red_eye'" title="Preview"></app-icon>
-                        <p>Preview</p>
-                    </div>
-                </div>
+  <div class="wrapper">
+    <div class="content">
+      <div>
+        <h2>Create new post</h2>
+        <div>
+          <div class="link">
+            <app-icon [icon]="'edit'" title="Edit"></app-icon>
+            <p>Edit</p>
+          </div>
+          <div class="link">
+            <app-icon [icon]="'remove_red_eye'" title="Preview"></app-icon>
+            <p>Preview</p>
+          </div>
+        </div>
+      </div>
+
+      <form class="form">
+        <div class="form__header">
+          <!-- <angular-markdown-editor textareaId="editor1" name="markdownText" ngModel="markdownText" (onChange)="onChange($event)">
+                    </angular-markdown-editor> -->
+          <app-button
+            *ngIf="form.get('banner')"
+            [name]="'Add a cover image'"
+            type="outline"></app-button>
+
+          <div *ngIf="!form.get('banner')" class="image-wrapper">
+            <div class="image-container">
+              <img
+                [src]="form.get('banner')"
+                *ngIf="form.get('banner')"
+                alt="banner" />
             </div>
 
-            <form class="form">
-                <div class="form__header">
-                    <!-- <angular-markdown-editor textareaId="editor1" name="markdownText" ngModel="markdownText" (onChange)="onChange($event)">
-                    </angular-markdown-editor> -->
-                    <app-button *ngIf="form.get('banner')" [name]="'Add a cover image'" type="outline"></app-button>
-
-                    <div *ngIf="!form.get('banner')" class="image-wrapper">
-                        <div class="image-container">
-                            <img [src]="form.get('banner')" *ngIf="form.get('banner')" alt="banner" />
-                        </div>
-
-                        <div>
-                            <app-button [name]="'Change'"></app-button>
-                            <app-button [name]="'Remove'" type="outline"></app-button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form__body">
-                    <div class="input">
-                        <input type="text" placeholder="Blog post title" />
-                        <input type="text" placeholder="Add up to 4 tags.." />
-                    </div>
-                    <div class="input">
-                        <textarea placeholder="Content here.."></textarea>
-                    </div>
-
-                    <footer>
-                        <app-button [name]="'Publish'"> </app-button>
-                        <app-button [name]="'Save Draft'" [type]="'outline'"> </app-button>
-                    </footer>
-                </div>
-            </form>
+            <div>
+              <app-button [name]="'Change'"></app-button>
+              <app-button [name]="'Remove'" type="outline"></app-button>
+            </div>
+          </div>
         </div>
+
+        <div class="form__body">
+          <div class="input">
+            <input
+              type="text"
+              placeholder="Blog post title"
+              class="p-xy-1 fsz-3" />
+            <input type="text" placeholder="Add up to 4 tags.." />
+          </div>
+          <div class="input">
+            <textarea placeholder="Content here.."></textarea>
+          </div>
+
+          <footer>
+            <app-button [name]="'Publish'"> </app-button>
+            <app-button [name]="'Save Draft'" [type]="'outline'"> </app-button>
+          </footer>
+        </div>
+      </form>
     </div>
+  </div>
 </section>

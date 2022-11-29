@@ -1,0 +1,41 @@
+section .content {
+  display: grid;
+
+  > div:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    > div {
+      display: inline-flex;
+      gap: 1em;
+    }
+  }
+
+  .form {
+    display: block;
+    &__header {
+      margin-bottom: 1em;
+      &:first-child {
+      }
+    }
+
+    &__body {
+      display: grid;
+      grid-gap: 2em;
+
+      .input {
+        display: grid;
+        grid-gap: 1em;
+      }
+    }
+
+    footer {
+      display: flex;
+      gap: 1em;
+      > * {
+        flex-grow: 1;
+      }
+    }
+  }
+}
