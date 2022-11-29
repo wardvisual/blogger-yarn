@@ -12,8 +12,8 @@ button {
     border: 1px $color-blue-400 solid;
     color: $color-blue-400;
     &:hover {
-      background-color: $color-blue-400;
       color: $color-black-400;
+      background-color: $color-blue-400;
     }
   }
 }
