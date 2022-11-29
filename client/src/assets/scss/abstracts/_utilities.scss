@@ -1,34 +1,13 @@
-// utilities
-.wrapper {
-  width: 100%;
-  max-width: 97em;
-  margin: 0 auto;
-  padding: 0 2em 0 2em;
-  @media #{$media-desktop} {
-  }
-  @media #{$media-laptop} {
-    max-width: unset;
-  }
-  @media #{$media-mobile-sm} {
-    max-width: unset;
-    padding: 0 1em 0 1em;
-  }
-  @media screen and (max-width: 775px) {
-    // padding: 0 0.5em 0 0.5em;
-    padding: 0 1.2em 0 1.2em;
-  }
-}
-
+/* Opacities */
 $opacities: 10, 20, 30, 40, 50, 60, 70, 80, 90;
-
 @each $opacity in $opacities {
   .o-#{$opacity} {
     opacity: #{$opacity} + '%';
   }
 }
 
+/* Margins */
 $margins: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
-
 @each $margin in $margins {
   .mt-#{$margin} {
     margin-top: #{$margin}em;
@@ -50,8 +29,8 @@ $margins: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
   }
 }
 
+/* Paddings */
 $paddings: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
-
 @each $padding in $paddings {
   .pt-#{$padding} {
     padding-top: #{$padding}em;
@@ -77,12 +56,13 @@ $paddings: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
   user-select: none;
 }
 
-// text
-.fsz-3 {
-  font-size: 3em;
+$font-sizes: 1, 2, 3, 4, 5, 6;
+@each $size in $font-sizes {
+  .fs-#{$size} {
+    font-size: #{$size}em;
+  }
 }
 
-// bg
 .bg-black-100 {
   background: $color-black-100;
 }
@@ -146,5 +126,25 @@ $paddings: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
 .input.icon-only {
   .icon {
     position: unset;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 97em;
+  margin: 0 auto;
+  padding: 0 2em 0 2em;
+  @media #{$media-desktop} {
+  }
+  @media #{$media-laptop} {
+    max-width: unset;
+  }
+  @media #{$media-mobile-sm} {
+    max-width: unset;
+    padding: 0 1em 0 1em;
+  }
+  @media screen and (max-width: 775px) {
+    // padding: 0 0.5em 0 0.5em;
+    padding: 0 1.2em 0 1.2em;
   }
 }
