@@ -18,17 +18,12 @@
     padding: 0 1.2em 0 1.2em;
   }
 }
+$opacities: 10, 20, 30, 40, 50, 60, 70, 80, 90;
 
-.o-90 {
-  opacity: 90%;
-}
-
-.o-80 {
-  opacity: 80%;
-}
-
-.o-70 {
-  opacity: 70%;
+@each $opacity in $opacities {
+  .o-#{$opacity} {
+    opacity: #{$opacity} + '%';
+  }
 }
 
 .mt-6 {
