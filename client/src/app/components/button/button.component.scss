@@ -1,19 +1,19 @@
 @import './src/assets/scss/abstracts/variables';
 button {
-    background-color: $color-blue-400;
-    color: $color-black-400;
-    width: 100%;
+  background-color: $color-blue-400;
+  color: $color-black-400;
+  width: 100%;
+  &:hover {
+    opacity: 90%;
+    cursor: pointer;
+  }
+  &.outline {
+    background-color: unset;
+    border: 1px $color-blue-400 solid;
+    color: $color-blue-400;
     &:hover {
-        opacity: 90%;
-        cursor: pointer;
+      background-color: $color-blue-400;
+      color: $color-black-400;
     }
-    &.outline {
-        background-color: unset;
-        border: 1px $color-blue-400 solid;
-        color: $color-blue-400;
-        &:hover {
-            background-color: $color-blue-300;
-            color: $color-white-400;
-        }
-    }
+  }
 }
