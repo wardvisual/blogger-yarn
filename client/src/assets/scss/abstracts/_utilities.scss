@@ -52,10 +52,6 @@ $paddings: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
   }
 }
 
-.select-1 {
-  user-select: none;
-}
-
 $font-sizes: 1, 2, 3, 4, 5, 6;
 @each $size in $font-sizes {
   .fs-#{$size} {
@@ -74,6 +70,10 @@ $font-sizes: 1, 2, 3, 4, 5, 6;
 }
 .bg-black-400 {
   background: $color-black-400;
+}
+
+.select-1 {
+  user-select: none;
 }
 
 .link {
