@@ -14,6 +14,7 @@ import { Views } from './views';
 /* Componetns */
 import { Component } from './components';
 import { AngularMarkdownEditorModule } from 'angular-markdown-editor';
+import { TruncatePipe } from './core/pipes/truncate/truncate.pipe';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { AngularMarkdownEditorModule } from 'angular-markdown-editor';
     ReactiveFormsModule,
     AngularMarkdownEditorModule,
   ],
-  providers: [],
+  providers: [TruncatePipe],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

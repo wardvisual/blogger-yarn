@@ -1,9 +1,9 @@
 @import './src/assets/scss/abstracts/variables';
 input {
-  border: 0.8px #313439 solid;
+  border: 0.8px #3134397b solid;
   background: $color-black-300;
-}
-.search {
-  padding: 0.4em 0.7em 0.4em 0.7em;
-  background: red;
+
+  &.search {
+    padding: 0.4em 0.7em 0.4em 0.7em;
+  }
 }

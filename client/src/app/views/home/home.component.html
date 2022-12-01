@@ -50,9 +50,7 @@
         </nav>
 
         <div class="blogs">
-          <app-card></app-card>
-          <app-card></app-card>
-          <app-card></app-card>
+          <app-card *ngFor="let post of testData" [blog]="post"></app-card>
         </div>
       </div>
       <div class="cards">

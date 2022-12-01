@@ -1,86 +1,86 @@
 @import './src/assets/scss/abstracts/variables';
 nav {
-    box-shadow: $shadow-1;
-    padding: 0.6em 0 0.6em 0;
-    position: fixed;
-    width: 100%;
-    background: $color-black-400;
-    top: 0;
-    z-index: 9;
+  box-shadow: $shadow-1;
+  padding: 0.6em 0 0.6em 0;
+  position: fixed;
+  width: 100%;
+  background: $color-black-400;
+  top: 0;
+  z-index: 9;
 }
 
 nav .content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1em;
-    @media #{$media-mobile} {
-        padding: 0 1em 0 1em;
-        .left {
-            .menu {
-                display: block !important;
-            }
-            .input {
-                display: none;
-            }
-        }
-        .right .actions {
-            gap: 1.4em !important;
-            .input {
-                display: block !important;
-                input {
-                    display: none !important;
-                }
-            }
-            button {
-                display: none;
-            }
-        }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  @media #{$media-mobile} {
+    padding: 0 1em 0 1em;
+    .left {
+      .menu {
+        display: block !important;
+      }
+      .input {
+        display: none;
+      }
     }
+    .right .actions {
+      gap: 1.4em !important;
+      .input {
+        display: block !important;
+        input {
+          display: none !important;
+        }
+      }
+      button {
+        display: none;
+      }
+    }
+  }
 }
 
 nav .content .left {
-    display: flex;
-    align-items: center;
-    gap: 1em;
-    .menu {
-        display: none;
-        .icon {
-            transform: scale(1.3);
-            cursor: pointer;
-        }
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  .menu {
+    display: none;
+    .icon {
+      transform: scale(1.3);
+      cursor: pointer;
     }
+  }
 }
 
 nav .content .left .logo {
-    cursor: pointer;
-    img {
-        max-width: 9em;
-    }
+  cursor: pointer;
+  img {
+    max-width: 9em;
+  }
 }
 
 nav .content .right .actions {
-    display: flex;
-    align-items: center;
-    gap: 1em;
-    .input {
-        display: none;
-    }
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  .input {
+    display: none;
+  }
 }
 
 nav .content .right .actions button {
-    margin-right: 1em;
+  margin-right: 1em;
 }
 
 nav .content .right .actions .notification {
-    transform: scale(1.5);
+  transform: scale(1.5);
 }
 
 nav .content .right .actions .user img {
-    width: 2.5em;
-    border-radius: 100%;
-    cursor: pointer;
-    &:hover {
-        opacity: 90%;
-    }
+  width: 2.5em;
+  border-radius: 100%;
+  cursor: pointer;
+  &:hover {
+    opacity: 90%;
+  }
 }
