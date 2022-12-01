@@ -16,7 +16,11 @@ section .content {
     display: block;
     &__header {
       margin-bottom: 1em;
-      &:first-child {
+      .form__buttons {
+        // @include flexbox();
+        display: flex;
+        gap: 1em;
+        margin-top: 2em;
       }
     }
 
