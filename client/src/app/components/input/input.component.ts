@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class InputComponent implements OnInit {
   @Input() type: string = '';
   @Input() name: string = '';
+  @Input() inputFor: string = '';
   @Input() placeholder: string = '';
 
   render: boolean = false;
@@ -15,9 +16,8 @@ export class InputComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    if(this.type === 'textarea') {
+    if (this.type === 'textarea') {
       this.type = this.type;
     }
   }
 }
-

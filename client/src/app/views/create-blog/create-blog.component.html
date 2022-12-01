@@ -19,10 +19,16 @@
         <div class="form__header">
           <!-- <angular-markdown-editor textareaId="editor1" name="markdownText" ngModel="markdownText" (onChange)="onChange($event)">
                     </angular-markdown-editor> -->
-          <app-button
-            *ngIf="form.get('banner')"
-            [name]="'Add a cover image'"
-            type="outline"></app-button>
+          <div class="form__buttons">
+            <app-button
+              *ngIf="form.get('banner')"
+              [name]="'Add cover'"
+              type="outline"></app-button>
+            <app-button
+              *ngIf="form.get('banner')"
+              [name]="'Add tags'"
+              type="outline"></app-button>
+          </div>
 
           <div *ngIf="!form.get('banner')" class="image-wrapper">
             <div class="image-container">

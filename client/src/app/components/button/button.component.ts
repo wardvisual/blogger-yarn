@@ -14,6 +14,7 @@ enum ButtonType {
 export class ButtonComponent implements OnInit {
   @Input() name: String = '';
   @Input() type: String = '';
+  @Input() size: String = '';
   @Output() onClick = new EventEmitter();
 
   constructor() {}

@@ -1,10 +1,20 @@
 <!-- Textarea -->
-<textarea *ngIf="type === 'textarea'" name="name" placeholder="placeholder"></textarea>
+<textarea
+  *ngIf="type === 'textarea'"
+  name="name"
+  placeholder="placeholder"
+  [ngClass]="inputFor"></textarea>
 
 <!-- Text -->
-<input *ngIf="type === 'text'" type="text" placeholder="placeholder" />
+<input
+  *ngIf="type === 'text'"
+  type="text"
+  placeholder="placeholder"
+  [ngClass]="inputFor" />
 
 <!-- Password -->
-<input *ngIf="type === 'password'" type="password" placeholder="placeholder" />
-
-
+<input
+  *ngIf="type === 'password'"
+  type="password"
+  placeholder="placeholder"
+  [ngClass]="inputFor" />
