@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +14,7 @@ import { Views } from './views';
 /* Componetns */
 import { Component } from './components';
 import { TruncatePipe } from './core/pipes/truncate/truncate.pipe';
+import { TextFieldModule } from '@angular/cdk/text-field';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,8 @@ import { TruncatePipe } from './core/pipes/truncate/truncate.pipe';
     Component.IconComponent,
     Component.ButtonComponent,
     Component.InputComponent,
+    Component.CardComponent,
+    Component.MarkdownComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,8 +38,10 @@ import { TruncatePipe } from './core/pipes/truncate/truncate.pipe';
     BrowserAnimationsModule,
     MatIconModule,
     ReactiveFormsModule,
+    TextFieldModule,
   ],
   providers: [TruncatePipe],
   bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}
