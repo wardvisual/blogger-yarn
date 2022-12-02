@@ -110,25 +110,6 @@ $font-sizes: 1, 2, 3, 4, 5, 6;
   }
 }
 
-.input {
-  display: flex;
-  gap: 1em;
-  cursor: pointer;
-  position: relative;
-  .icon {
-    position: absolute;
-    transform: scale(1.4);
-    right: 1em;
-    top: 0.4em;
-  }
-}
-
-.input.icon-only {
-  .icon {
-    position: unset;
-  }
-}
-
 .wrapper {
   width: 100%;
   max-width: 97em;
