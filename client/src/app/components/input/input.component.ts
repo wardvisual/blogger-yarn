@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-input',
@@ -8,8 +8,12 @@ import { Component, Input, OnInit } from '@angular/core';
 export class InputComponent implements OnInit {
   @Input() type: string = '';
   @Input() name: string = '';
+  @Input() value: string = '';
+  @Input() iconLeft: string = '';
+  @Input() iconRight: string = '';
   @Input() inputFor: string = '';
   @Input() placeholder: string = '';
+  @Output() event = new EventEmitter<any>();
 
   render: boolean = false;
 
@@ -19,5 +23,13 @@ export class InputComponent implements OnInit {
     if (this.type === 'textarea') {
       this.type = this.type;
     }
+  }
+
+  handleOnChange(param: any) {
+    this.event.emit(param);
+  }
+
+  handleOnClick(param: any) {
+    this.event.emit(param);
   }
 }

@@ -1,9 +1,21 @@
 @import './src/assets/scss/abstracts/variables';
-input {
+.input {
   border: 0.8px #3134397b solid;
   background: $color-black-300;
+  padding: 0 0.5em 0 0.5em;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
 
-  &.search {
-    padding: 0.4em 0.7em 0.4em 0.7em;
+  input,
+  textarea {
+    outline: none;
+  }
+  input {
+    &.search {
+      padding: 0.4em 0.7em 0.4em 0.7em;
+    }
   }
 }

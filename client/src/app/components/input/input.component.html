@@ -1,20 +1,21 @@
 <!-- Textarea -->
-<textarea
-  *ngIf="type === 'textarea'"
-  name="name"
-  placeholder="placeholder"
-  class="inputFor"></textarea>
+<div *ngIf="type === 'textarea'" class="input">
+  <textarea
+    name="name"
+    [placeholder]="placeholder"
+    [class]="inputFor"></textarea>
+</div>
 
 <!-- Text -->
-<input
-  *ngIf="type === 'text'"
-  type="text"
-  placeholder="placeholder"
-  class="search" />
-
-<!-- Password -->
-<input
-  *ngIf="type === 'password'"
-  type="password"
-  placeholder="placeholder"
-  class="inputFor" />
+<div *ngIf="type === 'text'" class="input">
+  <app-icon *ngIf="iconLeft" [icon]="iconLeft"></app-icon>
+  <input
+    [type]="type"
+    [placeholder]="placeholder"
+    [class]="inputFor"
+    [name]="name"
+    [value]="value"
+    (onchange)="handleOnChange($event)"
+    (onclick)="handleOnClick($event)" />
+  <app-icon *ngIf="iconRight" [icon]="iconRight"></app-icon>
+</div>
