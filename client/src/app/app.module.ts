@@ -21,6 +21,7 @@ import { TruncatePipe } from './core/pipes/truncate/truncate.pipe';
     AppComponent,
     Views.HomeComponent,
     Views.CreateBlogComponent,
+    Views.OnboardComponent,
     Component.NavbarComponent,
     Component.CardComponent,
     Component.IconComponent,
