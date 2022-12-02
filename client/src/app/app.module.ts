@@ -13,7 +13,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { Views } from './views';
 /* Componetns */
 import { Component } from './components';
-import { AngularMarkdownEditorModule } from 'angular-markdown-editor';
 import { TruncatePipe } from './core/pipes/truncate/truncate.pipe';
 
 @NgModule({
@@ -36,7 +35,6 @@ import { TruncatePipe } from './core/pipes/truncate/truncate.pipe';
     BrowserAnimationsModule,
     MatIconModule,
     ReactiveFormsModule,
-    AngularMarkdownEditorModule,
   ],
   providers: [TruncatePipe],
   bootstrap: [AppComponent],
