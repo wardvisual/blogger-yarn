@@ -2,10 +2,10 @@
 <textarea
   *ngIf="type === 'textarea'"
   [placeholder]="placeholder"
-  name="name"
+  [name]="name"
+  [id]="id"
   [value]="value"
-  [class]="modifyFor"
-  (onchange)="handleOnChange($event)"></textarea>
+  [class]="modifyFor"></textarea>
 
 <!-- Text -->
 <div *ngIf="type === 'text'" [class]="type">
@@ -15,6 +15,7 @@
     [placeholder]="placeholder"
     [class]="modifyFor"
     [name]="name"
+    [id]="id"
     [value]="value"
     (onchange)="handleOnChange($event)"
     (onclick)="handleOnClick($event)" />
@@ -29,6 +30,7 @@
     [placeholder]="placeholder"
     [class]="modifyFor + ' button'"
     [name]="name"
+    [id]="id"
     [value]="value"
     (onclick)="handleOnClick($event)"
     [routerLink]="routerLink"
