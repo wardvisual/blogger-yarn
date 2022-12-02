@@ -54,6 +54,11 @@ textarea {
   border: none;
   border-radius: $radius-5;
   width: 100%;
+  color: $color-white-400;
+
+  &::placeholder {
+    color: $color-white-100;
+  }
 }
 
 img {
