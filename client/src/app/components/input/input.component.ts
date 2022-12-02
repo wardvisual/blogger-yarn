@@ -11,7 +11,7 @@ export class InputComponent implements OnInit {
   @Input() value: string = '';
   @Input() iconLeft: string = '';
   @Input() iconRight: string = '';
-  @Input() inputFor: string = '';
+  @Input() modifyFor: string = '';
   @Input() placeholder: string = '';
   @Input() routerLink: string = '';
   @Input() routerLinkActive: string = '';

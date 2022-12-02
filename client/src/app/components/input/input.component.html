@@ -4,7 +4,7 @@
   [placeholder]="placeholder"
   name="name"
   [value]="value"
-  [class]="inputFor"
+  [class]="modifyFor"
   (onchange)="handleOnChange($event)"></textarea>
 
 <!-- Text -->
@@ -13,7 +13,7 @@
   <input
     [type]="type"
     [placeholder]="placeholder"
-    [class]="inputFor"
+    [class]="modifyFor"
     [name]="name"
     [value]="value"
     (onchange)="handleOnChange($event)"
@@ -27,7 +27,7 @@
   <input
     [type]="type"
     [placeholder]="placeholder"
-    [class]="inputFor + ' button'"
+    [class]="modifyFor + ' button'"
     [name]="name"
     [value]="value"
     (onclick)="handleOnClick($event)"
