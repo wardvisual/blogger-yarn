@@ -17,12 +17,6 @@
 
       <form class="form">
         <div class="form__header">
-          <angular-markdown-editor
-            textareaId="editor1"
-            name="markdownText"
-            ngModel="markdownText"
-            (onChange)="onChange($event)">
-          </angular-markdown-editor>
           <div class="form__buttons">
             <app-input
               type="button"
@@ -56,12 +50,7 @@
             placeholder="Blog post title"
             modifyFor="fs-3">
           </app-input>
-          <app-input
-            type="textarea"
-            name="title"
-            placeholder="Content here..."
-            modifyFor="pxy-3">
-          </app-input>
+          <app-markdown></app-markdown>
 
           <footer>
             <app-button [name]="'Publish'"> </app-button>
