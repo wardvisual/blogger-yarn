@@ -1,0 +1,33 @@
+@import './src/assets/scss/abstracts/variables';
+
+.wrapper {
+  height: 80vh;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  .form {
+    margin: 0 auto;
+    max-width: 40em;
+
+    display: grid;
+    grid-gap: 1em;
+
+    &__options {
+      div {
+        margin: 0.5em 0 0.5em 0;
+        border: 0.8px #3134397b solid;
+        background: $color-black-300;
+        padding: 1em;
+        border-radius: $radius-5;
+        width: 100%;
+      }
+    }
+
+    &__divider {
+      p {
+        text-align: center;
+        margin-top: 1em;
+      }
+    }
+  }
+}
