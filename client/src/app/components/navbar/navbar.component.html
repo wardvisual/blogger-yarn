@@ -8,30 +8,31 @@
         <div [routerLink]="'/'" class="logo">
           <img src="assets/logos/logo.svg" alt="logo" />
         </div>
-        <div class="input">
-          <app-input
-            type="text"
-            name="search"
-            id="search"
-            placeholder="Search..."
-            inputFor="search">
-          </app-input>
-          <app-icon [icon]="'search_outline'"></app-icon>
-        </div>
+        <app-input
+          type="text"
+          name="search"
+          id="search"
+          placeholder="Search..."
+          inputFor="search"
+          iconLeft="notifications"
+          iconRight="search_outline">
+        </app-input>
       </div>
       <div class="right">
         <div class="actions">
-          <app-button
-            [name]="'Create Post'"
-            [routerLink]="'new'"
-            [routerLinkActive]="'active'">
-          </app-button>
+          <app-input
+            type="button"
+            value="Create Post"
+            inputFor="primary"
+            routerLink="new"
+            routerLinkActive="active">
+          </app-input>
           <div class="input icon-only">
             <input
               type="text"
               name="search"
               id="search"
-              placeholder="Search..." />
+              [placeholder]="'Search...'" />
             <app-icon [icon]="'search_outline'"></app-icon>
           </div>
           <div>

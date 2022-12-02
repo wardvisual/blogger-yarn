@@ -1,13 +1,14 @@
 <!-- Textarea -->
-<div *ngIf="type === 'textarea'" class="input">
-  <textarea
-    name="name"
-    [placeholder]="placeholder"
-    [class]="inputFor"></textarea>
-</div>
+<textarea
+  *ngIf="type === 'textarea'"
+  [placeholder]="placeholder"
+  name="name"
+  [value]="value"
+  [class]="inputFor"
+  (onchange)="handleOnChange($event)"></textarea>
 
 <!-- Text -->
-<div *ngIf="type === 'text'" class="input">
+<div *ngIf="type === 'text'" [class]="type">
   <app-icon *ngIf="iconLeft" [icon]="iconLeft"></app-icon>
   <input
     [type]="type"
@@ -18,4 +19,19 @@
     (onchange)="handleOnChange($event)"
     (onclick)="handleOnClick($event)" />
   <app-icon *ngIf="iconRight" [icon]="iconRight"></app-icon>
+</div>
+
+<!-- Button -->
+<div *ngIf="type === 'button'" [class]="type">
+  <app-icon *ngIf="iconLeft" [icon]="iconLeft"></app-icon>
+  <input
+    [type]="type"
+    [placeholder]="placeholder"
+    [class]="inputFor + ' button'"
+    [name]="name"
+    [value]="value"
+    (onclick)="handleOnClick($event)"
+    [routerLink]="routerLink"
+    [routerLinkActive]="routerLinkActive" />
+  <app-icon *ngIf="iconLeft" [icon]="iconLeft"></app-icon>
 </div>

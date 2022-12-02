@@ -1,21 +1,64 @@
 @import './src/assets/scss/abstracts/variables';
-.input {
-  border: 0.8px #3134397b solid;
-  background: $color-black-300;
-  padding: 0 0.5em 0 0.5em;
+
+@mixin base {
+  input {
+    &.primary,
+    &.outline,
+    &.search {
+      padding: 0.4em 0.7em 0.4em 0.7em;
+    }
+
+    &.primary {
+      background-color: $color-blue-400;
+      color: $color-black-400;
+      width: 100%;
+
+      &:hover {
+        opacity: 90%;
+      }
+    }
+    &.outline {
+      background-color: unset;
+      border: 1px $color-blue-400 solid;
+      color: $color-blue-400;
+      &:hover {
+        color: $color-black-400;
+        background-color: $color-blue-400;
+      }
+    }
+  }
+}
+
+.text,
+.button {
   display: flex;
   width: 100%;
   justify-content: space-between;
   align-items: center;
   gap: 1em;
+}
 
-  input,
-  textarea {
-    outline: none;
-  }
-  input {
-    &.search {
-      padding: 0.4em 0.7em 0.4em 0.7em;
-    }
-  }
+.text {
+  border: 0.8px #3134397b solid;
+  background: $color-black-300;
+  padding: 0 0.5em 0 0.5em;
+
+  @include base;
+}
+
+.button {
+  cursor: pointer;
+  @include base;
+}
+
+textarea {
+  min-width: 30em;
+  max-width: 93em;
+  min-height: 20em;
+}
+
+input,
+textarea {
+  background: $color-black-300;
+  outline: none;
 }

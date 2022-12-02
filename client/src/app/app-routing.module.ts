@@ -16,6 +16,10 @@ const routes: Routes = [
     path: 'new',
     component: Views.CreateBlogComponent,
   },
+  {
+    path: 'onboard',
+    component: Views.OnboardComponent,
+  },
 ];
 
 @NgModule({

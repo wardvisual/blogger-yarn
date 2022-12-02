@@ -13,16 +13,14 @@ export class InputComponent implements OnInit {
   @Input() iconRight: string = '';
   @Input() inputFor: string = '';
   @Input() placeholder: string = '';
-  @Output() event = new EventEmitter<any>();
-
-  render: boolean = false;
+  @Input() routerLink: string = '';
+  @Input() routerLinkActive: string = '';
+  @Output() event: any;
 
   constructor() {}
 
   ngOnInit(): void {
-    if (this.type === 'textarea') {
-      this.type = this.type;
-    }
+    this.event = new EventEmitter<any>();
   }
 
   handleOnChange(param: any) {

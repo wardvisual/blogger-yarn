@@ -20,14 +20,14 @@
           <!-- <angular-markdown-editor textareaId="editor1" name="markdownText" ngModel="markdownText" (onChange)="onChange($event)">
                     </angular-markdown-editor> -->
           <div class="form__buttons">
-            <app-button
-              *ngIf="form.get('banner')"
-              [name]="'Add cover'"
-              type="outline"></app-button>
-            <app-button
-              *ngIf="form.get('banner')"
-              [name]="'Add tags'"
-              type="outline"></app-button>
+            <app-input
+              type="button"
+              value="Add cover"
+              inputFor="outline"></app-input>
+            <app-input
+              type="button"
+              value="Add tags"
+              inputFor="outline"></app-input>
           </div>
 
           <div *ngIf="!form.get('banner')" class="image-wrapper">
@@ -46,16 +46,18 @@
         </div>
 
         <div class="form__body">
-          <div class="input">
-            <input
-              type="text"
-              placeholder="Blog post title"
-              class="p-xy-1 fs-3" />
-            <input type="text" placeholder="Add up to 4 tags.." />
-          </div>
-          <div class="input">
-            <textarea placeholder="Content here.."></textarea>
-          </div>
+          <app-input
+            type="text"
+            name="title"
+            placeholder="Blog post title"
+            inputFor="p-xy-1 fs-3">
+          </app-input>
+          <app-input
+            type="textarea"
+            name="title"
+            placeholder="Content here..."
+            inputFor="fs-1">
+          </app-input>
 
           <footer>
             <app-button [name]="'Publish'"> </app-button>
