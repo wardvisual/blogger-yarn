@@ -1,0 +1,24 @@
+@import './src/assets/scss/abstracts/variables';
+.markdown {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+  background: $color-black-300;
+  > * {
+    padding: 1em;
+    &:hover {
+      background: $color-black-400;
+      cursor: pointer;
+    }
+  }
+}
+
+textarea {
+  min-width: 30em;
+  max-width: 78em;
+  min-height: 20em;
+  font-size: 1.2rem;
+  padding: 2em 3em 2em 3em;
+  background: $color-black-300;
+  outline: none;
+}
