@@ -5,11 +5,8 @@ services:
     build:
       dockerfile: Dockerfile
       context: ./api
-      # only build development stage from Dockerfile
       target: development
 
-      # mount host dir to the docker container
-      # mount api dir to the docker container
     volumes:
       - ./api:/blogger-yarn/src/app
       - ./blogger-yarn/src/app/node_modules
