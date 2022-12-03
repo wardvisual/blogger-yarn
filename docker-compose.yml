@@ -1,0 +1,38 @@
+version: "3.8"
+
+services:
+  api:
+    build:
+      dockerfile: Dockerfile
+      context: ./api
+      # only build development stage from Dockerfile
+      target: development
+
+      # mount host dir to the docker container
+      # mount api dir to the docker container
+    volumes:
+      - ./api:/blogger-yarn/src/app
+      - ./blogger-yarn/src/app/node_modules
+    command: npm run start:dev
+    environment:
+      NODE_ENV: development
+      PORT: 3000
+    ports: 
+      - 3000:3000
+      - 9229:9229
+  client: 
+    build: 
+      dockerfile: Dockerfile
+      context: ./client
+      target: development
+    command: npm run start
+    volumes:
+      - ./client:blogger-yarn/client/src/app
+      - ./blogger-yarn/client/src/app/node_modules
+    ports:
+      - 4200:4200
+    links:
+      - api
+
+
+ 
