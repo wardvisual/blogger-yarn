@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-create-blog',
@@ -9,21 +9,24 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class CreateBlogComponent implements OnInit {
   public form!: FormGroup;
   public markdownText: string = '';
-  row: number = 12;
 
   constructor(private formBuilder: FormBuilder) {}
-
-  onChange(e: any) {
-    console.log(e.getContent());
-  }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
       title: '',
-      content: '',
+      description: this.markdownText,
       banner: '',
       userId: 7,
       categoryId: 7,
     });
+  }
+
+  get descriptionRawControl() {
+    return this.form.controls['description'] as FormControl;
+  }
+  getData() {
+    console.log(this.markdownText);
+    console.log(true);
   }
 }

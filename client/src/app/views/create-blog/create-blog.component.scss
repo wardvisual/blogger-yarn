@@ -1,5 +1,6 @@
 section .content {
   display: grid;
+  margin-bottom: 2em;
 
   > div:first-child {
     display: flex;

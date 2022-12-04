@@ -50,10 +50,13 @@
             placeholder="Blog post title"
             modifyFor="fs-3">
           </app-input>
-          <app-markdown></app-markdown>
-
+          <app-markdown [description]="'markdownText'"></app-markdown>
           <footer>
-            <app-button [name]="'Publish'"> </app-button>
+            <app-button
+              [type]="'button'"
+              [name]="'Publish'"
+              (click)="getData()">
+            </app-button>
             <app-button [name]="'Save Draft'" [type]="'outline'"> </app-button>
           </footer>
         </div>
