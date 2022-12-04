@@ -12,6 +12,7 @@ services:
       - ./blogger-yarn/src/app/node_modules
     command: npm run start:dev
     environment:
+      DATABASE_URL: ''
       NODE_ENV: development
       PORT: 3000
     ports: 
