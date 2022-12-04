@@ -34,11 +34,4 @@
     <app-icon [icon]="'loyalty'"></app-icon>
   </md-ref>
 </markdown-toolbar>
-<textarea id="markup"></textarea>
-<!-- <app-input
-  type="textarea"
-  name="markup"
-  id="markup"
-  placeholder="Content here..."
-  modifyFor="pxy-3">
-</app-input> -->
+<textarea id="markup" class="text-editor" (onchange)="sendData()"></textarea>
