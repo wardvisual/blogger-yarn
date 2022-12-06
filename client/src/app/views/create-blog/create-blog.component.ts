@@ -25,6 +25,7 @@ export class CreateBlogComponent implements OnInit {
   get descriptionRawControl() {
     return this.form.controls['description'] as FormControl;
   }
+
   getData() {
     console.log(this.markdownText);
     console.log(true);
