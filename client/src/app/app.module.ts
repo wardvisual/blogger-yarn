@@ -11,7 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 /* Views */
 import { Views } from './views';
-/* Componetns */
+/* Components */
 import { Component } from './components';
 import { TruncatePipe } from './core/pipes/truncate/truncate.pipe';
 import { TextFieldModule } from '@angular/cdk/text-field';
