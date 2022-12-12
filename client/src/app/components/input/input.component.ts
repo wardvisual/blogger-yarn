@@ -10,6 +10,8 @@ export class InputComponent implements OnInit {
   @Input() id: string = '';
   @Input() name: string = '';
   @Input() value: string = '';
+  @Input() required: string = '';
+  @Input() disabled: string = '';
   @Input() iconLeft: string = '';
   @Input() iconRight: string = '';
   @Input() modifyFor: string = '';

@@ -4,8 +4,9 @@ export interface BlogPost {
     username: string;
     avatar: string;
   };
+  thumbnail: string;
   title: string;
-  description: string;
+  content: string;
   tags: string[];
   date: string;
   stats: {

@@ -3,6 +3,8 @@
   *ngIf="type === 'textarea'"
   [placeholder]="placeholder"
   [name]="name"
+  [required]="required ? true : false"
+  [disabled]="disabled ? true : false"
   [id]="id"
   [value]="value"
   [class]="modifyFor"></textarea>
@@ -15,6 +17,8 @@
     [placeholder]="placeholder"
     [class]="modifyFor"
     [name]="name"
+    [required]="required ? true : false"
+    [disabled]="disabled ? true : false"
     [id]="id"
     [value]="value"
     (onchange)="handleOnChange($event)"
@@ -23,15 +27,16 @@
 </div>
 
 <!-- Button -->
-<div *ngIf="type === 'button'" [class]="type">
+<div *ngIf="type === 'button' || type === 'submit'" class="button">
   <app-icon *ngIf="iconLeft" [icon]="iconLeft"></app-icon>
   <input
     [type]="type"
     [placeholder]="placeholder"
-    [class]="modifyFor + ' button'"
+    [class]="!modifyFor ? 'primary' : modifyFor"
     [name]="name"
     [id]="id"
     [value]="value"
+    [disabled]="disabled ? true : false"
     (onclick)="handleOnClick($event)"
     [routerLink]="routerLink"
     [routerLinkActive]="routerLinkActive" />

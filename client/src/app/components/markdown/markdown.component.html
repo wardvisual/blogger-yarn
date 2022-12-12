@@ -34,4 +34,9 @@
     <app-icon [icon]="'loyalty'"></app-icon>
   </md-ref>
 </markdown-toolbar>
-<textarea id="markup" class="text-editor" (onchange)="sendData()"></textarea>
+<textarea
+  id="markup"
+  class="text-editor"
+  (onchange)="sendData()"
+  [required]="required ? true : false"
+  [formControlName]="formControlName"></textarea>

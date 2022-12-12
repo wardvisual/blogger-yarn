@@ -14,8 +14,6 @@ export class CardComponent implements OnInit {
 
   ngOnInit(): void {
     this.blog.title = this.truncate.transform(this.blog.title, [40]);
-    this.blog.description = this.truncate.transform(this.blog.description, [
-      130,
-    ]);
+    this.blog.content = this.truncate.transform(this.blog.content, [130]);
   }
 }

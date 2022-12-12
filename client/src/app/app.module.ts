@@ -25,9 +25,7 @@ import { TextFieldModule } from '@angular/cdk/text-field';
     Component.NavbarComponent,
     Component.CardComponent,
     Component.IconComponent,
-    Component.ButtonComponent,
     Component.InputComponent,
-    Component.CardComponent,
     Component.MarkdownComponent,
   ],
   imports: [

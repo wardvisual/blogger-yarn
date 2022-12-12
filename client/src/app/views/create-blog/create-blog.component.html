@@ -2,7 +2,7 @@
   <div class="wrapper">
     <div class="content">
       <div>
-        <h2>Create new post</h2>
+        <h2>Create Blog Post</h2>
         <div>
           <div class="link">
             <app-icon [icon]="'edit'" title="Edit"></app-icon>
@@ -15,7 +15,7 @@
         </div>
       </div>
 
-      <form class="form">
+      <form class="form" [formGroup]="form" onsubmit="post()">
         <div class="form__header">
           <div class="form__buttons">
             <app-input
@@ -28,17 +28,20 @@
               modifyFor="outline"></app-input>
           </div>
 
-          <div *ngIf="!form.get('banner')" class="image-wrapper">
+          <div *ngIf="!form.get('thumbnail')" class="image-wrapper">
             <div class="image-container">
               <img
-                [src]="form.get('banner')"
-                *ngIf="form.get('banner')"
-                alt="banner" />
+                [src]="form.get('thumbnail')"
+                *ngIf="form.get('thumbnail')"
+                alt="thumbnail" />
             </div>
 
             <div>
-              <app-button [name]="'Change'"></app-button>
-              <app-button [name]="'Remove'" type="outline"></app-button>
+              <app-input type="button" value="Change"></app-input>
+              <app-input
+                type="button"
+                value="Remove"
+                modifyFor="outline"></app-input>
             </div>
           </div>
         </div>
@@ -47,17 +50,24 @@
           <app-input
             type="text"
             name="title"
+            required="true"
             placeholder="Blog post title"
+            formControlName="title"
             modifyFor="fs-3">
           </app-input>
-          <app-markdown [description]="'markdownText'"></app-markdown>
+          <app-markdown
+            formControlName="content"
+            required="true"></app-markdown>
           <footer>
-            <app-button
-              [type]="'button'"
-              [name]="'Publish'"
-              (click)="getData()">
-            </app-button>
-            <app-button [name]="'Save Draft'" [type]="'outline'"> </app-button>
+            <app-input
+              type="submit"
+              value="Publish"
+              disabled="!form.valid"></app-input>
+            <app-input
+              type="submit"
+              value="Publish"
+              modifyFor="outline"
+              disabled="!form.valid"></app-input>
           </footer>
         </div>
       </form>

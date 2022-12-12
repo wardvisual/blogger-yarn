@@ -9,7 +9,9 @@ import { marked } from 'marked';
   styleUrls: ['./markdown.component.scss'],
 })
 export class MarkdownComponent implements OnInit {
-  @Input() description: string = '';
+  @Input() formControlName: string = '';
+  @Input() required: string = '';
+  @Input() content: string = '';
   @Output() event!: EventEmitter<string>;
 
   constructor() {}
@@ -19,6 +21,6 @@ export class MarkdownComponent implements OnInit {
   }
 
   sendData(): void {
-    this.event.emit(marked(this.description));
+    this.event.emit(marked(this.content));
   }
 }
