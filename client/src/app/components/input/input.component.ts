@@ -1,5 +1,13 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import {
+  Component,
+  Input,
+  OnInit,
+  Output,
+  EventEmitter,
+  ViewChild,
+  ElementRef,
+} from '@angular/core';
+import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-input',
@@ -19,13 +27,20 @@ export class InputComponent implements OnInit {
   @Input() placeholder: string = '';
   @Input() routerLink: string = '';
   @Input() routerLinkActive: string = '';
-  @Input() formControlName: string = '';
+  @Input() controlName: string = '';
   @Output() event: any;
+  @ViewChild('input')
+  input!: ElementRef<HTMLInputElement>;
+  form!: FormGroup;
 
-  constructor() {}
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
     this.event = new EventEmitter<any>();
+
+    this.form = this.formBuilder.group({
+      text: new FormControl(''),
+    });
   }
 
   handleOnChange(param: any) {
@@ -34,5 +49,10 @@ export class InputComponent implements OnInit {
 
   handleOnClick(param: any) {
     this.event.emit(param);
+  }
+
+  handleGetInput() {
+    this.event.emit(this.form.get('text')?.value);
+    this.form.reset();
   }
 }
