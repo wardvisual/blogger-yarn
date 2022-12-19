@@ -26,9 +26,7 @@ export class CreateBlogComponent implements OnInit, OnDestroy {
     private blogService: CreateBlogService,
     private formBuilder: FormBuilder,
     private router: Router
-  ) {}
-
-  ngOnInit(): void {
+  ) {
     this.form = this.formBuilder.group<BlogPost>({
       user: {
         name: '',
@@ -46,6 +44,8 @@ export class CreateBlogComponent implements OnInit, OnDestroy {
       },
     });
   }
+
+  ngOnInit(): void {}
 
   public post() {
     this.blogService

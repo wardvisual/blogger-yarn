@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-input',
@@ -18,6 +19,7 @@ export class InputComponent implements OnInit {
   @Input() placeholder: string = '';
   @Input() routerLink: string = '';
   @Input() routerLinkActive: string = '';
+  @Input() formControlName: string = '';
   @Output() event: any;
 
   constructor() {}
