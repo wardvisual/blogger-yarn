@@ -27,32 +27,29 @@ export class InputComponent implements OnInit {
   @Input() placeholder: string = '';
   @Input() routerLink: string = '';
   @Input() routerLinkActive: string = '';
-  @Input() controlName: string = '';
+  @Input() control!: FormControl;
   @Output() event: any;
+  @Input() label: string = '';
   @ViewChild('input')
   input!: ElementRef<HTMLInputElement>;
-  form!: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
     this.event = new EventEmitter<any>();
-
-    this.form = this.formBuilder.group({
-      text: new FormControl(''),
-    });
   }
 
   handleOnChange(param: any) {
     this.event.emit(param);
   }
 
-  handleOnClick(param: any) {
+  handleOnClick(param?: any) {
     this.event.emit(param);
   }
 
-  handleGetInput() {
-    this.event.emit(this.form.get('text')?.value);
-    this.form.reset();
+  handleDisplayErrors() {
+    const { dirty, touched, errors } = this.control;
+
+    return dirty && touched && errors;
   }
 }
