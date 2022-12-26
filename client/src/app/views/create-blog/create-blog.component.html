@@ -15,7 +15,7 @@
         </div>
       </div>
 
-      <form class="form" [formGroup]="form" onsubmit="post()">
+      <form class="form" [formGroup]="form">
         <div class="form__header">
           <div class="form__buttons">
             <app-input
@@ -52,16 +52,18 @@
             name="title"
             required="true"
             placeholder="Blog post title"
+            [control]="$any(form.get('title'))"
             modifyFor="fs-3">
           </app-input>
           <app-markdown required="true"></app-markdown>
           <footer>
             <app-input
-              type="submit"
+              type="button"
+              onclick="post()"
               value="Publish"
               disabled="!form.valid"></app-input>
             <app-input
-              type="submit"
+              type="button"
               value="Publish"
               modifyFor="outline"
               disabled="!form.valid"></app-input>
