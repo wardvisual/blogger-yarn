@@ -21,6 +21,7 @@
     [disabled]="disabled ? true : false"
     [id]="id"
     [value]="value"
+    [formControl]="control"
     (onchange)="handleOnChange($event)"
     (onclick)="handleOnClick($event)" />
   <app-icon *ngIf="iconRight" [icon]="iconRight"></app-icon>
