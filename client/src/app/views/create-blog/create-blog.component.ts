@@ -47,7 +47,8 @@ export class CreateBlogComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {}
 
-  public post() {
+  public post(): void {
+    console.log({ app: 1, title: this.form.get('title') });
     this.blogService
       .post(this.form.getRawValue())
       .pipe(tap(() => this.router.navigate(['../'])))
