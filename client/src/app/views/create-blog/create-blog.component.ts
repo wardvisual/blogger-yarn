@@ -47,7 +47,9 @@ export class CreateBlogComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {}
 
-  public post(): void {
+  public post(event: Event): void {
+    event.preventDefault();
+
     console.log({ app: 1, title: this.form.get('title') });
     this.blogService
       .post(this.form.getRawValue())

@@ -15,6 +15,7 @@
         </div>
       </div>
 
+      {{ form.value | json }}
       <form class="form" [formGroup]="form">
         <div class="form__header">
           <div class="form__buttons">
@@ -58,10 +59,9 @@
           <app-markdown required="true"></app-markdown>
           <footer>
             <app-input
+              (click)="post($event)"
               type="button"
-              onclick="post()"
-              value="Publish"
-              disabled="!form.valid"></app-input>
+              value="Publish"></app-input>
             <app-input
               type="button"
               value="Publish"
