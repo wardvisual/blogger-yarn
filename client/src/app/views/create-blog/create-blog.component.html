@@ -15,8 +15,7 @@
         </div>
       </div>
 
-      {{ form.value | json }}
-      <form class="form" [formGroup]="form">
+      <form class="form">
         <div class="form__header">
           <div class="form__buttons">
             <app-input
@@ -29,12 +28,9 @@
               modifyFor="outline"></app-input>
           </div>
 
-          <div *ngIf="!form.get('thumbnail')" class="image-wrapper">
+          <div *ngIf="" class="image-wrapper">
             <div class="image-container">
-              <img
-                [src]="form.get('thumbnail')"
-                *ngIf="form.get('thumbnail')"
-                alt="thumbnail" />
+              <img [src]="" *ngIf="" alt="thumbnail" />
             </div>
 
             <div>
@@ -53,15 +49,11 @@
             name="title"
             required="true"
             placeholder="Blog post title"
-            [control]="$any(form.get('title'))"
             modifyFor="fs-3">
           </app-input>
           <app-markdown required="true"></app-markdown>
           <footer>
-            <app-input
-              (click)="post($event)"
-              type="button"
-              value="Publish"></app-input>
+            <app-input type="button" value="Publish"></app-input>
             <app-input
               type="button"
               value="Publish"
